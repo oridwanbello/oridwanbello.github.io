@@ -12,6 +12,10 @@ redirect_from:
     .custom-feature-section {
     margin-bottom: 2em;
     padding: 1em;
+    /* For desktop: constrain width and center */
+    max-width: 1140px; /* Adjust as needed, e.g., 960px, 1200px */
+    margin-left: auto;
+    margin-right: auto;
     }
 
     .custom-feature__item {
@@ -20,7 +24,7 @@ redirect_from:
     border: none; /* Remove visible border from the main rectangle */
     border-radius: 50px;
     overflow: hidden;
-    background-color: rgba(153, 204, 0, 0.20); /* Transparent version of #99cc00 (e.g., 15% opacity) */
+    background-color: rgba(153, 204, 0, 0.10); /* Transparent version of #99cc00 (e.g., 15% opacity) */
     }
 
     .custom-feature__item--img {
