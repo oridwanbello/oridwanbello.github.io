@@ -1,64 +1,81 @@
 ---
 layout: archive
-title: "CV"
+title: ""
 permalink: /cv/
 author_profile: true
 redirect_from:
-  - /resume
+    - /resume/
 ---
 
-{% include base_path %}
+<style>
+    .pdf-viewer {
+        width: 100%;
+        height: calc(100vh - 150px); /* Adjust height for mobile spacing */
+        border: none;
+        overflow: hidden; /* Prevent scrolling inside the iframe */
+    }
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+    .pdf-viewer iframe {
+        width: 100%;
+        height: 100%;
+        transform: scale(1); /* Default scale for desktop */
+        transform-origin: top left; /* Ensure scaling starts from the top-left corner */
+    }
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+    .button-container {
+        text-align: center;
+        margin-top: 20px;
+    }
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+    .download-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #28a096;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+    .download-button:hover {
+        background-color: #00c8c8;
+        color: #ffffff;
+    }
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .pdf-viewer {
+            height: calc(100vh - 200px); /* Adjust height for smaller screens */
+        }
+
+        .pdf-viewer iframe {
+            transform: scale(0.8); /* Scale down for smaller screens */
+            transform-origin: top left; /* Ensure scaling starts from the top-left corner */
+        }
+
+        h1 {
+            font-size: 1.5rem; /* Smaller font size for mobile */
+        }
+
+        .download-button {
+            padding: 8px 16px; /* Adjust button size for mobile */
+            font-size: 0.9rem;
+        }
+    }
+</style>
+
+<div class="container">
+    <h1 style="text-align: center; color: #28a096;">My Curriculum Vitae</h1>
+    <div class="pdf-viewer">
+        <iframe
+            src="/files/cv.pdf"
+            frameborder="0"
+        ></iframe>
+    </div>
+    <div class="button-container">
+        <a href="/files/cv.pdf" class="download-button" download="cv.pdf">
+            Download PDF
+        </a>
+    </div>
+</div>
