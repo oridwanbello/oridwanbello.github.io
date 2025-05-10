@@ -90,8 +90,8 @@ teaser: # filename of teaser fallback teaser image placed in /images/, .e.g. "50
 breadcrumbs: false # true, false (default)
 words_per_minute: 160
 future: true
-read_more: "disabled" # if enabled, adds "Read more" links to excerpts
-talkmap_link: false #change to true to add link to talkmap on talks page
+read_more: "enabled" # if enabled, adds "Read more" links to excerpts
+talkmap_link: false # change to true to add link to talkmap on talks page
 comments:
     provider: # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
     disqus:
@@ -119,7 +119,7 @@ staticman:
             options:
                 format: "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-    hide: false # change to true to hide the RSS feed in the footer
+    hide: true # change to true to hide the RSS feed in the footer or false to show it
     path: # blank (default) uses feed.xml
 
 # SEO Related
@@ -145,7 +145,7 @@ social:
 
 # Analytics
 analytics:
-    provider: "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+    provider: "google-analytics-4" # false (default), "google", "google-universal", "google-analytics-4", "custom"
     google:
         tracking_id:
 
