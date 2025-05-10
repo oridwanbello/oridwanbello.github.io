@@ -1,0 +1,73 @@
+---
+permalink: /strengths/
+title: ""
+author_profile: true
+redirect_from:
+    - /strengths.html
+---
+
+<style>
+    .pdf-viewer {
+        width: 100%;
+        height: calc(100vh - 150px); /* Adjust height for mobile spacing */
+        border: none;
+        overflow: hidden; /* Prevent scrolling inside the iframe */
+    }
+
+    .pdf-viewer iframe {
+        width: 100%;
+        height: 100%;
+        transform: scale(1); /* Default scale for desktop */
+        transform-origin: top left; /* Ensure scaling starts from the top-left corner */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .pdf-viewer {
+            height: calc(100vh - 200px); /* Adjust height for smaller screens */
+        }
+
+        .pdf-viewer iframe {
+            transform: scale(0.8); /* Scale down for smaller screens */
+            transform-origin: top left; /* Ensure scaling starts from the top-left corner */
+        }
+
+        h1 {
+            font-size: 1.5rem; /* Smaller font size for mobile */
+        }
+
+        .download-button {
+            padding: 8px 16px; /* Adjust button size for mobile */
+            font-size: 0.9rem;
+        }
+    }
+</style>
+
+<!-- <style>
+    .pdf-viewer {
+        width: 100%;
+        height: 100vh; /* Use the full viewport height */
+        border: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .pdf-viewer {
+            height: 100vh; /* Ensure it still uses the full height on smaller screens */
+        }
+
+        h1 {
+            font-size: 1.5rem; /* Smaller font size for mobile */
+        }
+    }
+</style> -->
+
+<div class="container">
+    <h1 style="text-align: center; color: #28a096;">My Clifton Strengths</h1>
+    <div class="pdf-viewer">
+        <iframe
+            src="/files/clifton_strengths.pdf"
+            frameborder="0"
+        ></iframe>
+    </div>
+</div>
