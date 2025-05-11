@@ -158,3 +158,45 @@
 }
 
 /* End of custom page style ------------------------------------------------- */
+
+
+/* Dark Mode mods ----------------------------------------------------------- */
+
+html[data-theme="dark"] .custom-feature__item {
+    background-color: rgba(40, 44, 52, 0.7);
+    /* Example: A darker, slightly transparent background */
+    /* Or, if your theme provides dark mode background variables, use them:
+       background-color: var(--dark-background-color-lighter, rgba(40, 44, 52, 0.7)); */
+}
+
+html[data-theme="dark"] .custom-feature__item--desc h3 {
+    color: #31c48d;
+    /* Example: A lighter, vibrant green for dark mode */
+    /* Or, use a theme variable if available:
+       color: var(--dark-primary-color, #31c48d); */
+}
+
+html[data-theme="dark"] .custom-feature__item--desc p {
+    /* The theme should ideally update --text-color-light or provide a dark mode equivalent.
+       If not, override it. #adb5bd is a light grey. */
+    color: var(--text-color-dark, #adb5bd);
+    /* Assuming your theme might have --text-color-dark */
+    /* Fallback if --text-color-dark is not defined by your theme for this context:
+       color: #adb5bd; */
+}
+
+/* Optional: Adjust button for dark mode if needed */
+/*
+html[data-theme="dark"] .custom-feature__item--desc .btn {
+    background-color: #31c48d;
+    border-color: #31c48d;
+    color: #111827 !important; /* Darker text for lighter button background */
+}
+
+html[data-theme="dark"] .custom-feature__item--desc .btn:hover {
+    background-color: #2ca87a;
+    border-color: #2ca87a;
+    color: #111827 !important;
+}
+
+/* End of Dark Mode mods ---------------------------------------------------- */
