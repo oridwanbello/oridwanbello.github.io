@@ -1,4 +1,4 @@
-/* Custom page style -------------------------------------------------------- */
+/* Container style ---------------------------------------------------------- */
 
 .cover-image-container {
     width: 100%;
@@ -81,7 +81,7 @@
     margin-top: 0;
     font-size: 1.5em;
     color: #009a00;
-    /* Color for "Financial Advisor" */
+    /* Color for "Header" */
 }
 
 .custom-feature__item--desc p {
@@ -157,7 +157,7 @@
     }
 }
 
-/* End of custom page style ------------------------------------------------- */
+/* End of container style --------------------------------------------------- */
 
 
 /* Dark Mode mods ----------------------------------------------------------- */
@@ -170,7 +170,7 @@ html[data-theme="dark"] .custom-feature__item {
 }
 
 html[data-theme="dark"] .custom-feature__item--desc h3 {
-    color: #31c48d;
+    color: #009a00;
     /* Example: A lighter, vibrant green for dark mode */
     /* Or, use a theme variable if available:
        color: var(--dark-primary-color, #31c48d); */
