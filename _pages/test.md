@@ -83,7 +83,7 @@ redirect_from:
     @media (min-width: 600px) { /* Matches $small breakpoint from _sass/_themes.scss */
         .custom-feature-section {
             width: 90%; /* Width for desktop view */
-            max-width: 1200px; /* Max width for desktop view */
+            /* max-width: 1200px; /* Max width for desktop view */
             /* margin-left: auto and margin-right: auto are inherited from the base rule and will continue to center it */
         }
 
