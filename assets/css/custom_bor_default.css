@@ -38,7 +38,7 @@
     border-radius: 50px;
     /* Curvy edges for the main rectangle */
     overflow: hidden;
-    background-color: rgba(153, 204, 0, 0.10);
+    background-color: rgba(153, 204, 0, 0.1);
     /* Transparent version of #99cc00 (e.g., 10% opacity) */
 }
 
