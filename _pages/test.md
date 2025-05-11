@@ -13,7 +13,7 @@ redirect_from:
     margin-bottom: 2em;
     padding: 1em;
     /* For desktop: constrain width and center */
-    max-width: 1140px; /* Adjust as needed, e.g., 960px, 1200px */
+    /*max-width: 1140px; /* Adjust as needed, e.g., 960px, 1200px */
     margin-left: auto;
     margin-right: auto;
     }
