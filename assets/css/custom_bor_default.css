@@ -163,7 +163,7 @@
 /* Dark Mode mods ----------------------------------------------------------- */
 
 html[data-theme="dark"] .custom-feature__item {
-    background-color: rgba(40, 44, 52, 0.7);
+    background-color: rgba(45, 44, 44, 0.5);
     /* Example: A darker, slightly transparent background */
     /* Or, if your theme provides dark mode background variables, use them:
        background-color: var(--dark-background-color-lighter, rgba(40, 44, 52, 0.7)); */
