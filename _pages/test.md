@@ -11,12 +11,11 @@ redirect_from:
 <style>
     .custom-feature-section {
     margin-bottom: 2em;
-    padding: 1em;
-    /* For desktop: constrain width and center */
-    width: 90%;
-    max-width: 1200px; /* Adjust as needed limit pixel extent of width */
+    padding: 1em; /* Provides spacing from screen edges on mobile */
+    width: 90%; /* Width for mobile view, centered by auto margins */
     margin-left: auto;
     margin-right: auto;
+    /* max-width removed from base rule to not affect mobile unnecessarily */
     }
 
     .custom-feature__item {
@@ -25,7 +24,7 @@ redirect_from:
     border: none; /* Remove visible border from the main rectangle */
     border-radius: 50px;
     overflow: hidden;
-    background-color: rgba(153, 204, 0, 0.10); /* Transparent version of #99cc00 (e.g., 15% opacity) */
+    background-color: rgba(153, 204, 0, 0.20); /* Transparent version of #99cc00 (e.g., 15% opacity) */
     }
 
     .custom-feature__item--img {
@@ -81,6 +80,12 @@ redirect_from:
 
     /* Desktop view: Apply for screens wider than 'small' breakpoint (typically 600px) */
     @media (min-width: 600px) { /* Matches $small breakpoint from _sass/_themes.scss */
+        .custom-feature-section {
+            width: 80%; /* Width for desktop view */
+            max-width: 1200px; /* Max width for desktop view */
+            /* margin-left: auto and margin-right: auto are inherited from the base rule and will continue to center it */
+        }
+
     .custom-feature__item {
         flex-direction: row; /* Desktop: horizontal layout */
         align-items: center; /* Align items vertically in desktop view */
