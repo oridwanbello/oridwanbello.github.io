@@ -35,7 +35,7 @@
     /* Mobile: vertical layout */
     border: none;
     /* Remove visible border from the main rectangle */
-    border-radius: 50px;
+    border-radius: 30px;
     /* Curvy edges for the main rectangle */
     overflow: hidden;
     background-color: rgba(153, 204, 0, 0.1);
