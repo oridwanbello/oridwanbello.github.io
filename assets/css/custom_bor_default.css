@@ -170,7 +170,7 @@ html[data-theme="dark"] .custom-feature__item {
 }
 
 html[data-theme="dark"] .custom-feature__item--desc h3 {
-    color: #009a00;
+    color: #99cc00;
     /* Example: A lighter, vibrant green for dark mode */
     /* Or, use a theme variable if available:
        color: var(--dark-primary-color, #31c48d); */
@@ -185,17 +185,16 @@ html[data-theme="dark"] .custom-feature__item--desc p {
        color: #adb5bd; */
 }
 
-/* Optional: Adjust button for dark mode if needed */
-/*
+/* Adjust button for dark mode if needed */
 html[data-theme="dark"] .custom-feature__item--desc .btn {
-    background-color: #31c48d;
-    border-color: #31c48d;
+    background-color: #99cc00;
+    border-color: #99cc00;
     color: #111827 !important; /* Darker text for lighter button background */
 }
 
 html[data-theme="dark"] .custom-feature__item--desc .btn:hover {
-    background-color: #2ca87a;
-    border-color: #2ca87a;
+    background-color: #7AA300;
+    border-color: #7AA300;
     color: #111827 !important;
 }
 
