@@ -179,7 +179,7 @@ html[data-theme="dark"] .custom-feature__item--desc h3 {
 html[data-theme="dark"] .custom-feature__item--desc p {
     /* The theme should ideally update --text-color-light or provide a dark mode equivalent.
        If not, override it. #adb5bd is a light grey. */
-    color: var(--text-color-dark, #e4e4e4);
+    color: var(--text-color-dark, #c8c8c8);
     /* Assuming your theme might have --text-color-dark */
     /* Fallback if --text-color-dark is not defined by your theme for this context:
        color: #adb5bd; */
