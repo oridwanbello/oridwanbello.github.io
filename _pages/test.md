@@ -13,7 +13,8 @@ redirect_from:
     margin-bottom: 2em;
     padding: 1em;
     /* For desktop: constrain width and center */
-    max-width: 90%; /* Adjust as needed, e.g., 960px, 1200px */
+    width: 90%;
+    max-width: 1200px; /* Adjust as needed limit pixel extent of width */
     margin-left: auto;
     margin-right: auto;
     }
@@ -24,7 +25,7 @@ redirect_from:
     border: none; /* Remove visible border from the main rectangle */
     border-radius: 50px;
     overflow: hidden;
-    background-color: rgba(153, 204, 0, 0.10); /* Transparent version of #99cc00 (e.g., 15% opacity) */
+    background-color: rgba(153, 204, 0, 0.510); /* Transparent version of #99cc00 (e.g., 15% opacity) */
     }
 
     .custom-feature__item--img {
