@@ -2,7 +2,8 @@
 
 .cover-image-container {
     width: 100%;
-    max-height: 400px;
+    height: 600px;
+    max-height: 1200px;
     /* Adjust as needed, or use aspect-ratio */
     overflow: hidden;
     margin-bottom: 2em;
