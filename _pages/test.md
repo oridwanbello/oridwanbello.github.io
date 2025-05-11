@@ -10,65 +10,66 @@ redirect_from:
 
 <style>
     .custom-feature-section {
-    margin-bottom: 2em;
-    padding: 1em; /* Provides spacing from screen edges on mobile */
-    width: 90%; /* Width for mobile view, centered by auto margins */
-    margin-left: auto;
-    margin-right: auto;
-    /* max-width removed from base rule to not affect mobile unnecessarily */
+        margin-bottom: 2em;
+        padding: 1em; /* Provides spacing from screen edges on mobile */
+        width: 100%; /* Width for mobile view, centered by auto margins */
+        margin-left: auto;
+        margin-right: auto;
+        /* max-width removed from base rule to not affect mobile unnecessarily */
     }
 
     .custom-feature__item {
-    display: flex;
-    flex-direction: column; /* Mobile: vertical layout */
-    border: none; /* Remove visible border from the main rectangle */
-    border-radius: 50px;
-    overflow: hidden;
-    background-color: rgba(153, 204, 0, 0.20); /* Transparent version of #99cc00 (e.g., 15% opacity) */
+        display: flex;
+        flex-direction: column; /* Mobile: vertical layout */
+        border: none; /* Remove visible border from the main rectangle */
+        border-radius: 50px;
+        overflow: hidden;
+        background-color: rgba(153, 204, 0, 0.10); /* Transparent version of #99cc00 (e.g., 15% opacity) */
     }
 
     .custom-feature__item--img {
-    flex-shrink: 0;
-    display: flex; /* Added to help center the image if it's smaller than its container */
-    justify-content: center; /* Center image horizontally */
-    align-items: center; /* Center image vertically */
-    padding: 1em; /* Add some padding around the image if desired */
+        flex-shrink: 0;
+        display: flex; /* Added to help center the image if it's smaller than its container */
+        justify-content: center; /* Center image horizontally */
+        align-items: center; /* Center image vertically */
+        padding: 1em; /* Add some padding around the image if desired */
     }
 
     .custom-feature__item--img img {
-    width: 100%;
-    height: auto;
-    max-width: 280px; /* INCREASED: Max size of the image for responsiveness */
-    display: block;
-    object-fit: cover; /* Ensures the image covers the area, might crop */
-    border-radius: 50%; /* Make the image round */
-    aspect-ratio: 1 / 1; /* Ensure the space for the image is square for a perfect circle */
+        width: 100%;
+        height: auto;
+        max-width: 280px; /* INCREASED: Max size of the image for responsiveness */
+        display: block;
+        object-fit: cover; /* Ensures the image covers the area, might crop */
+        border-radius: 50%; /* Make the image round */
+        aspect-ratio: 1 / 1; /* Ensure the space for the image is square for a perfect circle */
     }
 
     .custom-feature__item--desc {
-    padding: 1.5em;
-    display: flex;
-    flex-direction: column;
+        padding: 1.5em;
+        display: flex;
+        flex-direction: column;
     }
 
     .custom-feature__item--desc h3 {
-    margin-top: 0;
-    font-size: 1.5em; /* Adjust as needed, or use theme variables if available */
-    color: #009a00; /* New color for "Financial Advisor" */
+        margin-top: 0;
+        font-size: 1.5em; /* Adjust as needed, or use theme variables if available */
+        color: #009a00; /* New color for "Financial Advisor" */
     }
 
     .custom-feature__item--desc p {
-    margin-bottom: 1em;
-    flex-grow: 1; /* Allows paragraph to take available space */
-    color: var(--text-color-light, #555); /* Use theme's lighter text color */
+        margin-bottom: 1em;
+        flex-grow: 1; /* Allows paragraph to take available space */
+        color: var(--text-color-light, #555); /* Use theme's lighter text color */
     }
 
     .custom-feature__item--desc .btn {
-    margin-top: 1em; /* Space above button */
-    align-self: flex-start; /* Align button to the start */
-    background-color: #009a00; /* New background color for "Learn more" button */
-    color: #ffffff !important; /* New text color for "Learn more" button, !important to override theme styles if necessary */
-    border-color: #009a00; /* Match border color to background */
+        margin-top: 1em; /* Space above button */
+        align-self: flex-start; /* Align button to the start */
+        background-color: #009a00; /* New background color for "Learn more" button */
+        color: #ffffff !important; /* New text color for "Learn more" button, !important to override theme styles if necessary */
+        border-color: #009a00; /* Match border color to background */
+        border-radius: 50px; /* Rounded corners for the button */
     }
 
     /* Ensure hover styles for the button are also adjusted if needed */
@@ -81,7 +82,7 @@ redirect_from:
     /* Desktop view: Apply for screens wider than 'small' breakpoint (typically 600px) */
     @media (min-width: 600px) { /* Matches $small breakpoint from _sass/_themes.scss */
         .custom-feature-section {
-            width: 80%; /* Width for desktop view */
+            width: 90%; /* Width for desktop view */
             max-width: 1200px; /* Max width for desktop view */
             /* margin-left: auto and margin-right: auto are inherited from the base rule and will continue to center it */
         }
