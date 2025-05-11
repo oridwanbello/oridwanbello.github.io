@@ -1,7 +1,7 @@
 /* Masthead and Footer Border Removal --------------------------------------- */
 
 /* Remove border from bottom of the site header (masthead) */
-.masthead {
+body .masthead {
     border-bottom: none !important;
 }
 
