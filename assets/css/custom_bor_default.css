@@ -88,8 +88,6 @@
     margin-bottom: 1em;
     flex-grow: 1;
     /* Allows paragraph to take available space */
-    color: var(--text-color-light, #555);
-    /* Use theme's lighter text color */
 }
 
 .custom-feature__item--desc .btn {
@@ -99,7 +97,7 @@
     /* Mobile: Align button to the center */
     background-color: #009a00;
     /* Background color for "Learn more" button */
-    color: #ffffff !important;
+    color: #fff;
     /* Text color for "Learn more" button */
     border-color: #009a00;
     /* Match border color to background */
@@ -108,14 +106,14 @@
 }
 
 .custom-feature__item--desc .btn:hover {
-    background-color: #007a00;
-    /* Darker shade for hover */
-    border-color: #007a00;
-    color: #ffffff !important;
+    background-color: #99cc00;
+    /* Color for hover */
+    border-color: #99cc00;
+    color: var(--global-text-color, #2d2c2c);
 }
 
-/* Desktop view: Apply for screens wider than 'small' breakpoint (typically 600px) */
-@media (min-width: 600px) {
+/* Desktop view: Apply for screens wider than 'small' breakpoint (typically 768px) */
+@media (min-width: 768px) {
     .custom-feature-section {
         width: 90%;
         /* Width for desktop view */
@@ -165,37 +163,28 @@
 html[data-theme="dark"] .custom-feature__item {
     background-color: rgba(45, 44, 44, 0.5);
     /* Example: A darker, slightly transparent background */
-    /* Or, if your theme provides dark mode background variables, use them:
-       background-color: var(--dark-background-color-lighter, rgba(40, 44, 52, 0.7)); */
 }
 
 html[data-theme="dark"] .custom-feature__item--desc h3 {
     color: #99cc00;
-    /* Example: A lighter, vibrant green for dark mode */
-    /* Or, use a theme variable if available:
-       color: var(--dark-primary-color, #31c48d); */
 }
 
 html[data-theme="dark"] .custom-feature__item--desc p {
-    /* The theme should ideally update --text-color-light or provide a dark mode equivalent.
-       If not, override it. #adb5bd is a light grey. */
-    color: var(--text-color-dark, #c8c8c8);
+    color: var(--global-text-color, #c8c8c8);
     /* Assuming your theme might have --text-color-dark */
-    /* Fallback if --text-color-dark is not defined by your theme for this context:
-       color: #adb5bd; */
 }
 
 /* Adjust button for dark mode if needed */
 html[data-theme="dark"] .custom-feature__item--desc .btn {
     background-color: #99cc00;
     border-color: #99cc00;
-    color: #2d2c2c !important; /* Darker text for lighter button background */
+    color: var(--global-text-color, #2d2c2c); /* Darker text for lighter button background */
 }
 
 html[data-theme="dark"] .custom-feature__item--desc .btn:hover {
-    background-color: #7AA300;
-    border-color: #7AA300;
-    color: #2d2c2c !important;
+    background-color: #009a00;
+    border-color: #009a00;
+    color: #fff;
 }
 
 /* End of Dark Mode mods ---------------------------------------------------- */
