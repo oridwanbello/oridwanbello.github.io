@@ -1,0 +1,14 @@
+/* Masthead and Footer Border Removal --------------------------------------- */
+
+/* Remove border-like line from bottom of the site header (masthead) */
+.masthead::after {
+    display: none !important;
+    /* This will hide the pseudo-element creating the line */
+}
+
+/* Remove border from top of the site footer */
+.page__footer {
+    border-top: none !important;
+}
+
+/* End of Masthead and Footer Border Removal -------------------------------- */
