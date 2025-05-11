@@ -9,6 +9,26 @@ redirect_from:
 ---
 
 <style>
+    .cover-image-container {
+        width: 100%;
+        max-height: 400px; /* Adjust as needed, or use aspect-ratio */
+        overflow: hidden;
+        margin-bottom: 2em; /* Space below the cover image */
+    }
+
+    .cover-image-container img {
+        width: 100%;
+        height: 100%; /* Make image fill the container's height */
+        object-fit: cover; /* Ensures the image covers the area, might crop */
+        display: block; /* Removes extra space below the image */
+    }
+</style>
+<div class="cover-image-container">
+  <!-- Replace with your cover image path. Place the image in /assets/images/ or a similar folder -->
+  <img src="{{ '/images/dna-virus.jpg' | relative_url }}" alt="Cover Image">
+</div>
+
+<style>
     .custom-feature-section {
         margin-bottom: 2em;
         padding: 1em; /* Provides spacing from screen edges */
