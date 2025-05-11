@@ -34,3 +34,27 @@
 }
 
 /* End of Author Avatar Border Removal -------------------------------------- */
+
+
+/* Global Theme Color Overrides --------------------------------------------- */
+
+/* Light Theme Overrides */
+:root {
+    // Targets the default (light) theme
+    --global-text-color: #2d2c2c;
+    // If you also want masthead links to use this color in light mode:
+    --global-masthead-link-color: #2d2c2c;
+
+    // Add other light theme CSS custom property overrides here if needed
+}
+
+/* Dark Theme Overrides */
+html[data-theme="dark"] {
+    --global-text-color: #c8c8c8;
+    // If you also want masthead links to use this color in dark mode:
+    --global-masthead-link-color: #ffffff;
+
+    // Add other dark theme CSS custom property overrides here if needed
+}
+
+/* End of Global Theme Color Overrides -------------------------------------- */
