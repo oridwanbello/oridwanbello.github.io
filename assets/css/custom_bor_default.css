@@ -1,3 +1,18 @@
+/* Masthead and Footer Border Removal --------------------------------------- */
+
+/* Remove border from bottom of the site header (masthead) */
+.masthead {
+    border-bottom: none !important;
+}
+
+/* Remove border from top of the site footer */
+.page__footer {
+    border-top: none !important;
+}
+
+/* End of Masthead and Footer Border Removal -------------------------------- */
+
+
 /* Container style ---------------------------------------------------------- */
 
 .cover-image-container {
