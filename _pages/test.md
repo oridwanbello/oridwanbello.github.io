@@ -25,7 +25,7 @@ redirect_from:
     border: none; /* Remove visible border from the main rectangle */
     border-radius: 50px;
     overflow: hidden;
-    background-color: rgba(153, 204, 0, 0.510); /* Transparent version of #99cc00 (e.g., 15% opacity) */
+    background-color: rgba(153, 204, 0, 0.10); /* Transparent version of #99cc00 (e.g., 15% opacity) */
     }
 
     .custom-feature__item--img {
