@@ -25,7 +25,7 @@ redirect_from:
 </style>
 <div class="cover-image-container">
   <!-- Replace with your cover image path. Place the image in /assets/images/ or a similar folder -->
-  <img src="{{ '/images/dna-virus.jpg' | relative_url }}" alt="Cover Image">
+  <img src="{{ '/images/dna_virus.jpg' | relative_url }}" alt="Cover Image">
 </div>
 
 <style>
