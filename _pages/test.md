@@ -11,34 +11,33 @@ redirect_from:
 <style>
     .custom-feature-section {
         margin-bottom: 2em;
-        padding: 1em; /* Provides spacing from screen edges on mobile */
-        width: 100%; /* Width for mobile view, centered by auto margins */
+        padding: 1em; /* Provides spacing from screen edges */
+        width: 100%; /* Full width on mobile, padding handles insets */
         margin-left: auto;
         margin-right: auto;
-        /* max-width removed from base rule to not affect mobile unnecessarily */
     }
 
     .custom-feature__item {
         display: flex;
         flex-direction: column; /* Mobile: vertical layout */
         border: none; /* Remove visible border from the main rectangle */
-        border-radius: 50px;
+        border-radius: 50px; /* Curvy edges for the main rectangle */
         overflow: hidden;
-        background-color: rgba(153, 204, 0, 0.10); /* Transparent version of #99cc00 (e.g., 15% opacity) */
+        background-color: rgba(153, 204, 0, 0.10); /* Transparent version of #99cc00 (e.g., 10% opacity) */
     }
 
     .custom-feature__item--img {
         flex-shrink: 0;
-        display: flex; /* Added to help center the image if it's smaller than its container */
-        justify-content: center; /* Center image horizontally */
-        align-items: center; /* Center image vertically */
-        padding: 1em; /* Add some padding around the image if desired */
+        display: flex;
+        justify-content: center; /* Center image horizontally in its container */
+        align-items: center; /* Center image vertically in its container */
+        padding: 1em; /* Padding around the image */
     }
 
     .custom-feature__item--img img {
         width: 100%;
         height: auto;
-        max-width: 280px; /* INCREASED: Max size of the image for responsiveness */
+        max-width: 280px; /* Max size of the image */
         display: block;
         object-fit: cover; /* Ensures the image covers the area, might crop */
         border-radius: 50%; /* Make the image round */
@@ -49,12 +48,14 @@ redirect_from:
         padding: 1.5em;
         display: flex;
         flex-direction: column;
+        align-items: center; /* Mobile: Center flex items (h3, p, btn) horizontally */
+        text-align: center; /* Mobile: Center text within h3 and p */
     }
 
     .custom-feature__item--desc h3 {
         margin-top: 0;
-        font-size: 1.5em; /* Adjust as needed, or use theme variables if available */
-        color: #009a00; /* New color for "Financial Advisor" */
+        font-size: 1.5em;
+        color: #009a00; /* Color for "Financial Advisor" */
     }
 
     .custom-feature__item--desc p {
@@ -65,48 +66,49 @@ redirect_from:
 
     .custom-feature__item--desc .btn {
         margin-top: 1em; /* Space above button */
-        align-self: flex-start; /* Align button to the start */
-        background-color: #009a00; /* New background color for "Learn more" button */
-        color: #ffffff !important; /* New text color for "Learn more" button, !important to override theme styles if necessary */
+        align-self: center; /* Mobile: Align button to the center */
+        background-color: #009a00; /* Background color for "Learn more" button */
+        color: #ffffff !important; /* Text color for "Learn more" button */
         border-color: #009a00; /* Match border color to background */
         border-radius: 50px; /* Rounded corners for the button */
     }
 
-    /* Ensure hover styles for the button are also adjusted if needed */
     .custom-feature__item--desc .btn:hover {
-        background-color: #007a00; /* Darker shade for hover, adjust as needed */
+        background-color: #007a00; /* Darker shade for hover */
         border-color: #007a00;
         color: #ffffff !important;
     }
 
     /* Desktop view: Apply for screens wider than 'small' breakpoint (typically 600px) */
-    @media (min-width: 600px) { /* Matches $small breakpoint from _sass/_themes.scss */
+    @media (min-width: 600px) {
         .custom-feature-section {
             width: 90%; /* Width for desktop view */
-            /* max-width: 1200px; /* Max width for desktop view */
-            /* margin-left: auto and margin-right: auto are inherited from the base rule and will continue to center it */
+            max-width: 1200px; /* Max width for desktop view, centered by auto margins */
         }
 
-    .custom-feature__item {
-        flex-direction: row; /* Desktop: horizontal layout */
-        align-items: center; /* Align items vertically in desktop view */
-    }
+        .custom-feature__item {
+            flex-direction: row; /* Desktop: horizontal layout */
+            align-items: center; /* Vertically align image and text block */
+        }
 
-    .custom-feature__item--img {
-        width: 40%; /* UPDATED: Define a responsive width for the image container */
-        padding: 1.5em; /* Adjust padding for desktop if needed */
-        /* flex-shrink: 0; is good to prevent shrinking if space is tight */
-    }
+        .custom-feature__item--img {
+            width: 40%; /* Width for the image container */
+            padding: 1.5em; /* Adjust padding for desktop if needed */
+        }
 
-    .custom-feature__item--img img {
-        /* max-width is inherited (280px), width: 100% makes it fill its container up to max-width */
-        /* height: 100%; REMOVED to rely on aspect-ratio for correct height */
-    }
+        /* No specific desktop overrides for .custom-feature__item--img img needed from current requirements */
+        /* It inherits max-width, border-radius, etc. from base styles */
 
-    .custom-feature__item--desc {
-        width: 60%; /* UPDATED: Adjust text content width for desktop to complement image container */
-        justify-content: center; /* Vertically center content if desired */
-    }
+        .custom-feature__item--desc {
+            width: 60%; /* Width for the text content container */
+            align-items: flex-start; /* Desktop: Align flex items (h3, p, btn) to the left */
+            text-align: left; /* Desktop: Align text within h3 and p to the left */
+            justify-content: center; /* Vertically center content within the description block if it's taller */
+        }
+
+        .custom-feature__item--desc .btn {
+            align-self: flex-start; /* Desktop: Align button to the left */
+        }
     }
 </style>
 
