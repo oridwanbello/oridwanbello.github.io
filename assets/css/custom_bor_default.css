@@ -178,7 +178,7 @@ html[data-theme="dark"] .custom-feature__item--desc p {
 html[data-theme="dark"] .custom-feature__item--desc .btn {
     background-color: #99cc00;
     border-color: #99cc00;
-    color: var(--global-text-color, #2d2c2c); /* Darker text for lighter button background */
+    color: #2d2c2c; /* Darker text for lighter button background */
 }
 
 html[data-theme="dark"] .custom-feature__item--desc .btn:hover {
