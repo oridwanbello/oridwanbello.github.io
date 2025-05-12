@@ -34,6 +34,18 @@
     /* Removes extra space below the image */
 }
 
+.cover-text-overlay .cover-discover-button {
+    display: inline-block;
+    /* To allow margin-top */
+    margin-top: 1em;
+    /* Space above the button */
+    /* You can add more specific styles here if you want it to look different
+       from other .btn--primary buttons. For example:
+    background-color: #yourColor;
+    border-color: #yourColor;
+    */
+}
+
 .cover-text-overlay {
     position: absolute;
     top: 50%;
@@ -42,7 +54,7 @@
     /* Centers the text block */
     color: #ffffff;
     /* Text color - white */
-    text-align: center;
+    text-align: left;
     z-index: 2;
     /* Ensures text is above the image AND the gradient overlay */
     padding: 20px;
