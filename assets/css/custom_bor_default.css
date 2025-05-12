@@ -25,7 +25,7 @@ html {
     height: 100%;
     background:
         linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%),
-        linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 10%, transparent 30%);
+        linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 100%);
     z-index: 1;
     /* Sits above the image, but below the text overlay */
 }
@@ -346,12 +346,13 @@ html[data-theme="dark"] .cover-image-container::before {
         linear-gradient(to right,
             rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 1) 0%,
             rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 1) 25%,
-            rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 0.0) 75%,
+            rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 0) 75%,
             rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 0) 100%),
         linear-gradient(to top,
-            rgb(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71)) 0%,
-            rgb(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71)) 10%,
-            transparent 30%);
+            rgb(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 1) 0%,
+            rgb(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 1) 10%,
+            rgb(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 0) 30%,
+            rgb(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 0) 100%);
 }
 
 html[data-theme="dark"] .cover-text-overlay {
