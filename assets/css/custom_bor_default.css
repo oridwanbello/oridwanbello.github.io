@@ -92,7 +92,7 @@ html {
     .cover-image-container {
         /* You might experiment with a slightly smaller vh on mobile if 90vh feels too large
            once the text overlay content is better sized, but start without this. */
-        /* height: 85vh; */
+        height: 85vh;
     }
 
     .cover-text-overlay {
@@ -397,7 +397,7 @@ html[data-theme="dark"] .cover-image-container::before {
 }
 
 html[data-theme="dark"] .cover-text-overlay {
-    color: #e6e6e6; /* Lighter than global text because of image background shadow not enough */
+    color: #f0f0f0; /* Lighter than global text to account for image background */
     /* Text color for dark mode (white) */
 }
 
