@@ -110,7 +110,7 @@ html {
     border-radius: 30px;
     /* Curvy edges for the main rectangle */
     overflow: hidden;
-    background-color: rgba(153, 204, 0, 0);
+    background-color: rgba(153, 204, 0, 0.1);
     /* Transparent version of #99cc00 (e.g., 0 to 1 where 0.1 is 10% opacity) */
     margin-bottom: 0;
     /* Space below each feature item */
@@ -126,6 +126,12 @@ html {
     padding: 0; /* Creates no space around the image for the image-on-top layout */
     box-sizing: border-box; /* Ensures padding doesn't add to the 100% width */
     /* Padding and specific alignment for round images in desktop row layout are handled by modifiers */
+}
+
+/* Background for 'first container style' (default type) in light mode */
+.custom-feature__item.custom-feature__item--layout-desktop-row {
+    background-color: rgba(153, 204, 0, 0);
+    /* First container style - Light Mode */
 }
 
 /* Specific padding for the image wrapper when it's for the default type (round image) */
@@ -313,6 +319,12 @@ html {
 html[data-theme="dark"] .custom-feature__item {
     background-color: rgba(45, 44, 44, 0.5);
     /* Example: A darker, slightly transparent background */
+}
+
+/* Background for 'first container style' (default type) in dark mode */
+html[data-theme="dark"] .custom-feature__item.custom-feature__item--layout-desktop-row {
+    background-color: rgba(45, 44, 44, 0);
+    /* First container style - Dark Mode */
 }
 
 html[data-theme="dark"] .custom-feature__description-wrapper h3 {
