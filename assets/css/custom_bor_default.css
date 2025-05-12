@@ -290,7 +290,7 @@ html {
         /* Desktop: Align text within h3 and p to the left */
     }
 
-    .custom-feature__description-wrapper .btn {
+    .custom-feature__description-wrapper a.btn.btn--primary {
         align-self: flex-start;
         /* Desktop: Align button to the left */
     }
