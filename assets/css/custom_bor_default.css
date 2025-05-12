@@ -41,9 +41,10 @@ html {
 .cover-text-overlay {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* Centers the text block */
+    left: 5%;
+    /* Position the left edge 5% from the container's left edge */
+    transform: translateY(-50%);
+    /* Only apply vertical centering */
     color: #ffffff;
     /* Text color - white */
     text-align: left;
@@ -51,10 +52,14 @@ html {
     /* Ensures text is above the image AND the gradient overlay */
     padding: 20px;
     /* Optional: adds some space around the text */
-    width: 90%;
+    width: 55%;
+    /* Adjust as needed, e.g., 50% or 60% */
     /* Optional: constrain width of text block */
     max-width: 800px;
+    /* Keeps text block from becoming too wide on large screens */
     /* Optional: max width for very wide screens */
+    box-sizing: border-box;
+    /* Ensures padding is included in the width calculation */
 }
 
 .cover-text-overlay h1 {
@@ -76,6 +81,7 @@ html {
     /* To allow margin-top */
     margin-top: 1em;
     /* Space above the button */
+    font-size: 1.2em;
 }
 
 /* End of cover image style ================================================= */
@@ -83,7 +89,7 @@ html {
 
 /* Feature Section Wrapper ================================================== */
 .custom-feature-section {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     padding: 1em;
     /* Provides spacing from screen edges */
     width: 100%;
@@ -106,7 +112,7 @@ html {
     overflow: hidden;
     background-color: rgba(153, 204, 0, 0.1);
     /* Transparent version of #99cc00 (e.g., 10% opacity) */
-    margin-bottom: 2em;
+    margin-bottom: 0;
     /* Space below each feature item */
 }
 
@@ -117,6 +123,8 @@ html {
     /* Default: image wrapper takes full width for image-on-top layout */
     flex-shrink: 0;
     /* Prevents shrinking in flex layouts, important for desktop row layout */
+    padding: 1em; /* Creates space around the image for the image-on-top layout */
+    box-sizing: border-box; /* Ensures padding doesn't add to the 100% width */
     /* Padding and specific alignment for round images in desktop row layout are handled by modifiers */
 }
 
@@ -184,8 +192,8 @@ html {
 }
 
 /* Common Button Styling (Applied to buttons in feature items and cover overlay) */
-.custom-feature__description-wrapper .btn,
-.cover-text-overlay .btn {
+.custom-feature__description-wrapper a.btn.btn--primary,
+.cover-text-overlay a.btn.btn--primary {
     margin-top: 1em;
     /* Space above button */
     align-self: center;
@@ -208,13 +216,11 @@ html {
     /* If you need to enforce padding: e.g., padding: 0.75em 1.5em; */
 }
 
-.custom-feature__description-wrapper .btn:hover,
-.cover-text-overlay .btn:hover {
+.custom-feature__description-wrapper a.btn.btn--primary:hover,
+.cover-text-overlay a.btn.btn--primary:hover {
     background-color: #99cc00;
-    /* Color for hover */
     border-color: #99cc00;
-    color: var(--global-text-color, #2d2c2c);
-    /* Use theme variable or fallback */
+    color: #2d2c2c;
 }
 
 
@@ -240,11 +246,14 @@ html {
         width: 40%;
         /* Width for the image container in row layout */
         padding: 1.5em;
+        /* This specific padding for desktop-row layout will override the 1em base padding */
         /* Adjust padding for desktop if needed (for round image) */
         display: flex;
         /* Used to center the round image if it's smaller than this padded area */
         justify-content: center;
         align-items: center;
+        box-sizing: border-box;
+        /* Ensure consistency */
     }
 
     /* Reset mobile centering for round image when in desktop row layout */
@@ -306,16 +315,15 @@ html[data-theme="dark"] .custom-feature__description-wrapper p {
 }
 
 /* Adjust button for dark mode if needed */
-html[data-theme="dark"] .custom-feature__description-wrapper .btn,
-html[data-theme="dark"] .cover-text-overlay .btn {
+html[data-theme="dark"] .custom-feature__description-wrapper a.btn.btn--primary,
+html[data-theme="dark"] .cover-text-overlay a.btn.btn--primary {
     background-color: #99cc00;
     border-color: #99cc00;
     color: #2d2c2c;
-    /* Darker text for lighter button background */
 }
 
-html[data-theme="dark"] .custom-feature__description-wrapper .btn:hover,
-html[data-theme="dark"] .cover-text-overlay .btn:hover {
+html[data-theme="dark"] .custom-feature__description-wrapper a.btn.btn--primary:hover,
+html[data-theme="dark"] .cover-text-overlay a.btn.btn--primary:hover {
     background-color: #009a00;
     border-color: #009a00;
     color: #fff;

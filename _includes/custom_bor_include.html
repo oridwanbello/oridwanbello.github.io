@@ -28,7 +28,10 @@ image_shape_modifier = "custom-feature__image--shape-round" -%} {% endif %}
     </div>
     <div class="custom-feature__description-wrapper">
         <h3>{{ include.header_text }}</h3>
-        <p>{{ include.paragraph_text | newline_to_br }}</p>
+        <p>
+            {{ include.paragraph_text | replace: "\n", " " | strip_html | strip
+            | escape }}
+        </p>
         {% if include.button_href and include.button_text %}
         <a href="{{ include.button_href }}" class="btn btn--primary">
             {{ include.button_text | default: "Learn more" }}
