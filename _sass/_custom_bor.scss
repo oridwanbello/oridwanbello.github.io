@@ -65,14 +65,12 @@ html[data-theme="dark"] {
 /* Right-align header navigation (Site-Wide) ---------------------------------*/
 .masthead__inner-wrap {
     display: flex;
-    /* Ensure it's a flex container */
-    justify-content: space-between;
-    /* Pushes children to opposite ends */
+    /* Ensure the parent is a flex container */
     align-items: center;
-    /* Vertically aligns items in the center */
-
-    // .greedy-nav { // This child rule might no longer be needed with space-between
-    //   margin-left: auto;
-    // }
+    /* Optional: for vertical alignment of items like title and nav */
+    .greedy-nav {
+        margin-left: auto;
+        /* This pushes the .greedy-nav block to the right */
+    }
 }
 /* End of Right-align header navigation (Site-Wide) ------------------------- */
