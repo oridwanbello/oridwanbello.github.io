@@ -62,16 +62,3 @@ html[data-theme="dark"] {
 
 /* End of Global Theme Color Overrides -------------------------------------- */
 
-/* Right-align header navigation (Site-Wide) ---------------------------------*/
-.masthead__inner-wrap {
-    display: flex !important;
-    /* Added !important */
-    align-items: center !important;
-    /* Added !important */
-
-    .greedy-nav {
-        margin-left: auto !important;
-        /* Added !important */
-    }
-}
-/* End of Right-align header navigation (Site-Wide) ------------------------- */
