@@ -23,7 +23,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 40%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0) 100%);
     z-index: 1;
     /* Sits above the image, but below the text overlay */
 }
@@ -331,7 +331,7 @@ html[data-theme="dark"] .cover-image-container::before {
     background: linear-gradient(to right,
             rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 1) 0%,
             rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 1) 40%,
-            rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 0) 90%,
+            rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 0) 60%,
             rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 0) 100%);
 }
 
