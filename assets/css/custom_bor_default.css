@@ -1,12 +1,14 @@
-/* Container style ========================================================== */
+/* Cover image style =========================================================*/
 
 .cover-image-container {
     width: 100%;
     height: 90vh;
-    /* Makes the container 60% of the viewport height.*/
+    /* Makes the container 90% of the viewport height. */
     overflow: hidden;
     margin-bottom: 2em;
     /* Space below the cover image */
+    position: relative;
+    /* Added: Needed to position text overlay absolutely within this container */
 }
 
 .cover-image-container img {
@@ -17,7 +19,45 @@
     /* Ensures the image covers the area, might crop */
     display: block;
     /* Removes extra space below the image */
+    opacity: 0.6;
+    /* Added: Adjust value between 0.0 (fully transparent) and 1.0 (fully opaque) */
 }
+
+/* New CSS for the text overlay */
+.cover-text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centers the text block */
+    color: #ffffff;
+    /* Text color - white for good contrast on a dimmed image */
+    text-align: center;
+    z-index: 10;
+    /* Ensures text is above the image */
+    padding: 20px;
+    /* Optional: adds some space around the text */
+    /* You can add more styles here like max-width, background for text block, etc. */
+}
+
+.cover-text-overlay h1 {
+    font-size: 2.5em;
+    /* Example size */
+    margin-bottom: 0.5em;
+    /* Add text-shadow for better readability if needed */
+    /* text-shadow: 1px 1px 3px rgba(0,0,0,0.7); */
+}
+
+.cover-text-overlay p {
+    font-size: 1.2em;
+    /* Example size */
+    /* text-shadow: 1px 1px 2px rgba(0,0,0,0.7); */
+}
+
+/* End of cover image style ================================================= */
+
+
+/* Container style ========================================================== */
 
 .custom-feature-section {
     margin-bottom: 2em;
