@@ -92,7 +92,7 @@ html {
     .cover-image-container {
         /* You might experiment with a slightly smaller vh on mobile if 90vh feels too large
            once the text overlay content is better sized, but start without this. */
-        height: 85vh;
+        height: 75vh;
     }
 
     .cover-text-overlay {
