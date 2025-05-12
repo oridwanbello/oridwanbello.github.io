@@ -34,17 +34,6 @@
     /* Removes extra space below the image */
 }
 
-.cover-text-overlay .cover-discover-button {
-    display: inline-block;
-    /* To allow margin-top */
-    margin-top: 1em;
-    /* Space above the button */
-    /* You can add more specific styles here if you want it to look different
-       from other .btn--primary buttons. For example:
-    background-color: #yourColor;
-    border-color: #yourColor;
-    */
-}
 
 .cover-text-overlay {
     position: absolute;
@@ -105,6 +94,7 @@
     overflow: hidden;
     background-color: rgba(153, 204, 0, 0.1);
     /* Transparent version of #99cc00 (e.g., 10% opacity) */
+    margin-bottom: 2em;
 }
 
 .custom-feature__item--img {
@@ -144,6 +134,7 @@
 
 .custom-feature__item--desc h3 {
     margin-top: 0;
+    margin-bottom: 0.5em;
     font-size: 1.5em;
     color: #009a00;
     /* Color for "Header" */
@@ -168,6 +159,12 @@
     /* Match border color to background */
     border-radius: 50px;
     /* Rounded corners for the button */
+    display: inline-block;
+    /* Good for <a> tags styled as buttons */
+    text-decoration: none;
+    /* Ensures no underline */
+    /* Padding and other base styles are often inherited from the theme's .btn class. */
+    /* If you need to enforce padding: e.g., padding: 0.75em 1.5em; */
 }
 
 .custom-feature__item--desc .btn:hover {
@@ -220,6 +217,42 @@
     }
 }
 
+/* End of container style =================================================== */
+
+
+/* Alternative container styling ============================================ */
+
+.custom-feature-alt__item--img {
+    width: 100%;
+    /* The image container itself doesn't need its own border-radius if the parent has overflow:hidden */
+}
+
+.custom-feature-alt__item--img img {
+    width: 100%;
+    height: auto;
+    /* Adjusts height automatically based on width */
+    /* Consider adding aspect-ratio here if you want a fixed proportion, e.g., aspect-ratio: 16/9; */
+    /* Or a max-height, e.g., max-height: 400px; */
+    object-fit: cover;
+    /* Ensures the image covers the area, may crop */
+    display: block;
+    /* Removes extra space below the image */
+}
+
+/* Desktop view for Alt Style */
+@media (min-width: 768px) {
+    .custom-feature-alt__item--desc {
+        align-items: flex-start;
+        /* Desktop: Align flex items (h3, p, btn) to the left */
+        text-align: left;
+        /* Desktop: Align text within h3 and p to the left */
+    }
+
+}
+
+/* End of alternative container styling ===================================== */
+
+
 /* Dark Mode mods ----------------------------------------------------------- */
 html[data-theme="dark"] .custom-feature__item {
     background-color: rgba(45, 44, 44, 0.5);
@@ -239,7 +272,8 @@ html[data-theme="dark"] .custom-feature__item--desc p {
 html[data-theme="dark"] .custom-feature__item--desc .btn {
     background-color: #99cc00;
     border-color: #99cc00;
-    color: #2d2c2c; /* Darker text for lighter button background */
+    color: #2d2c2c;
+    /* Darker text for lighter button background */
 }
 
 html[data-theme="dark"] .custom-feature__item--desc .btn:hover {
@@ -247,138 +281,5 @@ html[data-theme="dark"] .custom-feature__item--desc .btn:hover {
     border-color: #009a00;
     color: #fff;
 }
+
 /* End of dark mode mods ---------------------------------------------------- */
-
-/* End of container style =================================================== */
-
-
-
-
-/* Alternative container styling ============================================ */
-
-.custom-feature-alt__item {
-    display: flex;
-    flex-direction: column;
-    /* Image on top, text below, for all screen sizes */
-    border: none;
-    border-radius: 30px;
-    /* Pronounced curved borders for the main rectangle */
-    overflow: hidden;
-    /* Ensures content respects the border-radius */
-    background-color: rgba(153, 204, 0, 0.1);
-    /* Adjust as needed, same as other style for consistency */
-    margin-bottom: 2em;
-    /* Space below each item if you stack them */
-}
-
-.custom-feature-alt__item--img {
-    width: 100%;
-    /* The image container itself doesn't need its own border-radius if the parent has overflow:hidden */
-}
-
-.custom-feature-alt__item--img img {
-    width: 100%;
-    height: auto;
-    /* Adjusts height automatically based on width */
-    /* Consider adding aspect-ratio here if you want a fixed proportion, e.g., aspect-ratio: 16/9; */
-    /* Or a max-height, e.g., max-height: 400px; */
-    object-fit: cover;
-    /* Ensures the image covers the area, may crop */
-    display: block;
-    /* Removes extra space below the image */
-}
-
-.custom-feature-alt__item--desc {
-    padding: 1.5em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Mobile: Center flex items (h3, p, btn) horizontally */
-    text-align: center;
-    /* Mobile: Center text within h3 and p */
-}
-
-.custom-feature-alt__item--desc h3 {
-    margin-top: 0;
-    margin-bottom: 0.5em;
-    /* Space below header */
-    font-size: 1.5em;
-    color: #009a00;
-    /* Match your existing style or choose a new color */
-}
-
-.custom-feature-alt__item--desc p {
-    margin-bottom: 1em;
-    flex-grow: 1;
-    /* Allows paragraph to take available space if items have varying text length */
-}
-
-.custom-feature-alt__item--desc .btn {
-    margin-top: 1em;
-    /* Space above button */
-    align-self: center;
-    /* Mobile: Align button to the center */
-    background-color: #009a00;
-    /* Match existing button style */
-    color: #fff;
-    border-color: #009a00;
-    border-radius: 50px;
-    /* Match existing button style */
-}
-
-.custom-feature-alt__item--desc .btn:hover {
-    background-color: #99cc00;
-    /* Match existing button style */
-    border-color: #99cc00;
-    color: var(--global-text-color, #2d2c2c);
-    /* Match existing button style */
-}
-
-/* Desktop view for Alt Style */
-@media (min-width: 768px) {
-    .custom-feature-alt__item--desc {
-        align-items: flex-start;
-        /* Desktop: Align flex items (h3, p, btn) to the left */
-        text-align: left;
-        /* Desktop: Align text within h3 and p to the left */
-    }
-
-    .custom-feature-alt__item--desc .btn {
-        align-self: flex-start;
-        /* Desktop: Align button to the left */
-    }
-}
-
-
-/* Dark Mode mods for Alt Style --------------------------------------------- */
-html[data-theme="dark"] .custom-feature-alt__item {
-    background-color: rgba(45, 44, 44, 0.5);
-    /* Match existing dark mode item background */
-}
-
-html[data-theme="dark"] .custom-feature-alt__item--desc h3 {
-    color: #99cc00;
-    /* Match existing dark mode h3 color */
-}
-
-html[data-theme="dark"] .custom-feature-alt__item--desc p {
-    color: var(--global-text-color, #c8c8c8);
-    /* Match existing dark mode p color */
-}
-
-html[data-theme="dark"] .custom-feature-alt__item--desc .btn {
-    background-color: #99cc00;
-    /* Match existing dark mode button style */
-    border-color: #99cc00;
-    color: #2d2c2c;
-}
-
-html[data-theme="dark"] .custom-feature-alt__item--desc .btn:hover {
-    background-color: #009a00;
-    /* Match existing dark mode button hover style */
-    border-color: #009a00;
-    color: #fff;
-}
-/* End of Dark Mode mods for alt style -------------------------------------- */
-
-/* End of alternative container styling ===================================== */
