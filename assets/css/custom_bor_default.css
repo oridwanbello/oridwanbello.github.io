@@ -67,7 +67,7 @@ html {
     /* Example size */
     margin-bottom: 0.5em;
     color: #009a00;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    /* text-shadow: 1px 1px 3px rgba(0,0,0,0.7); */
 }
 
 .cover-text-overlay p {
