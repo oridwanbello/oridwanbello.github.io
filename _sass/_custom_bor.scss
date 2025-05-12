@@ -53,6 +53,9 @@ html[data-theme="dark"] {
     // If you also want masthead links to use this color in dark mode:
     --global-masthead-link-color: #ffffff;
     --global-masthead-link-color-hover: #99cc00;
+    --global-bg-color-r : #{red($background)};
+    --global-bg-color-g : #{green($background)};
+    --global-bg-color-b : #{blue($background)};
 
     // Add other dark theme CSS custom property overrides here if needed
 }
