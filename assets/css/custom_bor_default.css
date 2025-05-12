@@ -1,4 +1,5 @@
 /* Cover image style =========================================================*/
+/* Styling for cover image style is desktop first, then mobile adjustments */
 html {
     scroll-behavior: smooth;
     /* Enables smooth scrolling for anchor links */
@@ -86,10 +87,51 @@ html {
     font-size: 1.2em;
 }
 
+/* Mobile adjustments for Cover Text Overlay */
+@media (max-width: 767px) {
+    .cover-image-container {
+        /* You might experiment with a slightly smaller vh on mobile if 90vh feels too large
+           once the text overlay content is better sized, but start without this. */
+        /* height: 85vh; */
+    }
+
+    .cover-text-overlay {
+        width: 90%;
+        /* Make the overlay wider on small screens */
+        left: 5%;
+        /* Position 5% from the left, leaving 5% on the right */
+        padding: 15px;
+        /* Reduce padding slightly */
+        /* top: 50%; transform: translateY(-50%); will still vertically center it */
+        /* box-sizing: border-box; is inherited and important */
+    }
+
+    .cover-text-overlay h1 {
+        font-size: 1.8em;
+        /* Reduce heading font size */
+        margin-bottom: 0.4em;
+    }
+
+    .cover-text-overlay p {
+        font-size: 1em;
+        /* Reduce paragraph font size */
+        margin-bottom: 0.8em;
+    }
+
+    .cover-text-overlay .btn {
+        font-size: 1em;
+        /* Reduce button font size */
+        padding: 0.6em 1.2em;
+        /* Optionally adjust button padding */
+        margin-top: 0.8em;
+    }
+}
+
 /* End of cover image style ================================================= */
 
 
 /* Feature Section Wrapper ================================================== */
+/* Styling here is mobile-first, then desktop adjustments */
 .custom-feature-section {
     margin-bottom: 1em;
     padding: 1em;
@@ -238,7 +280,7 @@ html {
 }
 
 
-/* Desktop View Adjustments */
+/* Desktop View Adjustments from default mobile view */
 @media (min-width: 768px) {
     .custom-feature-section {
         width: 90%;
@@ -317,7 +359,7 @@ html {
 /* End of Feature Item Styling ============================================== */
 
 
-/* Dark Mode mods ----------------------------------------------------------- */
+/* Dark Mode mods =========================================================== */
 /* Applied to the base item and description elements for consistency. */
 html[data-theme="dark"] .custom-feature__item {
     background-color: rgba(45, 44, 44, 0.5);
@@ -381,4 +423,4 @@ html[data-theme="dark"] body .cover-text-overlay a.btn.btn--primary:hover {
     color: #fff !important;
 }
 
-/* End of dark mode mods ---------------------------------------------------- */
+/* End of dark mode mods ==================================================== */
