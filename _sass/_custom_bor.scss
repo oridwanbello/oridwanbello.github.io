@@ -64,13 +64,14 @@ html[data-theme="dark"] {
 
 /* Right-align header navigation (Site-Wide) ---------------------------------*/
 .masthead__inner-wrap {
-    display: flex;
-    /* Ensure the parent is a flex container */
-    align-items: center;
-    /* Optional: for vertical alignment of items like title and nav */
+    display: flex !important;
+    /* Added !important */
+    align-items: center !important;
+    /* Added !important */
+
     .greedy-nav {
-        margin-left: auto;
-        /* This pushes the .greedy-nav block to the right */
+        margin-left: auto !important;
+        /* Added !important */
     }
 }
 /* End of Right-align header navigation (Site-Wide) ------------------------- */
