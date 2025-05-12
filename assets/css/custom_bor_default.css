@@ -276,7 +276,7 @@ html {
 .cover-text-overlay a.btn.btn--primary:hover {
     background-color: #99cc00;
     border-color: #99cc00;
-    color: #2d2c2c !important;
+    color: var(--global-text-color, #2d2c2c) !important;
 }
 
 
@@ -366,7 +366,7 @@ html[data-theme="dark"] .custom-feature__item {
     /* Example: A darker, slightly transparent background */
 }
 
-/* Background for 'first container style' (default type) in dark mode */
+/* Background for 'first container style' (default type) */
 html[data-theme="dark"] .custom-feature__item.custom-feature__item--layout-desktop-row {
     background-color: rgba(45, 44, 44, 0);
     /* First container style - Dark Mode */
@@ -378,8 +378,6 @@ html[data-theme="dark"] .custom-feature__description-wrapper h3 {
 
 html[data-theme="dark"] .custom-feature__description-wrapper p {
     color: var(--global-text-color, #c8c8c8);
-    /* Use your theme's dark text variable or fallback */
-    /* Assuming your theme might have --text-color-dark */
 }
 
 /* Dark Mode for Cover Image Overlay */
@@ -399,13 +397,12 @@ html[data-theme="dark"] .cover-image-container::before {
 }
 
 html[data-theme="dark"] .cover-text-overlay {
-    color: #ffffff;
+    color: var(--global-text-color, #c8c8c8);
     /* Text color for dark mode (white) */
 }
 
 html[data-theme="dark"] .cover-text-overlay h1 {
     color: #99cc00;
-    /* Header color for dark mode (light green) */
 }
 
 /* Adjust button for dark mode if needed */
@@ -413,7 +410,7 @@ html[data-theme="dark"] body .custom-feature__description-wrapper a.btn.btn--pri
 html[data-theme="dark"] body .cover-text-overlay a.btn.btn--primary {
     background-color: #99cc00;
     border-color: #99cc00;
-    color: #2d2c2c !important;
+    color: #313436 !important; /* Extracted from the text color in light mode. */
 }
 
 html[data-theme="dark"] body .custom-feature__description-wrapper a.btn.btn--primary:hover,
