@@ -8,7 +8,20 @@
     margin-bottom: 2em;
     /* Space below the cover image */
     position: relative;
-    /* Added: Needed to position text overlay absolutely within this container */
+    /* Needed to position text overlay and gradient absolutely within this container */
+}
+
+/* New: Gradient overlay using a pseudo-element */
+.cover-image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+    /* Sits above the image, but below the text overlay */
 }
 
 .cover-image-container img {
@@ -19,11 +32,8 @@
     /* Ensures the image covers the area, might crop */
     display: block;
     /* Removes extra space below the image */
-    opacity: 0.6;
-    /* Added: Adjust value between 0.0 (fully transparent) and 1.0 (fully opaque) */
 }
 
-/* New CSS for the text overlay */
 .cover-text-overlay {
     position: absolute;
     top: 50%;
@@ -31,13 +41,16 @@
     transform: translate(-50%, -50%);
     /* Centers the text block */
     color: #ffffff;
-    /* Text color - white for good contrast on a dimmed image */
+    /* Text color - white */
     text-align: center;
-    z-index: 10;
-    /* Ensures text is above the image */
+    z-index: 2;
+    /* Ensures text is above the image AND the gradient overlay */
     padding: 20px;
     /* Optional: adds some space around the text */
-    /* You can add more styles here like max-width, background for text block, etc. */
+    width: 90%;
+    /* Optional: constrain width of text block */
+    max-width: 800px;
+    /* Optional: max width for very wide screens */
 }
 
 .cover-text-overlay h1 {
