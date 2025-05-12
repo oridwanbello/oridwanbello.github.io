@@ -23,7 +23,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0.7) 70%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%);
     z-index: 1;
     /* Sits above the image, but below the text overlay */
 }
@@ -343,7 +343,7 @@ html[data-theme="dark"] .cover-image-container::before {
     background: linear-gradient(to right,
             rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 1) 0%,
             rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 1) 30%,
-            rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 0.7) 70%,
+            rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 0.7) 50%,
             rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 0) 100%);
 }
 
@@ -358,15 +358,15 @@ html[data-theme="dark"] .cover-text-overlay h1 {
 }
 
 /* Adjust button for dark mode if needed */
-html[data-theme="dark"] .custom-feature__description-wrapper a.btn.btn--primary,
-html[data-theme="dark"] .cover-text-overlay a.btn.btn--primary {
+html[data-theme="dark"] body .custom-feature__description-wrapper a.btn.btn--primary,
+html[data-theme="dark"] body .cover-text-overlay a.btn.btn--primary {
     background-color: #99cc00;
     border-color: #99cc00;
     color: #2d2c2c;
 }
 
-html[data-theme="dark"] .custom-feature__description-wrapper a.btn.btn--primary:hover,
-html[data-theme="dark"] .cover-text-overlay a.btn.btn--primary:hover {
+html[data-theme="dark"] body .custom-feature__description-wrapper a.btn.btn--primary:hover,
+html[data-theme="dark"] body .cover-text-overlay a.btn.btn--primary:hover {
     background-color: #009a00;
     border-color: #009a00;
     color: #fff;
