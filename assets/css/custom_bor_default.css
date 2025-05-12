@@ -48,7 +48,7 @@ html {
     /* Position the left edge 5% from the container's left edge */
     transform: translateY(-50%);
     /* Only apply vertical centering */
-    color: #2d2c2c;
+    color: var(--global-text-color, #2d2c2c);
     /* Text color */
     text-align: left;
     z-index: 2;
@@ -377,7 +377,7 @@ html[data-theme="dark"] .custom-feature__description-wrapper h3 {
 }
 
 html[data-theme="dark"] .custom-feature__description-wrapper p {
-    color: var(--global-text-color-dark, #c8c8c8);
+    color: var(--global-text-color, #c8c8c8);
     /* Use your theme's dark text variable or fallback */
     /* Assuming your theme might have --text-color-dark */
 }
