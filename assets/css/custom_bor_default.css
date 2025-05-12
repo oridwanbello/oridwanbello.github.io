@@ -159,6 +159,7 @@ html {
 /* Image Shape Modifier: Round */
 .custom-feature__image--shape-round {
     max-height: 300px;
+    max-width: 300px;
     /* Max size of the round image */
     border-radius: 50%;
     /* Make the image round */
