@@ -128,6 +128,13 @@ html {
     /* Padding and specific alignment for round images in desktop row layout are handled by modifiers */
 }
 
+/* Specific padding for the image wrapper when it's for the default type (round image) */
+/* This applies on all screen sizes for the default type item */
+.custom-feature__item.custom-feature__item--layout-desktop-row .custom-feature__image-wrapper {
+    padding: 2em;
+    /* Ensures 2em space around the round image container */
+}
+
 /* Base Image Styling */
 /* Styles applied directly to the <img> tag. */
 .custom-feature__image {
