@@ -20,7 +20,7 @@ $link-light                 : mix(#fff, $link, 25%);
 $danger-color               : #ee5f5b;
 $info-color                 : #2f7f93;
 $notice-color               : #7a8288;
-$success-color              : $background; /* #62c462 */
+$success-color              : #{$background};/* #62c462;*/
 $warning-color              : #f89406;
 
 /* Other basic settings for the template */
