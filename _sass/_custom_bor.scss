@@ -35,30 +35,3 @@
 
 /* End of Author Avatar Border Removal -------------------------------------- */
 
-
-/* Global Theme Color Overrides --------------------------------------------- */
-
-/* Light Theme Overrides */
-:root {
-    // If you also want masthead links to use this color in light mode:
-    --global-masthead-link-color-hover: #009a00;
-    --global-footer-bg-color: #fff;
-
-    // Add other light theme CSS custom property overrides here if needed
-}
-
-/* Dark Theme Overrides */
-html[data-theme="dark"] {
-    --global-text-color: #c8c8c8;
-    // If you also want masthead links to use this color in dark mode:
-    --global-masthead-link-color: #ffffff;
-    --global-masthead-link-color-hover: #99cc00;
-    --global-bg-color-r : #{red($background)};
-    --global-bg-color-g : #{green($background)};
-    --global-bg-color-b : #{blue($background)};
-
-    // Add other dark theme CSS custom property overrides here if needed
-}
-
-/* End of Global Theme Color Overrides -------------------------------------- */
-

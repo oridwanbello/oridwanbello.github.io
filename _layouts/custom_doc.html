@@ -15,31 +15,35 @@ layout: default
         </h1>
     </header>
 
+    <!-- This main tag will now be the flex item that grows -->
     <main class="doc-main-content">
         {% if page.pdf_url %}
-        <div class="pdf-viewer-wrapper">
-            <div class="pdf-viewer">
-                <iframe
-                    src="{{ page.pdf_url }}"
-                    title="{{ page.document_title | default: page.title | escape }} Viewer"
-                    frameborder="0"
-                    allowfullscreen
-                >
-                    Your browser does not support iframes. Please
-                    <a href="{{ page.pdf_url }}">download the PDF</a> to view
-                    it.
-                </iframe>
+        <!-- This div will manage the vertical space for the viewer and button -->
+        <div class="doc-viewer-and-button-area">
+            <div class="pdf-viewer-wrapper">
+                <div class="pdf-viewer">
+                    <iframe
+                        src="{{ page.pdf_url }}"
+                        title="{{ page.document_title | default: page.title | escape }} Viewer"
+                        frameborder="0"
+                        allowfullscreen
+                    >
+                        Your browser does not support iframes. Please
+                        <a href="{{ page.pdf_url }}">download the PDF</a> to
+                        view it.
+                    </iframe>
+                </div>
             </div>
-        </div>
 
-        <div class="button-container">
-            <a
-                href="{{ page.pdf_url }}"
-                class="download-button"
-                download="{{ page.download_filename | default: (page.document_title | default: 'document') | slugify | append: '.pdf' }}"
-            >
-                Download Document
-            </a>
+            <div class="button-container">
+                <a
+                    href="{{ page.pdf_url }}"
+                    class="download-button"
+                    download="{{ page.download_filename | default: (page.document_title | default: 'document') | slugify | append: '.pdf' }}"
+                >
+                    Download Document
+                </a>
+            </div>
         </div>
         {% else %}
         <p style="text-align: center">
@@ -49,10 +53,8 @@ layout: default
         {% endif %}
     </main>
 
-    {% comment %} Allows for additional Markdown/HTML content on the page below
-    the viewer and button. This content comes from the body of the .md file
-    using this layout. {% endcomment %} {% if content != "" and content != nil
-    %}
+    {% comment %} Allows for additional Markdown/HTML content on the page. {%
+    endcomment %} {% if content != "" and content != nil %}
     <div class="doc-additional-content">{{ content }}</div>
     {% endif %}
 </div>
