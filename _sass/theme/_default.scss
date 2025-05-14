@@ -3,10 +3,10 @@
    ========================================================================== */
 
 /* Color codes used for the theme */
-$custom-color-1 : #009a00;
-$custom-color-2 : #99cc00;
-$custom-color-3 : #2d2c2c;
-$custom-color-4 : #fafffa;
+$custom-color-1 : #288c8c;
+$custom-color-2 : #3ca0a0;
+$custom-color-3 : #2c2d2d;
+$custom-color-4 : #faffff;
 
 $gray : #7a8288;
 $dark-gray : mix(#000, $gray, 40%);
@@ -51,7 +51,7 @@ $sidebar-screen-min-width : 1024px;
     --global-link-color-hover : #{$link-dark};
     --global-link-color-visited : #{$link-light};
     --global-masthead-link-color : #{$dark-gray};
-    --global-masthead-link-color-hover: #009a00;
+    --global-masthead-link-color-hover: #{$custom-color-1};
     --global-text-color : #{$dark-gray};
     --global-text-color-light : #{$light-gray};
     --global-thead-color : #{$lighter-gray};
