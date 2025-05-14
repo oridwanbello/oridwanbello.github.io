@@ -87,7 +87,7 @@
     padding-top: 10px;
     flex-shrink: 0;
     overflow-y: auto;
-    max-height: calc(100vh - 90vh - 20px);
+    max-height: calc(100vh - 80vh - 20px);
     /* Example: limit height if .file-page-container is hidden overflow */
 }
 
