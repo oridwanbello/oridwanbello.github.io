@@ -1,6 +1,6 @@
 /* PDF Viewer Styles ---------------------------------------------------------*/
 .doc-page-container {
-    padding: 10px 20px;
+    padding: 20px 10px;
     box-sizing: border-box;
     height: 90vh;
     overflow-y: hidden;
@@ -101,8 +101,6 @@
 @media (max-width: 768px) {
     .doc-page-container {
         height: 80vh;
-        /* Mobile: 80% of viewport height */
-        padding: 10px 20px;
     }
 
     .doc-header h1 {
