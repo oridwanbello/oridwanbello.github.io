@@ -63,8 +63,7 @@
 
 .button-container {
     text-align: center;
-    margin-top: 10px;
-    padding-bottom: 10px;
+    margin: 10px 10px;
     flex-shrink: 0;
 }
 
@@ -86,13 +85,9 @@
 
 .file-additional-content {
     margin-top: 10px;
-    /* Or adjust as needed */
     padding-top: 10px;
-    /* Or adjust as needed */
     flex-shrink: 0;
-    /* Takes its natural height */
     overflow-y: auto;
-    /* If additional content itself is long, let it scroll */
     max-height: calc(100vh - 90vh - 20px);
     /* Example: limit height if .file-page-container is hidden overflow */
 }
@@ -109,11 +104,6 @@
 
     .file-viewer-wrapper {
         width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .button-container {
-        margin-top: 10px;
     }
 
     .download-button {
