@@ -12,7 +12,7 @@
 
 .doc-header {
     text-align: center;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     /* Or adjust as needed */
     flex-shrink: 0;
     /* Header takes its natural height */
