@@ -28,9 +28,9 @@ redirect_from:
     }
 
     .header-text {
-        color: var(--global-color-4);
+        color: var(--custom-color-4);
         margin: 0;
-        text-decoration: none;
+        border-bottom: none;
     }
 
     .section-list {
@@ -40,6 +40,11 @@ redirect_from:
     .section-list li {
         line-height: 1.8em;
         margin-bottom: 0px;
+    }
+
+    /* Dark mode mods */
+    html[data-theme="dark"] .header-box {
+        background-color: var(--custom-color-2);
     }
 </style>
 
