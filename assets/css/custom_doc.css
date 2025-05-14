@@ -1,13 +1,17 @@
 /* PDF Viewer Styles ---------------------------------------------------------*/
 .doc-page-container {
     padding: 20px 15px;
-    /* Add some padding around the page content */
     box-sizing: border-box;
+    height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .doc-header {
     text-align: center;
     margin-bottom: 25px;
+    flex-shrink: 0;
 }
 
 .doc-header h1 {
@@ -16,8 +20,11 @@
     color: var(--custom-color-1);
 }
 
-.doc-main-content {
-    /* This class is added for semantic structure, style if needed */
+.doc-viewer-and-button-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
 }
 
 .pdf-viewer-wrapper {
@@ -28,8 +35,7 @@
 
 .pdf-viewer {
     width: 100%;
-    height: calc(100vh - 200px);
-    max-height: 750px;
+    height: 100%;
     border: none;
     overflow: hidden;
 }
@@ -44,11 +50,12 @@
 .button-container {
     text-align: center;
     margin-top: 20px;
+    flex-shrink: 0;
 }
 
 .download-button {
     background-color: var(--custom-color-1);
-    color: var(--global-white);
+    color: var(--custom-color-4);
     padding: 10px 20px;
     text-decoration: none;
     font-weight: bold;
@@ -62,19 +69,19 @@
     color: var(--global-black);
 }
 
-.button-container {
-    text-align: center;
-    margin-top: 20px;
-    /* This was in your original CSS, ensure it's what you want */
-}
-
 .doc-additional-content {
     margin-top: 30px;
     padding-top: 20px;
+    flex-shrink: 0;
 }
 
 /* Responsive Design - Adjustments for mobile */
 @media (max-width: 768px) {
+    .doc-page-container {
+        height: 80vh;
+        padding: 15px 10px;
+    }
+
     .doc-header h1 {
         font-size: 1.5rem;
     }
@@ -83,17 +90,9 @@
         width: 98%;
     }
 
-    .pdf-viewer {
-        height: calc(100vh - 180px);
-    }
-
     .pdf-viewer iframe {
         transform: scale(0.8);
         transform-origin: top left;
-    }
-
-    h1 {
-        font-size: 1.5rem;
     }
 
     .download-button {
@@ -111,9 +110,7 @@ html[data-theme="dark"] .doc-header h1 {
 
 html[data-theme="dark"] .download-button {
     background-color: var(--custom-color-2);
-    /* Button background in dark mode */
     color: var(--global-black);
-    /* Button text color in dark mode */
 }
 
 /* End of PDF Viewer Styles -------------------------------------------------*/
