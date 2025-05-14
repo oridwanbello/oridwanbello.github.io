@@ -108,6 +108,10 @@
     .download-button {
         font-size: 1rem;
     }
+
+    .file-additional-content {
+        max-height: calc(100vh - 70vh - 20px);
+    }
 }
 
 /* Dark Mode Styles */
