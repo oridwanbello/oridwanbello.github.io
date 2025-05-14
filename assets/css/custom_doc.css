@@ -21,7 +21,7 @@
 .doc-header h1 {
     font-size: 2.2rem;
     margin-top: 0;
-    color: var(--custom-color-1);
+    color: var(--global-black);
 }
 
 /* This main content area will now grow to fill available space */
@@ -143,7 +143,7 @@
 
 /* Dark Mode Styles */
 html[data-theme="dark"] .doc-header h1 {
-    color: var(--custom-color-2);
+    color: var(--global-white);
 }
 
 html[data-theme="dark"] .download-button {
