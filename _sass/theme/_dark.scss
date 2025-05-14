@@ -45,8 +45,8 @@ html[data-theme="dark"] {
     --global-base-color : #{$background};
     --global-bg-color : #{$background};
     --global-footer-bg-color : #{$background};
-    --global-border-color : #f00;
-    --global-dark-border-color : #0f0;
+    --global-border-color : #{custom-color-2};
+    --global-dark-border-color : #{$background-light};
     --global-code-background-color: #002b36;
     --global-code-text-color : #{$global-white};
     --global-fig-caption-color : #{$light-gray};
@@ -57,7 +57,7 @@ html[data-theme="dark"] {
     --global-masthead-link-color-hover : #{$custom-color-2};
     --global-text-color : #{$global-white};
     --global-text-color-light : #{$light-gray};
-    --global-thead-color : #00f;
+    --global-thead-color : #{$background-lighter};
 
     /* New Color Definitions ------------------------------------------------ */
     --global-white : #{$global-white};
