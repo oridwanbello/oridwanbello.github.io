@@ -126,8 +126,7 @@
     }
 
     .pdf-viewer-wrapper {
-        width: 98%;
-        /* PDF viewer area is 98% of its container's width on mobile */
+        width: 100%;
         margin-bottom: 10px;
     }
 
