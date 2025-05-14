@@ -12,9 +12,8 @@
 
 .doc-header h1 {
     font-size: 2.2rem;
-    /* Adjust desktop font size as needed */
     margin-top: 0;
-    /* Inherit color or set explicitly e.g., color: var(--global-text-color); */
+    color: var(--custom-color-1);
 }
 
 .doc-main-content {
@@ -23,32 +22,23 @@
 
 .pdf-viewer-wrapper {
     width: 80%;
-    /* Desktop: 80% of screen width */
     margin: 0 auto 25px auto;
-    /* Center the wrapper and add bottom margin */
-    /* Optional: add a subtle shadow for better visual separation */
-    /* box-shadow: 0 2px 10px rgba(0,0,0,0.1); */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* It will take 100% width of the .pdf-viewer-wrapper. */
 .pdf-viewer {
     width: 100%;
     height: calc(100vh - 200px);
-    /* Adjust base height as needed, e.g., for header/footer space */
-    /* max-height: 750px; /* Optional: prevent it from becoming excessively tall on large screens */
+    max-height: 750px;
     border: none;
-    /* As per your existing style */
     overflow: hidden;
-    /* As per your existing style */
 }
 
 .pdf-viewer iframe {
     width: 100%;
     height: 100%;
     transform: scale(1);
-    /* Default scale for desktop */
     transform-origin: top left;
-    /* Ensure scaling starts from the top-left corner */
 }
 
 .button-container {
@@ -57,19 +47,19 @@
 }
 
 .download-button {
-    display: inline-block;
+    background-color: var(--custom-color-1);
+    color: var(--global-white);
     padding: 10px 20px;
-    background-color: #28a096;
-    color: white;
     text-decoration: none;
-    border-radius: 25px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    border-radius: 25px;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .download-button:hover {
-    background-color: #00c8c8;
-    color: #ffffff;
+    background-color: var(--custom-color-2);
+    color: var(--global-black);
 }
 
 .button-container {
@@ -81,38 +71,29 @@
 .doc-additional-content {
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid #eee;
-    /* Optional: separator for extra content */
 }
 
-/* Responsive Design - Adjustments for your existing media query */
+/* Responsive Design - Adjustments for mobile */
 @media (max-width: 768px) {
     .doc-header h1 {
         font-size: 1.5rem;
-        /* Your existing mobile style */
     }
 
     .pdf-viewer-wrapper {
         width: 98%;
-        /* Use more width on smaller screens */
     }
 
     .pdf-viewer {
         height: calc(100vh - 180px);
-        /* Adjust height for smaller screens */
     }
 
-    /* Your existing .pdf-viewer iframe scaling for mobile */
     .pdf-viewer iframe {
         transform: scale(0.8);
-        /* Scale down for smaller screens */
         transform-origin: top left;
-        /* Ensure scaling starts from the top-left corner */
     }
 
     h1 {
         font-size: 1.5rem;
-        /* Smaller font size for mobile */
     }
 
     .download-button {
@@ -120,6 +101,19 @@
         /* Adjust button size for mobile */
         font-size: 0.9rem;
     }
+}
+
+/* Dark Mode Styles */
+html[data-theme="dark"] .doc-header h1 {
+    color: var(--custom-color-2);
+    /* Title color in dark mode */
+}
+
+html[data-theme="dark"] .download-button {
+    background-color: var(--custom-color-2);
+    /* Button background in dark mode */
+    color: var(--global-black);
+    /* Button text color in dark mode */
 }
 
 /* End of PDF Viewer Styles -------------------------------------------------*/
