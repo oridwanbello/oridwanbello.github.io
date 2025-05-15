@@ -18,9 +18,9 @@
 }
 
 .file-header h1 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--global-black);
-    margin-bottom: 10px;
+    margin-bottom: 0px;/* At 1.2rem, the  next container's margin is enough */
 }
 
 /* This main content area will now grow to fill available space */
