@@ -69,7 +69,6 @@
 .download-button {
     background-color: var(--custom-color-1);
     color: var(--custom-color-4);
-    /* Ensure this variable is defined for light mode text */
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 25px;
