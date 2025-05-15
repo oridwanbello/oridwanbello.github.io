@@ -43,7 +43,7 @@
     width: 100%;
     flex-grow: 1;
     display: flex;
-    margin: 10px 0px;
+    margin: 0px 0px;
     min-height: 0;
 }
 
