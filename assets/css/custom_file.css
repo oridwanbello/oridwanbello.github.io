@@ -20,7 +20,7 @@
 .file-header h1 {
     font-size: 1.5rem;
     color: var(--global-black);
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 /* This main content area will now grow to fill available space */
@@ -28,7 +28,7 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    margin: 10px 0px;
+    margin: 0px 0px;
     min-height: 0;
     /* Crucial for nested flex containers that grow */
 }
@@ -62,7 +62,7 @@
 
 .button-container {
     text-align: center;
-    margin-top: 0px;
+    margin-top: 10px;
     flex-shrink: 0;
 }
 
