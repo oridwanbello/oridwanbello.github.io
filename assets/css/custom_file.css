@@ -8,7 +8,7 @@
     /* Prevent this container from scrolling; scrolling is inside the file */
     display: flex;
     flex-direction: column;
-    margin: 0 auto; /* auto for the left and right centers the container */
+    margin: 0 auto; /* auto for the left and right centers it horizontally */
 }
 
 .file-header {
@@ -43,6 +43,7 @@
     width: 100%;
     flex-grow: 1;
     display: flex;
+    margin: 20px 0px;
     min-height: 0;
 }
 
