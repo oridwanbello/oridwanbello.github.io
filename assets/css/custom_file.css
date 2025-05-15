@@ -21,6 +21,7 @@
 .file-header h1 {
     font-size: 1.5rem;
     color: var(--global-black);
+    margin-bottom: 0px;
 }
 
 /* This main content area will now grow to fill available space */
