@@ -8,7 +8,7 @@
     /* Prevent this container from scrolling; scrolling is inside the file */
     display: flex;
     flex-direction: column;
-    margin: 0 auto; /* auto for the left and right centers it horizontally */
+    margin: 0px auto; /* auto for the left and right centers it horizontally */
 }
 
 .file-header {
@@ -28,6 +28,7 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    margin: 10px 0px;
     min-height: 0;
     /* Crucial for nested flex containers that grow */
 }
@@ -43,7 +44,7 @@
     width: 100%;
     flex-grow: 1;
     display: flex;
-    margin: 0px 0px;
+    margin-bottom: 10px;
     min-height: 0;
 }
 
@@ -61,7 +62,7 @@
 
 .button-container {
     text-align: center;
-    margin: 20px 0px;
+    margin-top: 10px;
     flex-shrink: 0;
 }
 
