@@ -95,6 +95,7 @@
     .file-page-container {
         height: 80vh;
         width: 100%;
+        padding: 20px 10px;
     }
 
     .file-additional-content {
