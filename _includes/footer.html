@@ -18,11 +18,32 @@
         margin-bottom: 0.5em; /* Adjust space below the text links */
     }
 
-    .footer-links-row a {
-        margin-left: 0.5em;
-        margin-right: 0.5em;
-        line-height: 1.5; /* Helps if links wrap on small screens */
+    /* NEW CSS for footer items */
+    .footer-links-row .footer-item-wrapper {
+        display: inline-block; /* Crucial for cohesive block behavior and applying margins */
+        vertical-align: middle; /* Aligns items nicely if they have different heights */
+        margin-left: 0.4em; /* Space before this item */
+        margin-right: 0.4em; /* Space after this item */
+        line-height: 1.5; /* Consistent line height, helps if content wraps */
     }
+
+    /* Remove outer margins for the first and last items to prevent extra space at the edges of the row */
+    .footer-links-row .footer-item-wrapper:first-child {
+        margin-left: 0;
+    }
+    .footer-links-row .footer-item-wrapper:last-child {
+        margin-right: 0;
+    }
+
+    /* Original .footer-links-row a rule is no longer needed for spacing,
+       but can be kept if you have other link-specific styles (e.g., color)
+       If kept, remove margin-left and margin-right from it.
+       For this example, I'll assume it's removed or modified. */
+    /*
+    .footer-links-row a {
+        line-height: 1.5; // Keep if needed for <a> tags specifically
+    }
+    */
 </style>
 
 <div class="page__footer-copyright">
@@ -32,14 +53,21 @@
     >
 
     <div class="footer-links-row">
-        <a href="{{ '/terms/' | relative_url }}">Terms and Conditions</a>
-        <a href="{{ '/sitemap/' | relative_url }}">Sitemap</a>
-        {{ site.data.ui-text[site.locale].powered_by | default: "Powered by"}}
-        <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp;
-        <a
-            href="https://github.com/academicpages/academicpages.github.io"
-            rel="nofollow"
-            >AcademicPages</a
-        >
+        <span class="footer-item-wrapper">
+            <a href="{{ '/terms/' | relative_url }}">Terms and Conditions</a>
+        </span>
+        <span class="footer-item-wrapper">
+            <a href="{{ '/sitemap/' | relative_url }}">Sitemap</a>
+        </span>
+        <span class="footer-item-wrapper">
+            {{ site.data.ui-text[site.locale].powered_by | default: "Powered
+            by"}}
+            <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp;
+            <a
+                href="https://github.com/academicpages/academicpages.github.io"
+                rel="nofollow"
+                >AcademicPages</a
+            >
+        </span>
     </div>
 </div>
