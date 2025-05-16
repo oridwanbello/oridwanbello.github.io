@@ -267,7 +267,7 @@ html {
 .custom-feature__description-wrapper a.btn.btn--primary,
 .cover-text-overlay a.btn.btn--primary {
     margin-top: 1em;
-    /* Space above button */
+    margin-right: 10px;
     align-self: center;
     /* Mobile: Align button to the center */
     background-color: var(--custom-color-1);
