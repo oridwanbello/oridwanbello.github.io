@@ -8,8 +8,80 @@
         <a href="https://oridwanbello.github.io/year-archive/">Articles</a> .
         <a href="https://oridwanbello.github.io/teaching/">Teaching</a> .
         <a href="https://oridwanbello.github.io/portfolio/">Portfolio</a> .
-        <a href="https://oridwanbello.github.io/staging/">Staging</a> .
-        <a href="https://oridwanbello.github.io/publications/">Pubs</a><br />
+        <a href="https://oridwanbello.github.io/staging/">Staging</a><br />
+        {{ site.data.ui-text[site.locale].powered_by | default: "Powered by"}}
+        <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp;
+        <a
+            href="https://github.com/academicpages/academicpages.github.io"
+            rel="nofollow"
+            >AcademicPages</a
+        ><br />
+    </div>
+</div>
+
+<style>
+    .page__footer-copyright {
+        text-align: center; /* Center all content within this main div */
+        padding-bottom: 1em; /* Add some padding at the very bottom of the footer */
+    }
+
+    .footer-copyright-text,
+    .footer-links-row,
+    .footer-social-row {
+        display: block; /* Make each row a block to stack them */
+        width: 100%; /* Ensure they take full width for centering */
+    }
+
+    .footer-copyright-text {
+        margin-bottom: 0.1em; /* Adjust space below copyright text */
+    }
+
+    .footer-links-row {
+        margin-bottom: 0.5em; /* Adjust space below the text links */
+    }
+
+    .footer-links-row a {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        line-height: 1.5; /* Helps if links wrap on small screens */
+    }
+
+    .footer-social-row a {
+        margin: 0 0.6em; /* Space around social icons */
+        display: inline-block; /* Allows sizing and proper spacing */
+        text-decoration: none; /* Remove underline from icon links */
+    }
+
+    .footer-social-row svg {
+        width: 22px; /* Adjust size as needed */
+        height: 22px; /* Adjust size as needed */
+        vertical-align: middle;
+        fill: var(--global-text-color);
+        transition: fill 0.2s ease-in-out;
+    }
+
+    .footer-social-row a:hover svg {
+        fill: var(--custom-color-2);
+    }
+
+    html[data-theme="dark"] .footer-social-row svg {
+        fill: var(--custom-color-4);
+    }
+
+    html[data-theme="dark"] .footer-social-row a:hover svg {
+        fill: var(--custom-color-1);
+    }
+</style>
+
+<div class="page__footer-copyright">
+    <span class="footer-copyright-text"
+        >&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title
+        }}</span
+    >
+
+    <div class="footer-links-row">
+        <a href="{{ '/terms/' | relative_url }}">Terms and Conditions</a>
+        <br />
         {{ site.data.ui-text[site.locale].powered_by | default: "Powered by"}}
         <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp;
         <a
