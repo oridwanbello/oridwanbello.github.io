@@ -1,24 +1,3 @@
-<div class="page__footer-copyright">
-    <div align="center">
-        &copy; {{ site.time | date: '%Y' }} {{ site.name | default:
-        site.title}}<br />
-        <a href="https://oridwanbello.github.io/sitemap/">Sitemap</a> .
-        <a href="https://oridwanbello.github.io/markdown/">Guide</a> .
-        <a href="https://oridwanbello.github.io/talks/">Talks</a> .
-        <a href="https://oridwanbello.github.io/year-archive/">Articles</a> .
-        <a href="https://oridwanbello.github.io/teaching/">Teaching</a> .
-        <a href="https://oridwanbello.github.io/portfolio/">Portfolio</a> .
-        <a href="https://oridwanbello.github.io/staging/">Staging</a><br />
-        {{ site.data.ui-text[site.locale].powered_by | default: "Powered by"}}
-        <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp;
-        <a
-            href="https://github.com/academicpages/academicpages.github.io"
-            rel="nofollow"
-            >AcademicPages</a
-        ><br />
-    </div>
-</div>
-
 <style>
     .page__footer-copyright {
         text-align: center; /* Center all content within this main div */
@@ -81,13 +60,16 @@
 
     <div class="footer-links-row">
         <a href="{{ '/terms/' | relative_url }}">Terms and Conditions</a>
-        <br />
+        <a href="{{ '/sitemap/' | relative_url }}">Sitemap</a>
+    </div>
+
+    <div align="center">
         {{ site.data.ui-text[site.locale].powered_by | default: "Powered by"}}
         <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp;
         <a
             href="https://github.com/academicpages/academicpages.github.io"
             rel="nofollow"
             >AcademicPages</a
-        ><br />
+        >
     </div>
 </div>
