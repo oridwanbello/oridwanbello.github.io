@@ -11,11 +11,11 @@ main:
     - title: "About"
       url: /
 
-    - title: "CV"
-      url: /cv/
-
     - title: "Research"
       url: /research/
+
+    - title: "CV"
+      url: /cv/
 
     - title: "Strengths"
       url: /strengths/
