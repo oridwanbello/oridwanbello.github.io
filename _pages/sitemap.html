@@ -1,0 +1,86 @@
+---
+layout: default
+title: "Sitemap"
+permalink: /sitemap/
+---
+
+<style>
+    .sitemap-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .sitemap-section {
+        margin-bottom: 30px;
+    }
+
+    .sitemap-section h2 {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    .sitemap-list {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .sitemap-list li {
+        margin-bottom: 8px;
+    }
+
+    .sitemap-list a {
+        text-decoration: none;
+    }
+
+    .sitemap-list a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="sitemap-container">
+    <h1>Sitemap</h1>
+
+    <div class="sitemap-section">
+        <h2>Pages</h2>
+        <ul class="sitemap-list">
+            {% for page in site.pages %} {% if page.title and page.url and
+            page.sitemap != false and page.url != "/sitemap/" and page.url !=
+            "/404.html" %}
+            <li>
+                <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+            </li>
+            {% endif %} {% endfor %}
+        </ul>
+    </div>
+
+    {% if site.posts.size > 0 %}
+    <div class="sitemap-section">
+        <h2>Posts</h2>
+        <ul class="sitemap-list">
+            {% for post in site.posts %} {% if post.title and post.url and
+            post.sitemap != false %}
+            <li>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a> -
+                <small>{{ post.date | date: "%B %d, %Y" }}</small>
+            </li>
+            {% endif %} {% endfor %}
+        </ul>
+    </div>
+    {% endif %} {% if site.collections %} {% for collection in site.collections
+    %} {% if collection.label != "posts" and collection.docs.size > 0 and
+    collection.output == true %}
+    <div class="sitemap-section">
+        <h2>{{ collection.label | capitalize }}</h2>
+        <ul class="sitemap-list">
+            {% for item in collection.docs %} {% if item.title and item.url and
+            item.sitemap != false %}
+            <li>
+                <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            </li>
+            {% endif %} {% endfor %}
+        </ul>
+    </div>
+    {% endif %} {% endfor %} {% endif %}
+</div>
