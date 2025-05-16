@@ -5,8 +5,7 @@
     }
 
     .footer-copyright-text,
-    .footer-links-row,
-    .footer-social-row {
+    .footer-links-row {
         display: block; /* Make each row a block to stack them */
         width: 100%; /* Ensure they take full width for centering */
     }
@@ -24,32 +23,6 @@
         margin-right: 0.5em;
         line-height: 1.5; /* Helps if links wrap on small screens */
     }
-
-    .footer-social-row a {
-        margin: 0 0.6em; /* Space around social icons */
-        display: inline-block; /* Allows sizing and proper spacing */
-        text-decoration: none; /* Remove underline from icon links */
-    }
-
-    .footer-social-row svg {
-        width: 22px; /* Adjust size as needed */
-        height: 22px; /* Adjust size as needed */
-        vertical-align: middle;
-        fill: var(--global-text-color);
-        transition: fill 0.2s ease-in-out;
-    }
-
-    .footer-social-row a:hover svg {
-        fill: var(--custom-color-2);
-    }
-
-    html[data-theme="dark"] .footer-social-row svg {
-        fill: var(--custom-color-4);
-    }
-
-    html[data-theme="dark"] .footer-social-row a:hover svg {
-        fill: var(--custom-color-1);
-    }
 </style>
 
 <div class="page__footer-copyright">
@@ -61,9 +34,6 @@
     <div class="footer-links-row">
         <a href="{{ '/terms/' | relative_url }}">Terms and Conditions</a>
         <a href="{{ '/sitemap/' | relative_url }}">Sitemap</a>
-    </div>
-
-    <div align="center">
         {{ site.data.ui-text[site.locale].powered_by | default: "Powered by"}}
         <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp;
         <a
