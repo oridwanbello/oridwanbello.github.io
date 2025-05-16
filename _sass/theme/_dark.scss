@@ -65,6 +65,18 @@ html[data-theme="dark"] {
     --global-black-r : #{red($global-black)};
     --global-black-g : #{green($global-black)};
     --global-black-b : #{blue($global-black)};
+    --custom-color-1-r : #{red($custom-color-1)};
+    --custom-color-1-g : #{green($custom-color-1)};
+    --custom-color-1-b : #{blue($custom-color-1)};
+    --custom-color-2-r : #{red($custom-color-2)};
+    --custom-color-2-g : #{green($custom-color-2)};
+    --custom-color-2-b : #{blue($custom-color-2)};
+    --custom-color-3-r : #{red($custom-color-3)};
+    --custom-color-3-g : #{green($custom-color-3)};
+    --custom-color-3-b : #{blue($custom-color-3)};
+    --custom-color-4-r : #{red($custom-color-4)};
+    --custom-color-4-g : #{green($custom-color-4)};
+    --custom-color-4-b : #{blue($custom-color-4)};
 
     /* Company Color Definitions -------------------------------------------- */
     --custom-color-1 : #{$custom-color-1};

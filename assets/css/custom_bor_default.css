@@ -10,7 +10,7 @@ html {
     height: 90vh;
     /* Makes the container 90% of the viewport height. */
     overflow: hidden;
-    margin-bottom: 2em;
+    margin-bottom: 4em;
     /* Space below the cover image */
     position: relative;
     /* Needed to position text overlay and gradient absolutely within this container */
@@ -25,8 +25,16 @@ html {
     width: 100%;
     height: 100%;
     background:
-        linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%),
-        linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.75) 15%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 100%);
+        linear-gradient(to right,
+            rgba(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 1) 0%,
+            rgba(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 1) 25%,
+            rgba(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0) 75%,
+            rgba(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0) 100%),
+        linear-gradient(to top,
+            rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 1) 0%,
+            rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0.75) 15%,
+            rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0) 30%,
+            rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0) 100%);
     z-index: 1;
     /* Sits above the image, but below the text overlay */
 }
@@ -48,7 +56,7 @@ html {
     /* Position the left edge 5% from the container's left edge */
     transform: translateY(-50%);
     /* Only apply vertical centering */
-    color: var(--global-text-color, #2d2c2c);
+    color: var(--global-text-color);
     /* Text color */
     text-align: left;
     z-index: 2;
@@ -67,16 +75,19 @@ html {
 
 .cover-text-overlay h1 {
     font-size: 2.5em;
-    /* Example size */
-    margin-bottom: 0.5em;
-    color: #009a00;
-    /* text-shadow: 1px 1px 3px rgba(0,0,0,0.7); */
+    margin-bottom: 0.8em;
+    color: var(--custom-color-1);
+    text-shadow: 1px 1px 3px rgba(var(--custom-color-4-r),
+            var(--custom-color-4-g),
+            var(--custom-color-4-b), 0.7);
 }
 
 .cover-text-overlay p {
     font-size: 1.2em;
-    /* Example size */
-    /* text-shadow: 1px 1px 2px rgba(0,0,0,0.7); */
+    color: var(--custom-color-3);
+    text-shadow: 1px 1px 2px rgba(var(--custom-color-4-r),
+            var(--custom-color-4-g),
+            var(--custom-color-4-b), 0.7);
 }
 
 .cover-text-overlay .btn {
@@ -90,8 +101,6 @@ html {
 /* Mobile adjustments for Cover Text Overlay */
 @media (max-width: 767px) {
     .cover-image-container {
-        /* You might experiment with a slightly smaller vh on mobile if 90vh feels too large
-           once the text overlay content is better sized, but start without this. */
         height: 80vh;
     }
 
@@ -131,6 +140,7 @@ html {
 
 
 /* Feature Section Wrapper ================================================== */
+
 /* Styling here is mobile-first, then desktop adjustments */
 .custom-feature-section {
     margin-bottom: 1em;
@@ -154,8 +164,9 @@ html {
     border-radius: 30px;
     /* Curvy edges for the main rectangle */
     overflow: hidden;
-    background-color: rgba(153, 204, 0, 0.1);
-    /* Transparent version of #99cc00 (e.g., 0 to 1 where 0.1 is 10% opacity) */
+    background-color: rgba(var(--custom-color-2-r),
+            var(--custom-color-2-g),
+            var(--custom-color-2-b), 0.1);
     margin-bottom: 0;
     /* Space below each feature item */
 }
@@ -167,14 +178,19 @@ html {
     /* Default: image wrapper takes full width for image-on-top layout */
     flex-shrink: 0;
     /* Prevents shrinking in flex layouts, important for desktop row layout */
-    padding: 0; /* Creates no space around the image for the image-on-top layout */
-    box-sizing: border-box; /* Ensures padding doesn't add to the 100% width */
+    padding: 0;
+    /* Creates no space around the image for the image-on-top layout */
+    box-sizing: border-box;
+    /* Ensures padding doesn't add to the 100% width */
     /* Padding and specific alignment for round images in desktop row layout are handled by modifiers */
 }
 
 /* Background for 'first container style' (default type) in light mode */
 .custom-feature__item.custom-feature__item--layout-desktop-row {
-    background-color: rgba(153, 204, 0, 0);
+    background-color: rgba(var(--custom-color-2-r),
+            var(--custom-color-2-g),
+            var(--custom-color-2-b),
+            0);
     /* First container style - Light Mode */
 }
 
@@ -236,9 +252,9 @@ html {
 
 .custom-feature__description-wrapper h3 {
     margin-top: 0;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.4em;
     font-size: 1.5em;
-    color: #009a00;
+    color: var(--custom-color-1);
     /* Color for "Header" */
 }
 
@@ -254,11 +270,11 @@ html {
     /* Space above button */
     align-self: center;
     /* Mobile: Align button to the center */
-    background-color: #009a00;
+    background-color: var(--custom-color-1);
     /* Background color for "Learn more" button */
-    color: #fff;
+    color: var(--custom-color-4);
     /* Text color for "Learn more" button */
-    border-color: #009a00;
+    border-color: var(--custom-color-1);
     /* Match border color to background */
     border-radius: 50px;
     /* Rounded corners for the button */
@@ -274,9 +290,9 @@ html {
 
 .custom-feature__description-wrapper a.btn.btn--primary:hover,
 .cover-text-overlay a.btn.btn--primary:hover {
-    background-color: #99cc00;
-    border-color: #99cc00;
-    color: var(--global-text-color, #2d2c2c) !important;
+    background-color: var(--custom-color-2);
+    border-color: var(--custom-color-2);
+    color: var(--global-black) !important;
 }
 
 
@@ -345,15 +361,6 @@ html {
         align-self: flex-start;
         /* Desktop: Align button to the left */
     }
-
-    /* Note on the "Image on Top" layout (original 'alt' style) for Desktop:
-       - It does NOT use the .custom-feature__item--layout-desktop-row modifier.
-       - So, .custom-feature__item remains flex-direction: column.
-       - .custom-feature__image-wrapper remains width: 100%.
-       - The image (typically .custom-feature__image--shape-rect) fills this wrapper.
-       - The .custom-feature__description-wrapper below it gets left-aligned text due to the common rule above.
-       This covers the original "Desktop view for Alt Style" requirements.
-    */
 }
 
 /* End of Feature Item Styling ============================================== */
@@ -362,62 +369,79 @@ html {
 /* Dark Mode mods =========================================================== */
 /* Applied to the base item and description elements for consistency. */
 html[data-theme="dark"] .custom-feature__item {
-    background-color: rgba(45, 44, 44, 0.5);
+    background-color: rgba(var(--custom-color-3-r),
+            var(--custom-color-3-g),
+            var(--custom-color-3-b), 0.5);
     /* Example: A darker, slightly transparent background */
 }
 
 /* Background for 'first container style' (default type) */
 html[data-theme="dark"] .custom-feature__item.custom-feature__item--layout-desktop-row {
-    background-color: rgba(45, 44, 44, 0);
+    background-color: rgba(var(--custom-color-3-r),
+            var(--custom-color-3-g),
+            var(--custom-color-3-b), 0);
     /* First container style - Dark Mode */
 }
 
 html[data-theme="dark"] .custom-feature__description-wrapper h3 {
-    color: #99cc00;
+    color: var(--custom-color-2);
 }
 
 html[data-theme="dark"] .custom-feature__description-wrapper p {
-    color: var(--global-text-color, #c8c8c8);
+    color: var(--global-text-color);
 }
 
 /* Dark Mode for Cover Image Overlay */
-
 html[data-theme="dark"] .cover-image-container::before {
     background:
         linear-gradient(to right,
-            rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 1) 0%,
-            rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 1) 25%,
-            rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 0) 75%,
-            rgba(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 0) 100%),
+            rgba(var(--global-black-r), var(--global-black-g), var(--global-black-b), 1) 0%,
+            rgba(var(--global-black-r), var(--global-black-g), var(--global-black-b), 1) 25%,
+            rgba(var(--global-black-r), var(--global-black-g), var(--global-black-b), 0) 75%,
+            rgba(var(--global-black-r), var(--global-black-g), var(--global-black-b), 0) 100%),
         linear-gradient(to top,
-            rgb(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 1) 0%,
-            rgb(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 0.75) 15%,
-            rgb(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 0) 30%,
-            rgb(var(--global-bg-color-r, 71), var(--global-bg-color-g, 71), var(--global-bg-color-b, 71), 0) 100%);
+            rgb(var(--global-black-r), var(--global-black-g), var(--global-black-b), 1) 0%,
+            rgb(var(--global-black-r), var(--global-black-g), var(--global-black-b), 0.75) 15%,
+            rgb(var(--global-black-r), var(--global-black-g), var(--global-black-b), 0) 30%,
+            rgb(var(--global-black-r), var(--global-black-g), var(--global-black-b), 0) 100%);
 }
 
 html[data-theme="dark"] .cover-text-overlay {
-    color: #f0f0f0; /* Lighter than global text to account for image background */
-    /* Text color for dark mode (white) */
+    color: var(--custom-color-4);
+    /* Lighter than global text to account for image background */
 }
 
+
 html[data-theme="dark"] .cover-text-overlay h1 {
-    color: #99cc00;
+    color: var(--custom-color-2);
+    text-shadow: 1px 1px 3px rgba(var(--custom-color-3-r),
+            var(--custom-color-3-g),
+            var(--custom-color-3-b),
+            0.7);
+}
+
+html[data-theme="dark"] .cover-text-overlay p {
+    color: var(--custom-color-4);
+    text-shadow: 1px 1px 2px rgba(var(--custom-color-3-r),
+            var(--custom-color-3-g),
+            var(--custom-color-3-b),
+            0.7);
 }
 
 /* Adjust button for dark mode if needed */
 html[data-theme="dark"] body .custom-feature__description-wrapper a.btn.btn--primary,
 html[data-theme="dark"] body .cover-text-overlay a.btn.btn--primary {
-    background-color: #99cc00;
-    border-color: #99cc00;
-    color: #313436 !important; /* Extracted from the text color in light mode. */
+    background-color: var(--custom-color-2);
+    border-color: var(--custom-color-2);
+    color: var(--global-black) !important;
 }
 
 html[data-theme="dark"] body .custom-feature__description-wrapper a.btn.btn--primary:hover,
 html[data-theme="dark"] body .cover-text-overlay a.btn.btn--primary:hover {
-    background-color: #009a00;
-    border-color: #009a00;
-    color: #fff !important;
+    background-color: var(--custom-color-1);
+    border-color: var(--custom-color-1);
+    color: var(--custom-color-4) !important;
 }
+
 
 /* End of dark mode mods ==================================================== */
