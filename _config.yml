@@ -16,9 +16,9 @@ description: &description "Human and Animal Health Geneticist"
 url: https://oridwanbello.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl: "" # the subpath of your site, e.g. "/blog"
 repository: "oridwanbello/oridwanbello.github.io"
-logo: # "/images/logo.png" # Fall back to when either of the below are not specified
-logo_light: # "/images/logo_colored.png" # Specify your light theme logo
-logo_dark: # "/images/logo_colored.png" # Specify your dark theme logo
+logo: "/images/logo.png" # Fall back to when either of the below are not specified
+logo_light: "/images/logo_colored.png" # Specify your light theme logo
+logo_dark: "/images/logo_white.png" # Specify your dark theme logo
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
