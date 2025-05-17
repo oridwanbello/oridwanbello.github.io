@@ -62,30 +62,36 @@ permalink: /sitemap/
     <div class="sitemap-section">
         <h2>Pages</h2>
         <ul class="sitemap-list">
-            {% for page in site.pages %} {% assign is_in_pages_folder = false %}
-            {% if page.path contains '_pages/' %} {% assign is_in_pages_folder =
-            true %} {% endif %} {% comment %} Only include pages from _pages
-            folder, with sitemap: true, and exclude sitemap/404 pages {%
-            endcomment %} {% if is_in_pages_folder and page.sitemap == true and
-            page.url != "/sitemap/" and page.url != "/404.html" %}
+            {% assign pages_to_display = "" | split: "," %} {% for page in
+            site.pages %} {% assign is_in_pages_folder = false %} {% if
+            page.path contains '_pages/' %} {% assign is_in_pages_folder = true
+            %} {% endif %} {% if is_in_pages_folder and page.sitemap == true and
+            page.url != "/sitemap/" and page.url != "/404.html" %} {% assign
+            display_name = page.title %} {% if display_name == "" or
+            display_name == nil %} {% if page.url == "/" %} {% assign
+            display_name = "Home" %} {% else %} {% assign segments = page.url |
+            split: '/' %} {% assign last_valuable_segment = "" %} {% for segment
+            in segments reversed %} {% if segment != "" %} {% assign
+            last_valuable_segment = segment %} {% break %} {% endif %} {% endfor
+            %} {% if last_valuable_segment != "" %} {% assign display_name =
+            last_valuable_segment | remove: '.html' | replace: '-', ' ' |
+            capitalize %} {% else %} {% assign page_basename_no_ext =
+            page.basename | remove: page.extname %} {% assign display_name =
+            page_basename_no_ext | replace: '-', ' ' | capitalize %} {% endif %}
+            {% endif %} {% endif %} {% if display_name == "" or display_name ==
+            nil %} {% assign display_name = page.url %} {% endif %} {% assign
+            page_object = "{ \"display_name\": \"" | append: display_name |
+            append: "\", \"url\": \"" | append: page.url | append: "\" }" |
+            parse_json %} {% assign pages_to_display = pages_to_display | push:
+            page_object %} {% endif %} {% endfor %} {% assign sorted_pages =
+            pages_to_display | sort: "display_name" %} {% for page_item in
+            sorted_pages %}
             <li>
-                {% assign display_name = page.title %} {% if display_name == ""
-                or display_name == nil %} {% if page.url == "/" %} {% assign
-                display_name = "Home" %} {% else %} {% assign segments =
-                page.url | split: '/' %} {% assign last_valuable_segment = "" %}
-                {% for segment in segments reversed %} {% if segment != "" %} {%
-                assign last_valuable_segment = segment %} {% break %} {% endif
-                %} {% endfor %} {% if last_valuable_segment != "" %} {% assign
-                display_name = last_valuable_segment | remove: '.html' |
-                replace: '-', ' ' | capitalize %} {% else %} {% assign
-                page_basename_no_ext = page.basename | remove: page.extname %}
-                {% assign display_name = page_basename_no_ext | replace: '-', '
-                ' | capitalize %} {% endif %} {% endif %} {% endif %} {% if
-                display_name == "" or display_name == nil %} {% assign
-                display_name = page.url %} {% endif %}
-                <a href="{{ page.url | relative_url }}">{{ display_name }}</a>
+                <a href="{{ page_item.url | relative_url }}"
+                    >{{ page_item.display_name }}</a
+                >
             </li>
-            {% endif %} {% endfor %}
+            {% endfor %}
         </ul>
     </div>
 </div>
