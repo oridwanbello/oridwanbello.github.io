@@ -9,6 +9,19 @@ layout: compress
   <head>
     {% include head.html %}
     {% include head/custom.html %}
+    <!-- Favicon declarations -->
+    <link rel="apple-touch-icon" href="{{ site.baseurl }}/images/favicon.png?v=2">
+    <link rel="icon" type="image/png" href="{{ site.baseurl }}/images/favicon.png?v=2">
+    <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/images/favicon.svg?v=2">
+    <link rel="mask-icon" href="{{ site.baseurl }}/images/favicon.svg?v=2" color="#5bbad5"> {/* <!-- TODO: Update this color to your site's theme color --> */}
+    <link rel="shortcut icon" href="{{ site.baseurl }}/images/favicon.ico?v=2">
+
+    {/* <!-- Optional: If you have a site.webmanifest file in /images/, uncomment the line below --> */}
+    {/* <!-- <link rel="manifest" href="{{ site.baseurl }}/images/site.webmanifest?v=2"> --> */}
+
+    <meta name="msapplication-TileColor" content="#da532c"> {/* <!-- TODO: Update this color --> */}
+    <meta name="theme-color" content="#ffffff"> {/* <!-- TODO: Update this color --> */}
+    <!-- End Favicon declarations -->
   </head>
 
   <body>
