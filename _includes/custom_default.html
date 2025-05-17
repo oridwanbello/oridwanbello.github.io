@@ -33,7 +33,7 @@ image_shape_modifier = "custom-feature__image--shape-round" -%} {% endif %}
             | escape }}
         </p>
         {% if include.button_href and include.button_text %}
-        <a href="{{ include.button_href }}" class="btn btn--primary">
+        <a href="{{ include.button_href }}" class="btn btn--primary"{% if include.button_href contains "://" %} rel="nofollow noopener noreferrer"{% endif %}>
             {{ include.button_text | default: "Learn more" }}
         </a>
         {% endif %}
