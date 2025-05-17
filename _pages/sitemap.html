@@ -61,7 +61,7 @@ permalink: /sitemap/
         {% assign pages_list = "" | split: "" %} {% for page_item in site.pages
         %} {% assign is_in_pages_folder = false %} {% if page_item.path contains
         '_pages/' %} {% assign is_in_pages_folder = true %} {% endif %} {% if
-        is_in_pages_folder and page_item.sitemap != false and page_item.url !=
+        is_in_pages_folder and page_item.sitemap == true and page_item.url !=
         "/sitemap/" and page_item.url != "/404.html" %} {% assign display_name =
         page_item.title %} {% if display_name == "" or display_name == nil %} {%
         if page_item.url == "/" %} {% assign display_name = "Home" %} {% else %}
