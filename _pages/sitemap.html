@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Sitemap"
+title: ""
 permalink: /sitemap/
 ---
 
@@ -62,42 +62,26 @@ permalink: /sitemap/
     <div class="sitemap-section">
         <h2>Pages</h2>
         <ul class="sitemap-list">
-            {% for page in site.pages %} {% if page.title and page.url and
-            page.sitemap != false and page.url != "/sitemap/" and page.url !=
-            "/404.html" %}
+            {% for page in site.pages %} {% if page.url and page.sitemap !=
+            false and page.url != "/sitemap/" and page.url != "/404.html" %}
             <li>
-                <a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+                {% assign display_name = page.title %} {% if display_name == ""
+                or display_name == nil %} {% if page.url == "/" %} {% assign
+                display_name = "Home" %} {% else %} {% assign segments =
+                page.url | split: '/' %} {% assign last_valuable_segment = "" %}
+                {% for segment in segments reversed %} {% if segment != "" %} {%
+                assign last_valuable_segment = segment %} {% break %} {% endif
+                %} {% endfor %} {% if last_valuable_segment != "" %} {% assign
+                display_name = last_valuable_segment | remove: '.html' |
+                replace: '-', ' ' | capitalize %} {% else %} {% assign
+                page_basename_no_ext = page.basename | remove: page.extname %}
+                {% assign display_name = page_basename_no_ext | replace: '-', '
+                ' | capitalize %} {% endif %} {% endif %} {% endif %} {% if
+                display_name == "" or display_name == nil %}{% assign
+                display_name = page.url %}{% endif %}
+                <a href="{{ page.url | relative_url }}">{{ display_name }}</a>
             </li>
             {% endif %} {% endfor %}
         </ul>
     </div>
-
-    {% if site.posts.size > 0 %}
-    <div class="sitemap-section">
-        <h2>Posts</h2>
-        <ul class="sitemap-list">
-            {% for post in site.posts %} {% if post.title and post.url and
-            post.sitemap != false %}
-            <li>
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a> -
-                <small>{{ post.date | date: "%B %d, %Y" }}</small>
-            </li>
-            {% endif %} {% endfor %}
-        </ul>
-    </div>
-    {% endif %} {% if site.collections %} {% for collection in site.collections
-    %} {% if collection.label != "posts" and collection.docs.size > 0 and
-    collection.output == true %}
-    <div class="sitemap-section">
-        <h2>{{ collection.label | capitalize }}</h2>
-        <ul class="sitemap-list">
-            {% for item in collection.docs %} {% if item.title and item.url and
-            item.sitemap != false %}
-            <li>
-                <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-            </li>
-            {% endif %} {% endfor %}
-        </ul>
-    </div>
-    {% endif %} {% endfor %} {% endif %}
 </div>

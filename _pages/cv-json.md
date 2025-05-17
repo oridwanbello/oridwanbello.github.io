@@ -4,7 +4,8 @@ title: "CV"
 permalink: /cv-json/
 author_profile: false
 redirect_from:
-  - /resume-json
+    - /resume-json
+sitemap: false
 ---
 
 {% include base_path %}
@@ -19,7 +20,7 @@ redirect_from:
     float: none;
     padding-right: 0;
   }
-  
+
   @media (min-width: 80em) {
     .archive {
       width: 70%;
