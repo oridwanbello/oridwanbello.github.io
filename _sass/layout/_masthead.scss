@@ -27,17 +27,11 @@
     &__inner-wrap {
         @include container;
         @include clearfix;
-        width: 90%;
-        /* Make it occupy 90% of screen width */
-        margin: 0 auto;
-        /* Center the container */
-        padding: 0.5em 20px;
-        /* Remove horizontal padding as we're using width/margin */
+        padding: 0.5em 1em;
         font-family: $sans-serif-narrow;
 
         @include breakpoint($x-large) {
-            max-width: 90%;
-            /* Override max-width for large screens */
+            max-width: $x-large;
         }
 
         nav {
@@ -86,12 +80,6 @@
 @media (max-width: 768px) {
     .site-logo {
         max-height: 30px; // Adjust for smaller screens
-    }
-    .masthead {
-        &__inner-wrap {
-            width: 95%; /* Increase from 90% to 95% on mobile */
-            padding: 0.5em 0px 0.5em 5px; /* Adjust padding for mobile */
-        }
     }
 }
 

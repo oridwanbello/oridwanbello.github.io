@@ -174,73 +174,49 @@
 
 .greedy-nav {
     position: relative;
+    min-width: 250px;
     background: var(--global-bg-color);
-    display: flex;
-    justify-content: space-between;
-    /* Space between logo and nav items */
-    align-items: center;
-    width: 100%;
 
     a {
         display: block;
+        margin: 0 1rem;
         padding: 0.5rem 0;
         color: var(--global-masthead-link-color);
         text-decoration: none;
-        margin: 0 0.5rem;
 
         &:hover {
             color: var(--global-masthead-link-color-hover);
         }
     }
 
-    /* Site Title/Logo Container */
-    .site-title-wrapper {
-        flex: 0 0 auto;
-        /* Don't grow or shrink */
-
-        .site-title {
-            font-weight: bold;
-            margin-left: 0;
-
-            a {
-                margin-left: 0;
-            }
-        }
-    }
-
-    /* Navigation Items Container */
-    .nav-items-container {
-        display: flex;
-        align-items: center;
-        margin-left: auto;
-        /* Push to the right */
-    }
-
-    /* Hamburger Button */
-    .greedy-nav__toggle {
-        position: relative;
+    button {
+        position: absolute;
         height: 2.5rem;
+        right: 0;
         padding: 0 0.5rem;
         border: 0;
         outline: none;
-        background-color: transparent;
+        background-color: var(--global-bg-color);
         color: var(--global-black);
         cursor: pointer;
-        margin-left: 0.5rem;
-        display: none;
-        /* Hide by default - js will show it when needed */
+        z-index: 100;
     }
 
-    /* Visible Links */
     .visible-links {
-        display: flex;
-        align-items: center;
-        margin: 0;
-        padding: 0;
+        display: table;
 
         li {
-            display: flex;
-            align-items: center;
+            display: table-cell;
+            vertical-align: middle;
+
+            &:first-child {
+                font-weight: bold;
+                text-wrap: wrap;
+
+                a {
+                    margin-left: 0;
+                }
+            }
 
             &:last-child {
                 a {
@@ -249,10 +225,8 @@
             }
         }
 
-        #theme-toggle {
-            /* Ensure the theme toggle is always visible */
-            display: flex !important;
 
+        #theme-toggle {
             a {
                 width: 25px;
                 display: flex;
@@ -277,33 +251,40 @@
                 -webkit-transform: scaleX(0);
                 -ms-transform: scaleX(0);
                 transform: scaleX(0);
+                /* hide*/
             }
 
             &:hover:before {
                 -webkit-transform: scaleX(1);
                 -ms-transform: scaleX(1);
                 transform: scaleX(1);
+                /* reveal*/
             }
         }
     }
 
-    /* Hidden Links */
     .hidden-links {
-        display: none;
-        /* Hidden by default */
         position: absolute;
         top: 100%;
         right: 0;
-        width: 200px;
         margin-top: 15px;
         padding: 5px;
         border: 1px solid var(--global-border-color);
         border-radius: $border-radius;
         background: var(--global-bg-color);
         box-shadow: 0 0 10px rgba(#000, 0.25);
-        z-index: 100;
 
-        /* Add back the triangular indicators from original design */
+        a {
+            margin: 0;
+            padding: 10px 20px;
+            font-size: $type-size-5;
+
+            &:hover {
+                color: var(--global-masthead-link-color-hover);
+                background: var(--global-border-color);
+            }
+        }
+
         &:before {
             content: "";
             position: absolute;
@@ -330,18 +311,6 @@
             z-index: 1;
         }
 
-        /* Style the links themselves to match original */
-        a {
-            margin: 0;
-            padding: 10px 20px;
-            font-size: $type-size-5;
-
-            &:hover {
-                color: var(--global-masthead-link-color-hover);
-                background: var(--global-border-color);
-            }
-        }
-
         li {
             display: block;
             border-bottom: 1px solid var(--global-border-color);
@@ -350,115 +319,37 @@
                 border-bottom: none;
             }
         }
-
-        /* Show the menu when this class is added via JavaScript */
-        &.is-open {
-            display: block !important;
-        }
     }
 }
 
-/* Hamburger icon styling */
-.greedy-nav__toggle .navicon {
-    position: relative;
-    display: block;
-    width: 18px;
-    height: 2px;
-    background: var(--global-black);
-    margin: 0 auto;
+.greedy-nav button .navicon,
+.greedy-nav button .navicon::before,
+.greedy-nav button .navicon::after {
+    background: var(--global-black) !important;
 }
 
-.greedy-nav__toggle .navicon::before,
-.greedy-nav__toggle .navicon::after {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: var(--global-black);
-    transition: all 0.2s ease;
+html[data-theme="dark"] .greedy-nav button .navicon,
+html[data-theme="dark"] .greedy-nav button .navicon::before,
+html[data-theme="dark"] .greedy-nav button .navicon::after {
+    background: var(--custom-color-4) !important;
 }
 
-.greedy-nav__toggle .navicon::before {
-    top: -6px;
-}
+@media (max-width: 767px) {
 
-.greedy-nav__toggle .navicon::after {
-    bottom: -6px;
-}
-
-html[data-theme="dark"] .greedy-nav__toggle .navicon,
-html[data-theme="dark"] .greedy-nav__toggle .navicon::before,
-html[data-theme="dark"] .greedy-nav__toggle .navicon::after {
-    background: var(--custom-color-4);
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-
-    /* Force hamburger icon to always show on mobile with no flash */
-    .greedy-nav__toggle {
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transition: none !important;
-        cursor: pointer;
-        order: 3;
-        min-height: 40px;
-        width: 40px;
-    }
-
-    /* Make the visible-links a flex container */
-    .nav-items-container {
-        display: flex;
-        align-items: center;
-    }
-
-    /* On mobile, hide regular nav items except theme toggle */
-    .greedy-nav .visible-links {
-        flex: 1;
-        /* Take available space */
-        justify-content: flex-end;
-        /* Push items to the right */
-    }
-
-    .greedy-nav .visible-links li:not(#theme-toggle) {
+    .greedy-nav .visible-links a:before,
+    .greedy-nav .visible-links a:hover:before,
+    .greedy-nav .visible-links a:focus:before,
+    .greedy-nav .visible-links a:active:before {
         display: none !important;
+        content: none !important;
     }
 
-    /* Keep theme toggle visible and positioned correctly */
-    .greedy-nav .visible-links #theme-toggle {
-        display: flex !important;
-        margin-right: 10px;
-        /* Space between toggle and hamburger */
-    }
-
-    /* Site title/logo */
-    .greedy-nav .site-title-wrapper {
-        display: block !important;
-    }
-}
-
-/* Add specific desktop styles to prevent flashing */
-@media (min-width: 769px) {
-    .greedy-nav__toggle {
-        /* Hide initially until JS determines it's needed */
-        opacity: 0;
-        display: none;
-        transition: opacity 0.2s ease;
-    }
-
-    /* Only show when JS adds this class */
-    .greedy-nav__toggle.js-enabled {
-        display: block;
-        opacity: 1;
-    }
-
-    /* Remove any leftover space when toggle is hidden */
-    .nav-items-container {
-        justify-content: flex-end;
+    .greedy-nav .visible-links a,
+    .greedy-nav .visible-links a:hover,
+    .greedy-nav .visible-links a:focus,
+    .greedy-nav .visible-links a:active {
+        color: var(--global-masthead-link-color) !important;
+        background: none !important;
     }
 }
 

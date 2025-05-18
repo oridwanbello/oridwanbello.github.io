@@ -4,108 +4,57 @@
     <div class="masthead__inner-wrap">
         <div class="masthead__menu">
             <nav id="site-nav" class="greedy-nav">
-                <!-- Site Logo/Title (Always visible) -->
-                <div class="site-title-wrapper">
-                    <a href="{{ base_path }}/" class="site-title">
-                        {% if site.logo_light and site.logo_dark %}
-                        <img
-                            src="{{ site.logo_light | relative_url }}"
-                            alt="{{ site.title | default: site.name }}"
-                            class="site-logo site-logo--light"
-                        />
-                        <img
-                            src="{{ site.logo_dark | relative_url }}"
-                            alt="{{ site.title | default: site.name }}"
-                            class="site-logo site-logo--dark"
-                        />
-                        {% elsif site.logo %}
-                        <img
-                            src="{{ site.logo | relative_url }}"
-                            alt="{{ site.title | default: site.name }}"
-                            class="site-logo"
-                        />
-                        {% else %} {{ site.title }} {% endif %}
-                    </a>
-                </div>
-
-                <div class="nav-items-container">
-                    <!-- Navigation items for desktop -->
-                    <ul class="visible-links">
-                        {% for link in site.data.navigation.main %} {% if
-                        link.url contains 'http' %} {% assign domain = '' %} {%
-                        else %} {% assign domain = base_path %} {% endif %}
-                        <li class="masthead__menu-item">
-                            <a href="{{ domain }}{{ link.url }}"
-                                >{{ link.title }}</a
-                            >
-                        </li>
-                        {% endfor %}
-
-                        <!-- Theme toggle - always visible -->
-                        <li
-                            id="theme-toggle"
-                            class="masthead__menu-item persist"
-                        >
-                            <a
-                                ><i
-                                    id="theme-icon"
-                                    class="fa-solid fa-sun"
-                                    aria-hidden="true"
-                                    title="toggle theme"
-                                ></i
-                            ></a>
-                        </li>
-                    </ul>
-
-                    <!-- Mobile menu button -->
-                    <button
-                        id="mobile-menu-toggle"
-                        class="greedy-nav__toggle"
-                        aria-label="Menu"
+                <button><div class="navicon"></div></button>
+                <ul class="visible-links">
+                    <li
+                        class="masthead__menu-item masthead__menu-item--lg persist"
                     >
-                        <div class="navicon"></div>
-                    </button>
-
-                    <!-- Mobile dropdown menu -->
-                    <div id="mobile-menu" class="hidden-links">
-                        {% for link in site.data.navigation.main %} {% if
-                        link.url contains 'http' %} {% assign domain = '' %} {%
-                        else %} {% assign domain = base_path %} {% endif %}
-                        <li class="masthead__menu-item">
-                            <a href="{{ domain }}{{ link.url }}"
-                                >{{ link.title }}</a
-                            >
-                        </li>
-                        {% endfor %}
-                    </div>
-                </div>
+                        <a href="{{ base_path }}/" class="site-title">
+                            {% if site.logo_light and site.logo_dark %}
+                            <img
+                                src="{{ site.logo_light | relative_url }}"
+                                alt="{{ site.title | default: site.name }}"
+                                class="site-logo site-logo--light"
+                            />
+                            <img
+                                src="{{ site.logo_dark | relative_url }}"
+                                alt="{{ site.title | default: site.name }}"
+                                class="site-logo site-logo--dark"
+                            />
+                            {% elsif site.logo %}
+                            <img
+                                src="{{ site.logo | relative_url }}"
+                                alt="{{ site.title | default: site.name }}"
+                                class="site-logo"
+                            />
+                            {% else %} {{ site.title }} {% endif %}
+                        </a>
+                    </li>
+                    {% for link in site.data.navigation.main %} {% if link.url
+                    contains 'http' %} {% assign domain = '' %} {% else %} {%
+                    assign domain = base_path %} {% endif %}
+                    <li class="masthead__menu-item">
+                        <a href="{{ domain }}{{ link.url }}"
+                            >{{ link.title }}</a
+                        >
+                    </li>
+                    {% endfor %}
+                    <li
+                        id="theme-toggle"
+                        class="masthead__menu-item persist tail"
+                    >
+                        <a
+                            ><i
+                                id="theme-icon"
+                                class="fa-solid fa-sun"
+                                aria-hidden="true"
+                                title="toggle theme"
+                            ></i
+                        ></a>
+                    </li>
+                </ul>
+                <ul class="hidden-links hidden"></ul>
             </nav>
         </div>
     </div>
 </div>
-
-<!-- Simple JavaScript to toggle mobile menu -->
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var menuButton = document.getElementById("mobile-menu-toggle");
-        var mobileMenu = document.getElementById("mobile-menu");
-
-        menuButton.addEventListener("click", function () {
-            if (mobileMenu.classList.contains("is-open")) {
-                mobileMenu.classList.remove("is-open");
-            } else {
-                mobileMenu.classList.add("is-open");
-            }
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener("click", function (event) {
-            if (
-                !menuButton.contains(event.target) &&
-                !mobileMenu.contains(event.target)
-            ) {
-                mobileMenu.classList.remove("is-open");
-            }
-        });
-    });
-</script>
