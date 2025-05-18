@@ -89,7 +89,7 @@
     // For screens smaller than medium
     @include breakpoint(max-width $medium) {
         max-height: 30px;
-        transform: translateY(5px);
+        transform: translateY(3px);
     }
 }
 
