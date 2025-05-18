@@ -362,15 +362,18 @@ html[data-theme="dark"] .greedy-nav__toggle .navicon::after {
     /* Force hamburger icon to always show on mobile with no flash */
     .greedy-nav__toggle {
         display: flex !important;
-        /* Change block to flex */
         align-items: center;
-        /* Center items vertically */
+        justify-content: center;
+        /* Add this line */
         opacity: 1 !important;
         visibility: visible !important;
         transition: none !important;
         cursor: pointer;
         order: 3;
-        /* Make sure it appears after the theme toggle */
+        min-height: 40px;
+        /* Add this line */
+        width: 40px;
+        /* Add this line */
     }
 
     /* Make the visible-links a flex container */
@@ -406,7 +409,6 @@ html[data-theme="dark"] .greedy-nav__toggle .navicon::after {
     /* Style the hidden links dropdown */
     .greedy-nav .hidden-links {
         display: none;
-        /* Hidden by default */
         position: absolute;
         top: 100%;
         right: 0;
@@ -417,12 +419,16 @@ html[data-theme="dark"] .greedy-nav__toggle .navicon::after {
         border-radius: 4px;
         background: var(--global-bg-color);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-        z-index: 5;
-    }
+        z-index: 100;
+        /* Increase z-index to ensure it's on top */
+        overflow: visible;
+        /* Ensure content isn't cut off */   }
 
     /* Important: Fix the selector to properly show dropdown when checkbox is checked */
-    #nav-toggle:checked~.hidden-links {
+    .nav-items-container input#nav-toggle:checked~.hidden-links {
         display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
         z-index: 50;
     }
 
@@ -437,6 +443,12 @@ html[data-theme="dark"] .greedy-nav__toggle .navicon::after {
 
     .greedy-nav .hidden-links li:last-child a {
         border-bottom: none;
+    }
+
+    /* This will show a highlight when the checkbox is checked - for debugging */
+    #nav-toggle:checked+.greedy-nav__toggle {
+        background-color: rgba(0, 0, 0, 0.1);
+        /* Subtle highlight when active */
     }
 }
 
