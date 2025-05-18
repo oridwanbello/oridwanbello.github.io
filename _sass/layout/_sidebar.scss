@@ -15,19 +15,7 @@
 
   @media (orientation: portrait) {
     margin-top: 1em;
-    position: relative;
-    /* Change from fixed to relative in portrait */
-    height: auto;
-    /* Allow height to adjust to content */
-    overflow-y: visible;
-    /* Don't need scrollbar in portrait orientation */
-    padding-left: 2em;
-    /* Add left padding in portrait too */
-    padding-right: 2em;
-    /* Add right padding */
-    width: 100%;
-    /* Take full width in portrait */
-}
+  }
 
   @media screen and (min-width: $sidebar-screen-min-width) {
     height: 100vh;
