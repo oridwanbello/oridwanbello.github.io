@@ -304,10 +304,32 @@
 }
 
 /* Hamburger icon styling */
-.greedy-nav__toggle .navicon,
+.greedy-nav__toggle .navicon {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--global-black);
+    margin: 0 auto;
+}
+
 .greedy-nav__toggle .navicon::before,
 .greedy-nav__toggle .navicon::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
     background: var(--global-black);
+    transition: all 0.2s ease;
+}
+
+.greedy-nav__toggle .navicon::before {
+    top: -6px;
+}
+
+.greedy-nav__toggle .navicon::after {
+    bottom: -6px;
 }
 
 html[data-theme="dark"] .greedy-nav__toggle .navicon,
