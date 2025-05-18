@@ -203,22 +203,29 @@
     }
 
     .visible-links {
-        display: flex; // Change from table to flex
-        width: 100%; // Take full width
-        align-items: center; // Center items vertically
+        display: flex;
+        justify-content: flex-end; // This pushes all items to the right
+        width: 100%;
+        align-items: center;
 
         li {
-            display: inline-block; // Change from table-cell
+            display: inline-block;
             vertical-align: middle;
 
             &:first-child {
                 font-weight: bold;
                 text-wrap: wrap;
-                margin-right: auto; // This pushes other items to the right
+                margin-right: auto; // This creates space between logo and nav items
+                margin-left: 0; // Ensure logo stays at left edge
 
                 a {
                     margin-left: 0;
                 }
+            }
+
+            // Add more space between nav items for better separation
+            &:not(:first-child) {
+                margin-left: 0.5rem;
             }
 
             &:last-child {
