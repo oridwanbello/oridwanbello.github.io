@@ -21,13 +21,6 @@ redirect_from:
         margin-bottom: 10px;
     }
 
-    .header-box {
-        background-color: var(--custom-color-1);
-        border-radius: 25px;
-        padding: 10px 20px;
-        display: inline-block;
-    }
-
     .header-text {
         color: var(--custom-color-1);
         margin: 0;
@@ -42,10 +35,15 @@ redirect_from:
         margin-bottom: 0px;
     }
 
-    /* Dark mode mods */
-    html[data-theme="dark"] .header-box {
-        background-color: var(--custom-color-2);
+    .shadow-divider {
+        height: 5px;
+        background-color: transparent;
+        box-shadow: 0 0px 20px rgba(0, 0, 0, 0.3);
+        margin: 30px 0;
+        position: relative;
     }
+
+    /* Dark mode mods */
     html[data-theme="dark"] .header-text {
         color: var(--custom-color-2);
     }
@@ -99,6 +97,7 @@ redirect_from:
     </p>
 
     <hr />
+    <div class="shadow-divider"></div>
 
     <div class="section-header">
         <h2 class="header-text">🎓 Education</h2>
@@ -123,8 +122,8 @@ redirect_from:
     <ul class="section-list">
         <li>Public T Cell Receptors in Immunity</li>
         <li>Genetic and Epigenetic Mechanisms of Disease Resistance</li>
-        <li>Transcriptomics and Bioinformatics</li>
         <li>Microbiome-Immunity Interactions</li>
+        <li>Transcriptomics and Proteomics</li>
         <li>Quantitative and Molecular Genetics</li>
         <li>Selective Breeding and Genomic Selection</li>
     </ul>
@@ -134,9 +133,12 @@ redirect_from:
     </div>
     <ul class="section-list">
         <li>Programming: R, Python, Bash</li>
-        <li>Data Analysis: Bulk/Single-cell RNA-Seq, ATAC-Seq, ChIP-Seq</li>
-        <li>Tools: GWAS, Metagenomics, Machine Learning, HPC Systems</li>
-        <li>OS Proficiency: Linux, Windows, MacOS</li>
+        <li>
+            Bioinformatics: Bulk/Single-cell RNA-Seq, ATAC-Seq, ChIP-Seq,
+            DNA-Seq
+        </li>
+        <li>Tools: Statistics, Machine Learning, HPC Systems</li>
+        <li>OS Proficiency: Linux, MacOS, Windows</li>
     </ul>
 
     <div class="section-header">
