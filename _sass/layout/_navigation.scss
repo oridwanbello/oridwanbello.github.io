@@ -203,19 +203,27 @@
     }
 
     .visible-links {
-        display: table;
+        display: flex; // Change from table to flex
+        justify-content: space-between; // Space between logo and nav items
+        width: 100%; // Ensure it takes full width
+        align-items: center; // Vertically center items
 
         li {
-            display: table-cell;
+            display: inline-block; // Change from table-cell
             vertical-align: middle;
 
             &:first-child {
                 font-weight: bold;
                 text-wrap: wrap;
+                margin-right: auto; // Push other items to the right
 
                 a {
                     margin-left: 0;
                 }
+            }
+
+            &:not(:first-child) {
+                margin-left: 1rem; // Space between nav items
             }
 
             &:last-child {
