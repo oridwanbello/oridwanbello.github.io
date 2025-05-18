@@ -30,6 +30,16 @@
 
                 <!-- Navigation Items Container -->
                 <div class="nav-items-container">
+                    <!-- Hamburger button - now a label for the checkbox -->
+                    <input
+                        type="checkbox"
+                        id="nav-toggle"
+                        class="nav-toggle-checkbox"
+                    />
+                    <label for="nav-toggle" class="greedy-nav__toggle">
+                        <div class="navicon"></div>
+                    </label>
+
                     <ul class="visible-links">
                         {% for link in site.data.navigation.main %} {% if
                         link.url contains 'http' %} {% assign domain = '' %} {%
@@ -57,13 +67,18 @@
                         </li>
                     </ul>
 
-                    <!-- Hamburger button -->
-                    <button class="greedy-nav__toggle">
-                        <div class="navicon"></div>
-                    </button>
-
                     <!-- Hidden links for hamburger menu -->
-                    <ul class="hidden-links hidden"></ul>
+                    <ul class="hidden-links">
+                        {% for link in site.data.navigation.main %} {% if
+                        link.url contains 'http' %} {% assign domain = '' %} {%
+                        else %} {% assign domain = base_path %} {% endif %}
+                        <li class="masthead__menu-item">
+                            <a href="{{ domain }}{{ link.url }}"
+                                >{{ link.title }}</a
+                            >
+                        </li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </nav>
         </div>
