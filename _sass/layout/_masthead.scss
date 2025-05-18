@@ -39,13 +39,16 @@
         @include clearfix;
         padding: 0.5em 1em;
         font-family: $sans-serif-narrow;
+        width: 100%; // Ensure inner wrap uses full masthead width
+        max-width: 100%; // Override any max-width constraints
 
         @include breakpoint($x-large) {
-            max-width: $x-large;
+            max-width: 100%; // Remove x-large constraint to use full masthead width
         }
 
         nav {
             z-index: 10;
+            width: 100%; // Make navigation use full width
         }
 
         a {
