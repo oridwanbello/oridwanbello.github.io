@@ -63,7 +63,7 @@ html {
     /* Ensures text is above the image AND the gradient overlay */
     padding: 20px;
     /* Optional: adds some space around the text */
-    width: 55%;
+    width: 40%;
     /* Adjust as needed, e.g., 50% or 60% */
     /* Optional: constrain width of text block */
     max-width: 800px;
