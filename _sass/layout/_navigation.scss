@@ -176,13 +176,20 @@
     position: relative;
     min-width: 250px;
     background: var(--global-bg-color);
+    display: flex;
+    /* Add flex display */
+    justify-content: space-between;
+    /* Push items to edges */
+    width: 100%;
+    /* Ensure it takes full width of parent */
 
     a {
         display: block;
-        margin: 0 1rem;
         padding: 0.5rem 0;
         color: var(--global-masthead-link-color);
         text-decoration: none;
+        margin: 0 0.5rem;
+        /* Reduce margin to prevent wrapping */
 
         &:hover {
             color: var(--global-masthead-link-color-hover);
@@ -190,28 +197,38 @@
     }
 
     button {
-        position: absolute;
+        position: relative;
+        /* Change from absolute to relative */
         height: 2.5rem;
-        right: 0;
         padding: 0 0.5rem;
         border: 0;
         outline: none;
         background-color: var(--global-bg-color);
         color: var(--global-black);
         cursor: pointer;
+        margin-left: 0.5rem;
+        /* Add margin to separate from links */
         z-index: 100;
     }
 
     .visible-links {
-        display: table;
+        display: flex;
+        /* Change from table to flex */
+        align-items: center;
+        /* Center items vertically */
+        margin-left: auto;
+        /* Push to right side */
 
         li {
-            display: table-cell;
-            vertical-align: middle;
+            display: flex;
+            /* Change from table-cell to flex */
+            align-items: center;
 
             &:first-child {
                 font-weight: bold;
                 text-wrap: wrap;
+                margin-right: auto;
+                /* Push the rest to the right */
 
                 a {
                     margin-left: 0;
@@ -225,15 +242,13 @@
             }
         }
 
-
         #theme-toggle {
             a {
                 width: 25px;
                 display: flex;
                 justify-content: center;
                 cursor: pointer;
-            }
-        }
+            }   }
 
         a {
             position: relative;
