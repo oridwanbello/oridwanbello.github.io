@@ -90,7 +90,7 @@
     .masthead {
         &__inner-wrap {
             width: 95%; /* Increase from 90% to 95% on mobile */
-            padding: 0.5em 5px; /* Adjust padding for mobile */
+            padding: 0.5em 0px 0.5em 5px; /* Adjust padding for mobile */
         }
     }
 }
