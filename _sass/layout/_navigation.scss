@@ -218,6 +218,8 @@
             &:first-child {
                 font-weight: bold;
                 text-wrap: wrap;
+                margin-right: auto;
+                /* Push everything else to the right */
 
                 a {
                     margin-left: 0;
@@ -231,22 +233,32 @@
                 }
             }
 
-            &:last-child {
+            &#theme-toggle {
+                display: inline-block !important;
+                /* Ensure always visible */
+                margin-right: 50px;
+                /* Space for hamburger button */
+
+                @media (max-width: 767px) {
+                    position: absolute;
+                    right: 50px;
+                    /* Position to left of hamburger */
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                a {
+                    width: 25px;
+                    display: flex;
+                    justify-content: center;
+                    cursor: pointer;
+                }
+            }
+
+            &:last-child:not(#theme-toggle) {
                 a {
                     margin-right: 0;
                 }
-            }
-        }
-
-        #theme-toggle {
-            margin-left: auto;
-            order: 999;
-
-            a {
-                width: 25px;
-                display: flex;
-                justify-content: center;
-                cursor: pointer;
             }
         }
 
