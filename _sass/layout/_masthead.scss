@@ -80,20 +80,19 @@
 // Site log styling ============================================================
 
 .site-logo {
-    max-height: 60px; // Adjust as needed
+    max-height: 60px; // Default sizing for larger screens
     width: auto;
     vertical-align: middle;
-    display: inline-block; // Or block, depending on layout needs
-}
+    display: inline-block;
 
-@media (max-width: 768px) {
-    .site-logo {
-        max-height: 30px; // Adjust for smaller screens
+    // For screens smaller than medium
+    @include breakpoint(max-width $medium) {
+        max-height: 30px;
     }
 }
 
 .site-logo--light {
-    display: inline-block; // Or your preferred display type
+    display: inline-block;
 }
 
 .site-logo--dark {
@@ -106,7 +105,7 @@ html[data-theme="dark"] .site-logo--light {
 }
 
 html[data-theme="dark"] .site-logo--dark {
-    display: inline-block; // Or your preferred display type
+    display: inline-block;
 }
 
 // End of site logo styling ====================================================
