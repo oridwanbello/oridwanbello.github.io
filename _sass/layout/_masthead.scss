@@ -87,6 +87,11 @@
     .site-logo {
         max-height: 30px; // Adjust for smaller screens
     }
+    .masthead {
+        &__inner-wrap {
+            width: 95%; /* Increase from 90% to 95% on mobile */
+        }
+    }
 }
 
 .site-logo--light {

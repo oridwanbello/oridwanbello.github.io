@@ -196,6 +196,7 @@
     /* Site Title/Logo Container */
     .site-title-wrapper {
         flex: 0 0 auto;
+        /* Don't grow or shrink */
 
         .site-title {
             font-weight: bold;
@@ -216,7 +217,7 @@
     }
 
     /* Hamburger Button */
-    button.greedy-nav__toggle {
+    .greedy-nav__toggle {
         position: relative;
         height: 2.5rem;
         padding: 0 0.5rem;
@@ -226,7 +227,8 @@
         color: var(--global-black);
         cursor: pointer;
         margin-left: 0.5rem;
-        z-index: 100;
+        display: block;
+        /* Make sure it's visible */
     }
 
     /* Visible Links */
@@ -248,6 +250,9 @@
         }
 
         #theme-toggle {
+            /* Ensure the theme toggle is always visible */
+            display: flex !important;
+
             a {
                 width: 25px;
                 display: flex;
@@ -282,7 +287,7 @@
         }
     }
 
-    /* Hidden Links (Hamburger Menu) */
+    /* Hidden Links */
     .hidden-links {
         position: absolute;
         top: 100%;
@@ -293,22 +298,23 @@
         border-radius: $border-radius;
         background: var(--global-bg-color);
         box-shadow: 0 0 10px rgba(#000, 0.25);
+        z-index: 5;
 
-        /* Retain existing hidden-links styling */
+        /* Keep any existing styling for hidden-links */
     }
 }
 
 /* Hamburger icon styling */
-.greedy-nav button .navicon,
-.greedy-nav button .navicon::before,
-.greedy-nav button .navicon::after {
-    background: var(--global-black) !important;
+.greedy-nav__toggle .navicon,
+.greedy-nav__toggle .navicon::before,
+.greedy-nav__toggle .navicon::after {
+    background: var(--global-black);
 }
 
-html[data-theme="dark"] .greedy-nav button .navicon,
-html[data-theme="dark"] .greedy-nav button .navicon::before,
-html[data-theme="dark"] .greedy-nav button .navicon::after {
-    background: var(--custom-color-4) !important;
+html[data-theme="dark"] .greedy-nav__toggle .navicon,
+html[data-theme="dark"] .greedy-nav__toggle .navicon::before,
+html[data-theme="dark"] .greedy-nav__toggle .navicon::after {
+    background: var(--custom-color-4);
 }
 
 /* Mobile adjustments */
