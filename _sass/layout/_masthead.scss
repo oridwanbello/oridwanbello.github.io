@@ -29,7 +29,7 @@
 
     &__inner-wrap {
         @include clearfix;
-        padding: 0.5em 1em;
+        padding: 0.5em 0em;
         font-family: $sans-serif-narrow;
         width: 95%;
         /* Mobile width (95%) */
