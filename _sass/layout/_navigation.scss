@@ -176,6 +176,9 @@
     position: relative;
     min-width: 250px;
     background: var(--global-bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     a {
         display: block;
@@ -203,10 +206,13 @@
     }
 
     .visible-links {
-        display: table;
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
 
         li {
-            display: table-cell;
+            display: inline-block;
             vertical-align: middle;
 
             &:first-child {
@@ -218,6 +224,13 @@
                 }
             }
 
+            // Hide all navigation items except logo and theme toggle on mobile
+            &:not(:first-child):not(#theme-toggle) {
+                @media (max-width: 767px) {
+                    display: none;
+                }
+            }
+
             &:last-child {
                 a {
                     margin-right: 0;
@@ -225,8 +238,10 @@
             }
         }
 
-
         #theme-toggle {
+            margin-left: auto;
+            order: 999;
+
             a {
                 width: 25px;
                 display: flex;
@@ -273,6 +288,11 @@
         border-radius: $border-radius;
         background: var(--global-bg-color);
         box-shadow: 0 0 10px rgba(#000, 0.25);
+
+        // Prevent theme toggle from showing in hamburger menu
+        #theme-toggle {
+            display: none;
+        }
 
         a {
             margin: 0;
