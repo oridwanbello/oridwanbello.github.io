@@ -58,7 +58,7 @@
                         </li>
                     </ul>
 
-                    <!-- Hamburger button AFTER the visible links -->
+                    <!-- IMPORTANT: Checkbox and Label must be DIRECT SIBLINGS of the hidden-links -->
                     <input
                         type="checkbox"
                         id="nav-toggle"
@@ -67,8 +67,6 @@
                     <label for="nav-toggle" class="greedy-nav__toggle">
                         <div class="navicon"></div>
                     </label>
-
-                    <!-- Hidden links for hamburger menu -->
                     <ul class="hidden-links">
                         {% for link in site.data.navigation.main %} {% if
                         link.url contains 'http' %} {% assign domain = '' %} {%

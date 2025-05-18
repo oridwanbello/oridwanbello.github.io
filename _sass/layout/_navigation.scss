@@ -339,7 +339,10 @@ html[data-theme="dark"] .greedy-nav__toggle .navicon::after {
 
     /* Force hamburger icon to always show on mobile with no flash */
     .greedy-nav__toggle {
-        display: block !important;
+        display: flex !important;
+        /* Change block to flex */
+        align-items: center;
+        /* Center items vertically */
         opacity: 1 !important;
         visibility: visible !important;
         transition: none !important;
@@ -398,6 +401,7 @@ html[data-theme="dark"] .greedy-nav__toggle .navicon::after {
     /* Important: Fix the selector to properly show dropdown when checkbox is checked */
     #nav-toggle:checked~.hidden-links {
         display: block !important;
+        z-index: 50;
     }
 
     /* Style the links in hamburger menu */
