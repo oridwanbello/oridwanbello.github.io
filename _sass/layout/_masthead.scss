@@ -31,7 +31,7 @@
         /* Make it occupy 90% of screen width */
         margin: 0 auto;
         /* Center the container */
-        padding: 0.5em 0;
+        padding: 0.5em 20px;
         /* Remove horizontal padding as we're using width/margin */
         font-family: $sans-serif-narrow;
 
@@ -90,6 +90,7 @@
     .masthead {
         &__inner-wrap {
             width: 95%; /* Increase from 90% to 95% on mobile */
+            padding: 0.5em 5px; /* Adjust padding for mobile */
         }
     }
 }

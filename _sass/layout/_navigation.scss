@@ -227,8 +227,7 @@
         color: var(--global-black);
         cursor: pointer;
         margin-left: 0.5rem;
-        display: block;
-        /* Make sure it's visible */
+        display: none; /* Hide by default - js will show it when needed */
     }
 
     /* Visible Links */
@@ -317,21 +316,65 @@ html[data-theme="dark"] .greedy-nav__toggle .navicon::after {
     background: var(--custom-color-4);
 }
 
-/* Mobile adjustments */
-@media (max-width: 767px) {
-    .greedy-nav {
-        .visible-links {
-            li:not(#theme-toggle) {
-                display: none;
-                /* Hide all navigation items except theme toggle */
-            }
+/* Update the mobile styles */
+@media (max-width: 768px) {
 
-            #theme-toggle {
-                display: flex;
-                /* Ensure theme toggle is always visible */
-            }
-        }
-    }     }
+    /* Force hamburger icon to always show on mobile with no flash */
+    .greedy-nav__toggle {
+        display: block !important;
+        opacity: 1 !important;
+        /* Prevent any fade effects */
+        visibility: visible !important;
+        transition: none !important;
+        /* Prevent transitions */
+    }
+
+    /* Keep your existing mobile rules */
+    .greedy-nav .visible-links li:not(#theme-toggle) {
+        display: none !important;
+    }
+
+    .greedy-nav .visible-links #theme-toggle {
+        display: flex !important;
+    }
+
+    .greedy-nav .site-title-wrapper {
+        display: block !important;
+    }
+
+    /* Improve the dropdown behavior */
+    .greedy-nav .hidden-links {
+        -webkit-transition: none !important;
+        transition: none !important;
+        display: none;
+    }
+
+    /* Only show when active */
+    .greedy-nav .hidden-links.js-visible {
+        display: block;
+    }
+}
+
+/* Add specific desktop styles to prevent flashing */
+@media (min-width: 769px) {
+    .greedy-nav__toggle {
+        /* Hide initially until JS determines it's needed */
+        opacity: 0;
+        display: none;
+        transition: opacity 0.2s ease;
+    }
+
+    /* Only show when JS adds this class */
+    .greedy-nav__toggle.js-enabled {
+        display: block;
+        opacity: 1;
+    }
+
+    /* Remove any leftover space when toggle is hidden */
+    .nav-items-container {
+        justify-content: flex-end;
+    }
+}
 
 /*
      Navigation list
