@@ -316,42 +316,70 @@ html[data-theme="dark"] .greedy-nav__toggle .navicon::after {
     background: var(--custom-color-4);
 }
 
-/* Update the mobile styles */
+/* Update the mobile styles section */
 @media (max-width: 768px) {
 
     /* Force hamburger icon to always show on mobile with no flash */
     .greedy-nav__toggle {
         display: block !important;
         opacity: 1 !important;
-        /* Prevent any fade effects */
         visibility: visible !important;
         transition: none !important;
-        /* Prevent transitions */
     }
 
-    /* Keep your existing mobile rules */
+    /* On mobile, move nav items to hidden menu instead of hiding them */
     .greedy-nav .visible-links li:not(#theme-toggle) {
-        display: none !important;
+        /* Don't use display:none - this prevents JS from finding the elements */
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
     }
 
+    /* Ensure these items appear in hidden links menu when it's opened */
+    .greedy-nav .hidden-links li {
+        display: block !important;
+    }
+
+    /* Keep theme toggle visible */
     .greedy-nav .visible-links #theme-toggle {
         display: flex !important;
     }
 
+    /* Site title/logo */
     .greedy-nav .site-title-wrapper {
         display: block !important;
     }
 
-    /* Improve the dropdown behavior */
+    /* Improve dropdown behavior */
     .greedy-nav .hidden-links {
-        -webkit-transition: none !important;
-        transition: none !important;
-        display: none;
+        width: 200px;
+        /* Set a reasonable width */
+        padding: 10px;
+        border-radius: 4px;
     }
 
-    /* Only show when active */
+    /* When menu is visible */
     .greedy-nav .hidden-links.js-visible {
         display: block;
+    }
+
+    /* Style the links in hamburger menu */
+    .greedy-nav .hidden-links a {
+        padding: 8px 10px;
+        display: block;
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid var(--global-border-color);
+    }
+
+    .greedy-nav .hidden-links li:last-child a {
+        border-bottom: none;
     }
 }
 
