@@ -108,7 +108,7 @@ html {
         width: 95%;
         /* Make the overlay wider on small screens */
         left: 2.5%;
-        padding: 0px;
+        padding-left: 5px;
         /* Reduce padding slightly */
         /* top: 50%; transform: translateY(-50%); will still vertically center it */
         /* box-sizing: border-box; is inherited and important */
