@@ -1,22 +1,16 @@
-/* Cover image style =========================================================*/
-/* Styling for cover image style is desktop first, then mobile adjustments */
+/* Cover image style */
 html {
     scroll-behavior: smooth;
-    /* Enables smooth scrolling for anchor links */
 }
 
 .cover-image-container {
     width: 100%;
     height: 90vh;
-    /* Makes the container 90% of the viewport height. */
     overflow: hidden;
     margin-bottom: 4em;
-    /* Space below the cover image */
     position: relative;
-    /* Needed to position text overlay and gradient absolutely within this container */
 }
 
-/* New: Gradient overlay using a pseudo-element */
 .cover-image-container::before {
     content: "";
     position: absolute;
@@ -36,134 +30,65 @@ html {
             rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0) 30%,
             rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0) 100%);
     z-index: 1;
-    /* Sits above the image, but below the text overlay */
 }
 
 .cover-image-container img {
     width: 100%;
     height: 100%;
-    /* Make image fill the container's height */
     object-fit: cover;
-    /* Ensures the image covers the area, might crop */
     display: block;
-    /* Removes extra space below the image */
 }
 
 .cover-text-overlay {
     position: absolute;
     top: 50%;
     left: 5%;
-    /* Position the left edge 5% from the container's left edge */
     transform: translateY(-50%);
-    /* Only apply vertical centering */
     color: var(--global-text-color);
-    /* Text color */
     text-align: left;
     z-index: 2;
-    /* Ensures text is above the image AND the gradient overlay */
     padding: 20px;
-    /* Optional: adds some space around the text */
     width: 40%;
-    /* Adjust as needed, e.g., 50% or 60% */
-    /* Optional: constrain width of text block */
     max-width: 800px;
-    /* Keeps text block from becoming too wide on large screens */
-    /* Optional: max width for very wide screens */
     box-sizing: border-box;
-    /* Ensures padding is included in the width calculation */
 }
 
 .cover-text-overlay h1 {
     font-size: 2.5em;
     margin-bottom: 0.8em;
     color: var(--custom-color-1);
-    text-shadow: 1px 1px 3px rgba(var(--custom-color-4-r),
-            var(--custom-color-4-g),
-            var(--custom-color-4-b), 0.7);
+    text-shadow: 1px 1px 3px rgba(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0.7);
 }
 
 .cover-text-overlay p {
     font-size: 1.2em;
     color: var(--custom-color-3);
-    text-shadow: 1px 1px 2px rgba(var(--custom-color-4-r),
-            var(--custom-color-4-g),
-            var(--custom-color-4-b), 0.7);
+    text-shadow: 1px 1px 2px rgba(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0.7);
 }
 
 .cover-text-overlay .btn {
     display: inline-block;
-    /* To allow margin-top */
     margin-top: 1em;
-    /* Space above the button */
     font-size: 1.2em;
 }
 
-/* Mobile adjustments for Cover Text Overlay */
-@include breakpoint(max-width $medium) {
-    .cover-image-container {
-        height: 80vh;
-    }
-
-    .cover-text-overlay {
-        width: 95%;
-        /* Make the overlay wider on small screens */
-        left: 2.5%;
-        padding-left: 5px;
-        /* Reduce padding slightly */
-    }
-
-    .cover-text-overlay h1 {
-        font-size: 1.8em;
-        /* Reduce heading font size */
-        margin-bottom: 0.4em;
-    }
-
-    .cover-text-overlay p {
-        font-size: 1em;
-        /* Reduce paragraph font size */
-        margin-bottom: 0.8em;
-    }
-
-    .cover-text-overlay .btn {
-        font-size: 1em;
-        /* Reduce button font size */
-        padding: 0.6em 1.2em;
-        /* Optionally adjust button padding */
-        margin-top: 0.8em;
-    }
-}
-
-/* End of cover image style ================================================= */
-
-
-/* Feature Section Wrapper ================================================== */
-
-/* Styling here is mobile-first, then desktop adjustments */
+/* Feature section styling */
 .custom-feature-section {
-    margin-bottom: 1em;
+    margin: 0 auto 1em;
     padding: 1em;
-    /* Provides spacing from screen edges */
     width: 100%;
-    /* Full width on mobile, padding handles insets */
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* Base Feature Item Styling */
 .custom-feature__item {
     display: flex;
     flex-direction: column;
-    /* Mobile: vertical layout */
     border: none;
     border-radius: 30px;
     overflow: hidden;
-    background-color: rgba(var(--custom-color-2-r),
-            var(--custom-color-2-g),
-            var(--custom-color-2-b), 0.1);
+    background-color: rgba(var(--custom-color-2-r), var(--custom-color-2-g), var(--custom-color-2-b), 0.1);
     margin-bottom: 0;
 }
 
-/* Image Wrapper Styling */
 .custom-feature__image-wrapper {
     width: 100%;
     flex-shrink: 0;
@@ -171,20 +96,14 @@ html {
     box-sizing: border-box;
 }
 
-/* Background for 'first container style' (default type) in light mode */
 .custom-feature__item.custom-feature__item--layout-desktop-row {
-    background-color: rgba(var(--custom-color-2-r),
-            var(--custom-color-2-g),
-            var(--custom-color-2-b),
-            0);
+    background-color: rgba(var(--custom-color-2-r), var(--custom-color-2-g), var(--custom-color-2-b), 0);
 }
 
-/* Specific padding for the image wrapper */
 .custom-feature__item.custom-feature__item--layout-desktop-row .custom-feature__image-wrapper {
     padding: 2em;
 }
 
-/* Base Image Styling */
 .custom-feature__image {
     display: block;
     object-fit: cover;
@@ -192,24 +111,20 @@ html {
     height: auto;
 }
 
-/* Image Shape Modifier: Round */
 .custom-feature__image--shape-round {
     max-height: 300px;
     max-width: 300px;
     border-radius: 50%;
     aspect-ratio: 1 / 1;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
-/* Image Shape Modifier: Rectangular with Rounded Corners */
 .custom-feature__image--shape-rect {
     border-radius: 0;
     max-height: 400px;
     aspect-ratio: 2 / 1;
 }
 
-/* Description Wrapper Styling */
 .custom-feature__description-wrapper {
     padding: 1.5em;
     display: flex;
@@ -220,8 +135,7 @@ html {
 }
 
 .custom-feature__description-wrapper h3 {
-    margin-top: 0;
-    margin-bottom: 0.4em;
+    margin: 0 0 0.4em;
     font-size: 1.5em;
     color: var(--custom-color-1);
 }
@@ -230,11 +144,10 @@ html {
     margin-bottom: 1em;
 }
 
-/* Common Button Styling */
+/* Button styling - combined selectors */
 .custom-feature__description-wrapper a.btn.btn--primary,
 .cover-text-overlay a.btn.btn--primary {
-    margin-top: 1em;
-    margin-right: 10px;
+    margin: 1em 10px 0 0;
     align-self: center;
     background-color: var(--custom-color-1);
     color: var(--custom-color-4);
@@ -252,8 +165,36 @@ html {
     color: var(--global-black) !important;
 }
 
-/* Desktop View Adjustments */
-@include breakpoint($medium) {
+/* Responsive styles */
+@media (max-width: 767px) {
+    .cover-image-container {
+        height: 80vh;
+    }
+
+    .cover-text-overlay {
+        width: 95%;
+        left: 2.5%;
+        padding-left: 5px;
+    }
+
+    .cover-text-overlay h1 {
+        font-size: 1.8em;
+        margin-bottom: 0.4em;
+    }
+
+    .cover-text-overlay p {
+        font-size: 1em;
+        margin-bottom: 0.8em;
+    }
+
+    .cover-text-overlay .btn {
+        font-size: 1em;
+        padding: 0.6em 1.2em;
+        margin-top: 0.8em;
+    }
+}
+
+@media (min-width: 768px) {
     .custom-feature-section {
         width: 90%;
         max-width: 1200px;
@@ -266,16 +207,13 @@ html {
 
     .custom-feature__item--layout-desktop-row .custom-feature__image-wrapper {
         width: 40%;
-        padding: 2em;
         display: flex;
         justify-content: center;
         align-items: center;
-        box-sizing: border-box;
     }
 
     .custom-feature__item--layout-desktop-row .custom-feature__image--shape-round {
-        margin-left: 0;
-        margin-right: 0;
+        margin: 0;
     }
 
     .custom-feature__description-wrapper {
@@ -288,31 +226,19 @@ html {
     }
 }
 
-/* End of Feature Item Styling ============================================== */
-
-
-/* Dark Mode mods =========================================================== */
+/* Dark mode styles */
 html[data-theme="dark"] .custom-feature__item {
-    background-color: rgba(var(--custom-color-3-r),
-            var(--custom-color-3-g),
-            var(--custom-color-3-b), 0.5);
+    background-color: rgba(var(--custom-color-3-r), var(--custom-color-3-g), var(--custom-color-3-b), 0.5);
 }
 
 html[data-theme="dark"] .custom-feature__item.custom-feature__item--layout-desktop-row {
-    background-color: rgba(var(--custom-color-3-r),
-            var(--custom-color-3-g),
-            var(--custom-color-3-b), 0);
+    background-color: rgba(var(--custom-color-3-r), var(--custom-color-3-g), var(--custom-color-3-b), 0);
 }
 
 html[data-theme="dark"] .custom-feature__description-wrapper h3 {
     color: var(--custom-color-2);
 }
 
-html[data-theme="dark"] .custom-feature__description-wrapper p {
-    color: var(--global-text-color);
-}
-
-/* Dark Mode for Cover Image Overlay */
 html[data-theme="dark"] .cover-image-container::before {
     background:
         linear-gradient(to right,
@@ -333,18 +259,12 @@ html[data-theme="dark"] .cover-text-overlay {
 
 html[data-theme="dark"] .cover-text-overlay h1 {
     color: var(--custom-color-2);
-    text-shadow: 1px 1px 3px rgba(var(--custom-color-3-r),
-            var(--custom-color-3-g),
-            var(--custom-color-3-b),
-            0.7);
+    text-shadow: 1px 1px 3px rgba(var(--custom-color-3-r), var(--custom-color-3-g), var(--custom-color-3-b), 0.7);
 }
 
 html[data-theme="dark"] .cover-text-overlay p {
     color: var(--custom-color-4);
-    text-shadow: 1px 1px 2px rgba(var(--custom-color-3-r),
-            var(--custom-color-3-g),
-            var(--custom-color-3-b),
-            0.7);
+    text-shadow: 1px 1px 2px rgba(var(--custom-color-3-r), var(--custom-color-3-g), var(--custom-color-3-b), 0.7);
 }
 
 html[data-theme="dark"] body .custom-feature__description-wrapper a.btn.btn--primary,
@@ -360,5 +280,3 @@ html[data-theme="dark"] body .cover-text-overlay a.btn.btn--primary:hover {
     border-color: var(--custom-color-1);
     color: var(--custom-color-4) !important;
 }
-
-/* End of dark mode mods ==================================================== */
