@@ -227,7 +227,8 @@
         color: var(--global-black);
         cursor: pointer;
         margin-left: 0.5rem;
-        display: none; /* Hide by default - js will show it when needed */
+        display: none;
+        /* Hide by default - js will show it when needed */
     }
 
     /* Visible Links */
@@ -288,6 +289,8 @@
 
     /* Hidden Links */
     .hidden-links {
+        display: none;
+        /* Hidden by default */
         position: absolute;
         top: 100%;
         right: 0;
@@ -297,9 +300,7 @@
         border-radius: $border-radius;
         background: var(--global-bg-color);
         box-shadow: 0 0 10px rgba(#000, 0.25);
-        z-index: 5;
-
-        /* Keep any existing styling for hidden-links */
+        z-index: 100;
     }
 }
 
@@ -364,16 +365,13 @@ html[data-theme="dark"] .greedy-nav__toggle .navicon::after {
         display: flex !important;
         align-items: center;
         justify-content: center;
-        /* Add this line */
         opacity: 1 !important;
         visibility: visible !important;
         transition: none !important;
         cursor: pointer;
         order: 3;
         min-height: 40px;
-        /* Add this line */
         width: 40px;
-        /* Add this line */
     }
 
     /* Make the visible-links a flex container */
@@ -409,40 +407,71 @@ html[data-theme="dark"] .greedy-nav__toggle .navicon::after {
     /* Style the hidden links dropdown */
     .greedy-nav .hidden-links {
         display: none;
+        /* Hidden by default */
         position: absolute;
         top: 100%;
         right: 0;
         width: 200px;
         margin-top: 15px;
-        padding: 10px;
+        padding: 5px;
         border: 1px solid var(--global-border-color);
-        border-radius: 4px;
+        border-radius: $border-radius;
         background: var(--global-bg-color);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0 10px rgba(#000, 0.25);
         z-index: 100;
-        /* Increase z-index to ensure it's on top */
-        overflow: visible;
-        /* Ensure content isn't cut off */   }
 
-    /* Important: Fix the selector to properly show dropdown when checkbox is checked */
-    .nav-items-container input#nav-toggle:checked~.hidden-links {
+        /* Add back the triangular indicators from original design */
+        &:before {
+            content: "";
+            position: absolute;
+            top: -11px;
+            right: 10px;
+            width: 0;
+            border-style: solid;
+            border-width: 0 10px 10px;
+            border-color: var(--global-border-color) transparent;
+            display: block;
+            z-index: 0;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            width: 0;
+            border-style: solid;
+            border-width: 0 10px 10px;
+            border-color: var(--global-bg-color) transparent;
+            display: block;
+            z-index: 1;
+        }
+
+        /* Style the links themselves to match original */
+        a {
+            margin: 0;
+            padding: 10px 20px;
+            font-size: $type-size-5;
+
+            &:hover {
+                color: var(--global-masthead-link-color-hover);
+                background: var(--global-border-color);
+            }
+        }
+
+        li {
+            display: block;
+            border-bottom: 1px solid var(--global-border-color);
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+    /* Show dropdown when checkbox is checked - IMPORTANT! */
+    #nav-toggle:checked~.hidden-links {
         display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        z-index: 50;
-    }
-
-    /* Style the links in hamburger menu */
-    .greedy-nav .hidden-links a {
-        padding: 8px 10px;
-        display: block;
-        width: 100%;
-        text-align: left;
-        border-bottom: 1px solid var(--global-border-color);
-    }
-
-    .greedy-nav .hidden-links li:last-child a {
-        border-bottom: none;
     }
 
     /* This will show a highlight when the checkbox is checked - for debugging */
