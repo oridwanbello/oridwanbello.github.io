@@ -7,13 +7,23 @@
     background: var(--global-bg-color);
     height: fit-content;
     top: 0;
-    width: 100%;
+    width: 95%;
+    /* Mobile width (95%) */
+    margin: 0 auto;
+    /* Center it horizontally */
+    left: 0;
+    right: 0;
 
     -webkit-animation: intro 0.3s both;
     animation: intro 0.3s both;
     -webkit-animation-delay: 0.15s;
     animation-delay: 0.15s;
     z-index: 20;
+
+    @include breakpoint($medium) {
+        width: 90%;
+        /* Desktop width (90%) */
+    }
 
     &::after {
         content: "";
