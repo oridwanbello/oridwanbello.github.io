@@ -203,39 +203,35 @@
     }
 
     .visible-links {
-        display: flex;
-        width: 100%;
-        align-items: center;
+        display: table;
 
         li {
-            display: inline-block;
+            display: table-cell;
             vertical-align: middle;
 
             &:first-child {
                 font-weight: bold;
                 text-wrap: wrap;
-                margin-right: auto !important;
-                /* Force push everything else to right */
-                flex-grow: 1;
-                /* Take available space */
 
                 a {
                     margin-left: 0;
                 }
             }
 
-            &:not(:first-child) {
-                margin-left: 1rem !important;
-                /* Increase spacing between nav items */
-                text-align: right;
-                /* Align text to right */
-            }
-
             &:last-child {
                 a {
-                    margin-right: 0.5rem !important;
-                    /* Ensure last item has right margin */
+                    margin-right: 0;
                 }
+            }
+        }
+
+
+        #theme-toggle {
+            a {
+                width: 25px;
+                display: flex;
+                justify-content: center;
+                cursor: pointer;
             }
         }
 
