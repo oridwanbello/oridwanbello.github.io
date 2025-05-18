@@ -316,12 +316,25 @@ html[data-theme="dark"] .greedy-nav__toggle .navicon::after {
     background: var(--custom-color-4);
 }
 
+.nav-toggle-checkbox {
+    display: none !important;
+    /* Using !important to override any potential specificity issues */
+}
+
 /* Update the mobile styles section */
 @media (max-width: 768px) {
 
-    /* Hide the checkbox */
+    /* Hide the checkbox but make it accessible */
     .nav-toggle-checkbox {
-        display: none;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
     }
 
     /* Force hamburger icon to always show on mobile with no flash */
@@ -331,16 +344,33 @@ html[data-theme="dark"] .greedy-nav__toggle .navicon::after {
         visibility: visible !important;
         transition: none !important;
         cursor: pointer;
+        order: 3;
+        /* Make sure it appears after the theme toggle */
+    }
+
+    /* Make the visible-links a flex container */
+    .nav-items-container {
+        display: flex;
+        align-items: center;
     }
 
     /* On mobile, hide regular nav items except theme toggle */
+    .greedy-nav .visible-links {
+        flex: 1;
+        /* Take available space */
+        justify-content: flex-end;
+        /* Push items to the right */
+    }
+
     .greedy-nav .visible-links li:not(#theme-toggle) {
         display: none !important;
     }
 
-    /* Keep theme toggle visible */
+    /* Keep theme toggle visible and positioned correctly */
     .greedy-nav .visible-links #theme-toggle {
         display: flex !important;
+        margin-right: 10px;
+        /* Space between toggle and hamburger */
     }
 
     /* Site title/logo */
@@ -365,9 +395,9 @@ html[data-theme="dark"] .greedy-nav__toggle .navicon::after {
         z-index: 5;
     }
 
-    /* Show the dropdown when checkbox is checked */
-    .nav-toggle-checkbox:checked~.hidden-links {
-        display: block;
+    /* Important: Fix the selector to properly show dropdown when checkbox is checked */
+    #nav-toggle:checked~.hidden-links {
+        display: block !important;
     }
 
     /* Style the links in hamburger menu */
