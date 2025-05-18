@@ -36,7 +36,7 @@
         margin: 0 auto;
         /* Center the inner content */
 
-        @include breakpoint($medium) {
+        @include breakpoint($large) {
             width: 90%;
             /* Desktop width (90%) */
         }
