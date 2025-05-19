@@ -240,7 +240,7 @@
 
                 @media (max-width: 767px) {
                     position: absolute;
-                    right: 0px; /* Spacing between hamburger button and theme toggle on mobile */
+                    right: -25px; /* Spacing between hamburger button and theme toggle on mobile */
                     top: 50%;
                     transform: translateY(-50%);
                 }
