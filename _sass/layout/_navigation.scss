@@ -176,9 +176,6 @@
     position: relative;
     min-width: 250px;
     background: var(--global-bg-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
     a {
         display: block;
@@ -206,95 +203,35 @@
     }
 
     .visible-links {
-
-        /* Desktop view - table display */
-        @media (min-width: 768px) {
-            display: table;
-            width: 100%;
-        }
-
-        /* Mobile view - flexbox layout */
-        @media (max-width: 767px) {
-            display: flex;
-            width: 100%;
-            justify-content: flex-start;
-            align-items: center;
-        }
+        display: table;
 
         li {
-
-            /* Desktop view - table-cell display */
-            @media (min-width: 768px) {
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            /* Mobile view - inline-block display */
-            @media (max-width: 767px) {
-                display: inline-block;
-                vertical-align: middle;
-            }
+            display: table-cell;
+            vertical-align: middle;
 
             &:first-child {
                 font-weight: bold;
                 text-wrap: wrap;
-
-                /* Push other items right on mobile */
-                @media (max-width: 767px) {
-                    margin-right: auto;
-                }
 
                 a {
                     margin-left: 0;
                 }
             }
 
-            /* Hide all items except logo and theme toggle on mobile */
-            &:not(:first-child):not(#theme-toggle) {
-                @media (max-width: 767px) {
-                    display: none;
-                }
-            }
-
-            /* Theme toggle handling */
-            &#theme-toggle {
-                display: inline-block !important;
-
-                /* Desktop specific styling */
-                @media (min-width: 768px) {
-                    display: table-cell !important;
-                    vertical-align: middle;
-
-                    a {
-                        width: 25px;
-                        display: flex;
-                        justify-content: center;
-                        cursor: pointer;
-                    }
-                }
-
-                /* Mobile specific positioning */
-                @media (max-width: 767px) {
-                    position: absolute;
-                    right: 50px;
-                    /* Space for hamburger button */
-                    top: 50%;
-                    transform: translateY(-50%);
-
-                    a {
-                        width: 25px;
-                        display: flex;
-                        justify-content: center;
-                        cursor: pointer;
-                    }
-                }
-            }
-
-            /* Last item handling (except theme toggle) */
-            &:last-child:not(#theme-toggle) {
+            &:last-child {
                 a {
                     margin-right: 0;
                 }
+            }
+        }
+
+
+        #theme-toggle {
+            a {
+                width: 25px;
+                display: flex;
+                justify-content: center;
+                cursor: pointer;
             }
         }
 
@@ -337,11 +274,6 @@
         background: var(--global-bg-color);
         box-shadow: 0 0 10px rgba(#000, 0.25);
 
-        /* Hide theme toggle in dropdown menu */
-        #theme-toggle {
-            display: none;
-        }
-
         a {
             margin: 0;
             padding: 10px 20px;
@@ -350,7 +282,6 @@
             &:hover {
                 color: var(--global-masthead-link-color-hover);
                 background: transparent;
-                text-decoration: underline;
             }
         }
 
