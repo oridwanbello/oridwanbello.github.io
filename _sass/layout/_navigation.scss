@@ -236,13 +236,11 @@
             &#theme-toggle {
                 display: inline-block !important;
                 /* Ensure always visible */
-                margin-right: 50px;
-                /* Space for hamburger button */
+                margin-right: 50px; /* Space between hamburger button and theme toggle on Desktop */
 
                 @media (max-width: 767px) {
                     position: absolute;
-                    right: 50px;
-                    /* Position to left of hamburger */
+                    right: 10px; /* Spacing between hamburger button and theme toggle on mobile */
                     top: 50%;
                     transform: translateY(-50%);
                 }
