@@ -176,6 +176,9 @@
     position: relative;
     min-width: 250px;
     background: var(--global-bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     a {
         display: block;
@@ -200,21 +203,17 @@
         color: var(--global-black);
         cursor: pointer;
         z-index: 100;
-
-        /* Hide button on desktop by default */
-        @media (min-width: 768px) {
-            display: none;
-        }
     }
 
     .visible-links {
 
-        /* Desktop view - table display from _navigation.scss */
+        /* Desktop view - table display */
         @media (min-width: 768px) {
             display: table;
+            width: 100%;
         }
 
-        /* Mobile view - flexbox layout from _navigation_bor_keep_hamburger.scss */
+        /* Mobile view - flexbox layout */
         @media (max-width: 767px) {
             display: flex;
             width: 100%;
@@ -224,13 +223,13 @@
 
         li {
 
-            /* Desktop view - table-cell display from _navigation.scss */
+            /* Desktop view - table-cell display */
             @media (min-width: 768px) {
                 display: table-cell;
                 vertical-align: middle;
             }
 
-            /* Mobile view - inline-block display from _navigation_bor_keep_hamburger.scss */
+            /* Mobile view - inline-block display */
             @media (max-width: 767px) {
                 display: inline-block;
                 vertical-align: middle;
@@ -257,20 +256,15 @@
                 }
             }
 
-            /* Last item handling (except theme toggle) */
-            &:last-child:not(#theme-toggle) {
-                a {
-                    margin-right: 0;
-                }
-            }
-
             /* Theme toggle handling */
             &#theme-toggle {
                 display: inline-block !important;
-                /* Always visible */
 
                 /* Desktop specific styling */
                 @media (min-width: 768px) {
+                    display: table-cell !important;
+                    vertical-align: middle;
+
                     a {
                         width: 25px;
                         display: flex;
@@ -282,7 +276,8 @@
                 /* Mobile specific positioning */
                 @media (max-width: 767px) {
                     position: absolute;
-                    right: -20px;
+                    right: 50px;
+                    /* Space for hamburger button */
                     top: 50%;
                     transform: translateY(-50%);
 
@@ -292,6 +287,13 @@
                         justify-content: center;
                         cursor: pointer;
                     }
+                }
+            }
+
+            /* Last item handling (except theme toggle) */
+            &:last-child:not(#theme-toggle) {
+                a {
+                    margin-right: 0;
                 }
             }
         }
@@ -348,9 +350,7 @@
             &:hover {
                 color: var(--global-masthead-link-color-hover);
                 background: transparent;
-                /* No background on hover */
                 text-decoration: underline;
-                /* Add underline for better visibility */
             }
         }
 
