@@ -249,7 +249,7 @@
                 display: inline-block !important;
 
                 /* Hide items when they would overflow (handled by JS) */
-                .greedy-nav.has-overflow &:nth-last-child(-n+2):not(:first-child):not(#theme-toggle) {
+                .greedy-nav.has-overflow &:not(:first-child):not(#theme-toggle) {
                     display: none !important;
                 }
             }
@@ -269,7 +269,7 @@
 
                 @media (max-width: 767px) {
                     position: absolute;
-                    right: 25px;
+                    right: 40px;
                     /* Adjusted spacing for mobile */
                     top: 50%;
                     transform: translateY(-50%);
@@ -344,7 +344,7 @@
             &:hover {
                 color: var(--global-masthead-link-color-hover);
                 background: transparent;
-                /* FIXED: Remove background color on hover */
+                /* Remove background color on hover */
                 text-decoration: underline;
                 /* Add underline for better hover indication */
             }
