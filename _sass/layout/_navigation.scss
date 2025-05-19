@@ -269,10 +269,12 @@
 
                 @media (max-width: 767px) {
                     position: absolute;
-                    right: -20px;
-                    /* Spacing between hamburger button and theme toggle on mobile */
+                    right: 25px;
+                    /* Adjusted spacing for mobile */
                     top: 50%;
                     transform: translateY(-50%);
+                    z-index: 101;
+                    /* Keep above other elements */
                 }
 
                 a {
@@ -342,7 +344,9 @@
             &:hover {
                 color: var(--global-masthead-link-color-hover);
                 background: transparent;
+                /* FIXED: Remove background color on hover */
                 text-decoration: underline;
+                /* Add underline for better hover indication */
             }
         }
 
