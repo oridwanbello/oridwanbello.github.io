@@ -203,32 +203,60 @@
         color: var(--global-black);
         cursor: pointer;
         z-index: 100;
+
+        @media (min-width: 768px) {
+            /* Show hamburger button only when necessary on desktop */
+            display: none;
+
+            /* Make it visible if we need overflow handling */
+            .greedy-nav.has-overflow & {
+                display: block;
+            }
+        }
     }
 
     .visible-links {
         display: flex;
         width: 100%;
-        justify-content: flex-start;
+        justify-content: flex-end;
+        /* Align items to the right */
         align-items: center;
+        flex-wrap: nowrap;
+        /* Prevent wrapping for overflow detection */
+        overflow: visible;
+        /* Show all items by default */
 
         li {
             display: inline-block;
             vertical-align: middle;
+            white-space: nowrap;
+            /* Prevent text wrapping */
 
             &:first-child {
                 font-weight: bold;
                 text-wrap: wrap;
                 margin-right: auto;
                 /* Push everything else to the right */
+                margin-left: 0;
 
                 a {
                     margin-left: 0;
                 }
             }
 
-            // Hide all navigation items except logo and theme toggle on mobile
-            &:not(:first-child):not(#theme-toggle) {
-                @media (max-width: 767px) {
+            /* On desktop, show all items by default */
+            @media (min-width: 768px) {
+                display: inline-block !important;
+
+                /* Hide items when they would overflow (handled by JS) */
+                .greedy-nav.has-overflow &:nth-last-child(-n+2):not(:first-child):not(#theme-toggle) {
+                    display: none !important;
+                }
+            }
+
+            /* On mobile, hide all except logo and theme toggle */
+            @media (max-width: 767px) {
+                &:not(:first-child):not(#theme-toggle) {
                     display: none;
                 }
             }
@@ -236,11 +264,13 @@
             &#theme-toggle {
                 display: inline-block !important;
                 /* Ensure always visible */
-                margin-right: 50px; /* Space between hamburger button and theme toggle on Desktop */
+                margin-right: 50px;
+                /* Space between hamburger button and theme toggle on Desktop */
 
                 @media (max-width: 767px) {
                     position: absolute;
-                    right: -20px; /* Spacing between hamburger button and theme toggle on mobile */
+                    right: -20px;
+                    /* Spacing between hamburger button and theme toggle on mobile */
                     top: 50%;
                     transform: translateY(-50%);
                 }
@@ -312,6 +342,7 @@
             &:hover {
                 color: var(--global-masthead-link-color-hover);
                 background: transparent;
+                text-decoration: underline;
             }
         }
 
@@ -347,6 +378,15 @@
 
             &:last-child {
                 border-bottom: none;
+            }
+        }
+
+        /* On desktop, only show when button is clicked */
+        @media (min-width: 768px) {
+            display: none;
+
+            .greedy-nav.open & {
+                display: block;
             }
         }
     }
