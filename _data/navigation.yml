@@ -20,8 +20,8 @@ main:
     - title: "CV"
       url: /cv/
 
-    - title: "Strengths"
-      url: /strengths/
+    # - title: "Strengths"
+    #   url: /strengths/
 
     # - title: "Publications"
     #   url: /publications/
