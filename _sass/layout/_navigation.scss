@@ -344,13 +344,23 @@
             color: var(--global-masthead-link-color-hover) !important;
             font-weight: bold !important;
             background-color: transparent !important;
-            border-bottom: none !important; /* Remove the old border-bottom */
-            margin-bottom: 0 !important; /* Reset margin */
-            &:before { /* Ensure underline is visible and full width for active item */
-                transform: scaleX(1);
+            border-bottom: none !important;
+            /* Remove the old border-bottom */
+            margin-bottom: 0 !important;
+            /* Reset margin */
+
+            &:before {
+                /* Ensure underline is visible and full width for active item */
+                /* Add these properties to ensure the underline displays correctly */
+                display: block !important;
+                opacity: 1 !important;
+                -webkit-transform: scaleX(1) !important;
+                -ms-transform: scaleX(1) !important;
+                transform: scaleX(1) !important;
             }
         }
     }
+
     /* Logo styling (first child) */
     li:first-child a {
 
