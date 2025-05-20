@@ -29,7 +29,7 @@
 
     &__inner-wrap {
         @include clearfix;
-        padding: 0.5em -0.1em 0.5em 0.3em;
+        padding: 0.5em 0em 0.5em 0.5em;
         font-family: $sans-serif-narrow;
         width: 95%;
         /* Mobile width (95%) */
@@ -91,6 +91,49 @@
     @include breakpoint(max-width $medium) {
         max-height: 20px;
         transform: translateY(-4px);
+    }
+
+    // Prevent hover effects entirely for the logo
+    &:hover,
+    a:hover & {
+        text-decoration: none;
+        box-shadow: none;
+        border-bottom: none;
+        background: transparent;
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
+// For light-dark mode toggle
+.theme-toggle {
+
+    &:hover,
+    a:hover & {
+        // Keep hover color but remove underline
+        box-shadow: none;
+        border-bottom: none;
+        text-decoration: none;
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
+// For active/current menu items
+.masthead__menu-item {
+
+    &.active,
+    &.current {
+
+        // Keep highlighted but without underline
+        &::after,
+        &:hover::after {
+            display: none;
+        }
     }
 }
 
