@@ -322,34 +322,53 @@
     }
 }
 
+/* Custom active link highlighting without underlines */
 .greedy-nav .visible-links {
+    li {
 
-    // Disable underline for site logo
-    li:first-child a:before,
-    li:first-child a:hover:before {
-        display: none !important;
-        transform: scaleX(0) !important;
+        &.active,
+        &.current,
+        &[aria-current="page"],
+        &.selected {
+            a {
+                color: var(--global-masthead-link-color-hover) !important;
+                font-weight: bold !important;
+                background-color: transparent !important;
+
+                &:before {
+                    display: none !important;
+                    transform: scaleX(0) !important;
+                    opacity: 0 !important;
+                }
+            }
+        }
     }
 
-    // Disable underline for theme toggle but keep color change
-    #theme-toggle a:before,
-    #theme-toggle a:hover:before {
-        display: none !important;
-        transform: scaleX(0) !important;
+    /* Target first child (logo) to prevent all hover effects */
+    li:first-child a {
+
+        &:hover,
+        &:focus,
+        &:active {
+            &:before {
+                display: none !important;
+                transform: scaleX(0) !important;
+            }
+        }
     }
 
-    // Keep active menu items highlighted but remove underline
-    li.active a,
-    li.current a {
-        color: var(--global-masthead-link-color-hover) !important;
-        font-weight: bold !important;
-    }
-    .active a:before,
-    .current a:before,
-    .active a:hover:before,
-    .current a:hover:before {
-        display: none !important;
-        transform: scaleX(0) !important;
+    /* Target theme toggle specifically */
+    li#theme-toggle a,
+    a#theme-toggle {
+
+        &:hover,
+        &:focus,
+        &:active {
+            &:before {
+                display: none !important;
+                transform: scaleX(0) !important;
+            }
+        }
     }
 }
 
