@@ -16,6 +16,7 @@
   @media (orientation: portrait) {
     margin-top: 0em;
     padding-top: 0em;
+    margin-top: -$masthead-height;
   }
 
   @media screen and (min-width: $sidebar-screen-min-width) {
