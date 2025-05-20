@@ -371,10 +371,9 @@
         &:focus,
         &:active {
             color: var(--global-masthead-link-color-hover) !important;
-            border-bottom: none !important; /* Remove underline border */
 
             &:before {
-                display: none !important;
+                display: block !important;
                 transform: scaleX(0) !important;
             }
         }
