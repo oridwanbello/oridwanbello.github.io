@@ -319,6 +319,22 @@
 /* Custom navigation styling */
 .greedy-nav .visible-links {
 
+    /* Regular navigation items - keep hover styles on focus/active */
+    li:not(:first-child):not(#theme-toggle):not(.active):not(.current):not([aria-current="page"]):not(.selected) a {
+
+        &:focus,
+        &:active {
+            color: var(--global-masthead-link-color-hover) !important;
+
+            &:before {
+                -webkit-transform: scaleX(1) !important;
+                -ms-transform: scaleX(1) !important;
+                transform: scaleX(1) !important;
+                display: block !important;
+            }
+        }
+    }
+
     /* Active/current menu item highlighting */
     li.active,
     li.current,
@@ -399,7 +415,7 @@ html[data-theme="dark"] .greedy-nav button .navicon::after {
 /* Mobile styles */
 @media (max-width: 767px) {
 
-    /* Default link styling for mobile */
+    /* Default link styling for mobile - don't show hover effects */
     .greedy-nav .visible-links li:not(#theme-toggle):not(.active):not(.current):not([aria-current="page"]):not(.selected) a {
 
         &,
