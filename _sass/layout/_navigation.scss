@@ -370,9 +370,8 @@
         &:hover,
         &:focus,
         &:active {
-            /* Allow color change but no underline */
             color: var(--global-masthead-link-color-hover) !important;
-            border-bottom: none !important;
+            border-bottom: none !important; /* Remove underline border */
 
             &:before {
                 display: none !important;
