@@ -372,21 +372,31 @@
     /* Theme toggle styling */
     li#theme-toggle a,
     a#theme-toggle {
-        // Default state for the theme toggle link (applies to all states unless overridden by hover-capable media query)
-        // This ensures no sticky styles on touch devices like iPads.
+        /* Base properties that apply to all devices */
         color: var(--global-masthead-link-color) !important;
-        background: none !important; // Just in case
+        background: none !important;
+        -webkit-tap-highlight-color: transparent !important; /* Prevent default tap highlight on mobile */
 
+        /* Remove underline completely for all states on all devices */
         &:before {
             display: none !important;
             transform: scaleX(0) !important;
         }
 
-        // Apply visual hover effects (color change and underline) only for devices that can truly hover (e.g., mouse users)
+        /* Reset all interactive states on touch devices */
+        &:hover, &:focus, &:active {
+            color: var(--global-masthead-link-color) !important;
+
+            &:before {
+                display: none !important;
+                transform: scaleX(0) !important;
+            }
+        }
+
+        /* Only apply hover effects on devices that truly support hovering */
         @media (hover: hover) and (pointer: fine) {
             &:hover {
                 color: var(--global-masthead-link-color-hover) !important;
-
                 &:before {
                     display: block !important; // Show underline
                     transform: scaleX(1) !important; // Full width
