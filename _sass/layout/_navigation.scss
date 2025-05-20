@@ -326,6 +326,7 @@
 .greedy-nav .visible-links {
     li {
 
+        /* Active/current menu item highlighting */
         &.active,
         &.current,
         &[aria-current="page"],
@@ -334,6 +335,8 @@
                 color: var(--global-masthead-link-color-hover) !important;
                 font-weight: bold !important;
                 background-color: transparent !important;
+                border-bottom: 3px solid var(--global-masthead-link-color-hover) !important;
+                margin-bottom: -3px !important;
 
                 &:before {
                     display: none !important;
@@ -350,6 +353,9 @@
         &:hover,
         &:focus,
         &:active {
+            color: inherit !important;
+            border-bottom: none !important;
+
             &:before {
                 display: none !important;
                 transform: scaleX(0) !important;
@@ -364,6 +370,10 @@
         &:hover,
         &:focus,
         &:active {
+            /* Allow color change but no underline */
+            color: var(--global-masthead-link-color-hover) !important;
+            border-bottom: none !important;
+
             &:before {
                 display: none !important;
                 transform: scaleX(0) !important;
@@ -384,8 +394,10 @@ html[data-theme="dark"] .greedy-nav button .navicon::after {
     background: var(--custom-color-4) !important;
 }
 
+/* Mobile styles - preserve active item highlighting */
 @media (max-width: 767px) {
 
+    /* Disable underlines on hover for all items */
     .greedy-nav .visible-links a:before,
     .greedy-nav .visible-links a:hover:before,
     .greedy-nav .visible-links a:focus:before,
@@ -394,12 +406,24 @@ html[data-theme="dark"] .greedy-nav button .navicon::after {
         content: none !important;
     }
 
+    /* Default link color */
     .greedy-nav .visible-links a,
     .greedy-nav .visible-links a:hover,
     .greedy-nav .visible-links a:focus,
     .greedy-nav .visible-links a:active {
         color: var(--global-masthead-link-color) !important;
         background: none !important;
+    }
+
+    /* Active/current item styling for mobile */
+    .greedy-nav .visible-links li.active a,
+    .greedy-nav .visible-links li.current a,
+    .greedy-nav .visible-links li[aria-current="page"] a,
+    .greedy-nav .visible-links li.selected a {
+        color: var(--global-masthead-link-color-hover) !important;
+        font-weight: bold !important;
+        border-bottom: 3px solid var(--global-masthead-link-color-hover) !important;
+        margin-bottom: -3px !important;
     }
 }
 
