@@ -336,37 +336,28 @@
     }
 
     /* Active/current menu item highlighting */
-    li.active a,
-    li.current a,
-    li[aria-current="page"] a,
-    li.selected a,
-    /* Add additional states that might be used by your framework */
-    li[class*="current"] a,
-    li[class*="active"] a {
-        /* Make styling more persistent with higher specificity */
-        color: var(--global-masthead-link-color-hover) !important;
-        font-weight: bold !important;
-        background-color: transparent !important;
-        border-bottom: none !important;
-        margin-bottom: 0 !important;
+    li.active,
+    li.current,
+    li[aria-current="page"],
+    li.selected {
+        a {
+            color: var(--global-masthead-link-color-hover) !important;
+            font-weight: bold !important;
+            background-color: transparent !important;
+            border-bottom: none !important;
+            /* Remove the old border-bottom */
+            margin-bottom: 0 !important;
+            /* Reset margin */
 
-        &:before {
-            content: "" !important;
-            position: absolute !important;
-            left: 0 !important;
-            bottom: 0 !important;
-            height: 4px !important;
-            background: var(--global-border-color) !important;
-            width: 100% !important;
-            display: block !important;
-            opacity: 1 !important;
-            visibility: visible !important;
-            -webkit-transform: scaleX(1) !important;
-            -ms-transform: scaleX(1) !important;
-            transform: scaleX(1) !important;
-            -webkit-transition: none !important;
-            /* Prevent transition from affecting state */
-            transition: none !important;
+            &:before {
+                /* Ensure underline is visible and full width for active item */
+                /* Add these properties to ensure the underline displays correctly */
+                display: block !important;
+                opacity: 1 !important;
+                -webkit-transform: scaleX(1) !important;
+                -ms-transform: scaleX(1) !important;
+                transform: scaleX(1) !important;
+            }
         }
     }
 
