@@ -263,3 +263,14 @@
     }
   }
 }
+
+/* No sidebar case - archive takes full width */
+.no-author-profile {
+    .archive {
+        @include breakpoint($large) {
+            @include span(12 of 12);
+            padding-left: 1.5em;
+            padding-right: 1.5em;
+        }
+    }
+}
