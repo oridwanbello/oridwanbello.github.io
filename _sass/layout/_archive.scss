@@ -12,9 +12,9 @@
 
     // Only apply the 90% width and max-width for desktop screens
     @include breakpoint($large) {
-        width: 90%;
+        width: 95%;
         max-width: 1440px;
-        margin: 0 auto;
+        margin: 0 3em;
     }
 }
 
