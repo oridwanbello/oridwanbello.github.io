@@ -344,11 +344,9 @@
             color: var(--global-masthead-link-color-hover) !important;
             font-weight: bold !important;
             background-color: transparent !important;
-            border-bottom: 3px solid var(--global-masthead-link-color-hover) !important;
-            margin-bottom: -3px !important;
-
-            &:before,
-            &:hover:before { /* Ensure underline is visible and full width for active item, even on hover */
+            border-bottom: none !important; /* Remove the old border-bottom */
+            margin-bottom: 0 !important; /* Reset margin */
+            &:before { /* Ensure underline is visible and full width for active item */
                 display: block !important;
                 opacity: 1 !important;
                 transform: scaleX(1) !important;
@@ -409,29 +407,6 @@ html[data-theme="dark"] .greedy-nav button .navicon,
 html[data-theme="dark"] .greedy-nav button .navicon::before,
 html[data-theme="dark"] .greedy-nav button .navicon::after {
     background: var(--custom-color-4) !important;
-}
-
-/* Mobile styles */
-@media (max-width: 767px) {
-
-    /* Default link styling for mobile - don't show hover effects */
-    .greedy-nav .visible-links li:not(#theme-toggle):not(.active):not(.current):not([aria-current="page"]):not(.selected) a {
-
-        &,
-        &:hover,
-        &:focus,
-        &:active {
-            color: var(--global-masthead-link-color) !important;
-            background: none !important;
-        }
-
-        &:before,
-        &:hover:before,
-        &:focus:before,
-        &:active:before {
-            display: none !important;
-        }
-    }
 }
 
 /*
