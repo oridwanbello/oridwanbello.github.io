@@ -433,6 +433,29 @@ html[data-theme="dark"] .greedy-nav button .navicon::after {
             display: none !important;
         }
     }
+
+    /* Specific override for theme toggle on mobile */
+    .greedy-nav .visible-links li#theme-toggle a,
+    .greedy-nav .visible-links a#theme-toggle {
+
+        /* Force remove any hover effects on mobile after tapping */
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            color: var(--global-masthead-link-color) !important;
+
+            &:before {
+                display: none !important;
+                transform: scaleX(0) !important;
+            }
+        }
+
+        /* Only apply hover effect during actual hover, never after tap */
+        &:hover {
+            color: var(--global-masthead-link-color-hover) !important;
+        }
+    }
 }
 
 /*
