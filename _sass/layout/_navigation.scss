@@ -225,7 +225,6 @@
             }
         }
 
-
         #theme-toggle {
             a {
                 width: 25px;
@@ -251,14 +250,12 @@
                 -webkit-transform: scaleX(0);
                 -ms-transform: scaleX(0);
                 transform: scaleX(0);
-                /* hide*/
             }
 
             &:hover:before {
                 -webkit-transform: scaleX(1);
                 -ms-transform: scaleX(1);
                 transform: scaleX(1);
-                /* reveal*/
             }
         }
     }
@@ -285,29 +282,26 @@
             }
         }
 
-        &:before {
+        &:before,
+        &:after {
             content: "";
             position: absolute;
-            top: -11px;
             right: 10px;
             width: 0;
             border-style: solid;
             border-width: 0 10px 10px;
-            border-color: var(--global-border-color) transparent;
             display: block;
+        }
+
+        &:before {
+            top: -11px;
+            border-color: var(--global-border-color) transparent;
             z-index: 0;
         }
 
         &:after {
-            content: "";
-            position: absolute;
             top: -10px;
-            right: 10px;
-            width: 0;
-            border-style: solid;
-            border-width: 0 10px 10px;
             border-color: var(--global-bg-color) transparent;
-            display: block;
             z-index: 1;
         }
 
@@ -322,32 +316,31 @@
     }
 }
 
-/* Custom active link highlighting without underlines */
+/* Custom navigation styling */
 .greedy-nav .visible-links {
-    li {
 
-        /* Active/current menu item highlighting */
-        &.active,
-        &.current,
-        &[aria-current="page"],
-        &.selected {
-            a {
-                color: var(--global-masthead-link-color-hover) !important;
-                font-weight: bold !important;
-                background-color: transparent !important;
-                border-bottom: 3px solid var(--global-masthead-link-color-hover) !important;
-                margin-bottom: -3px !important;
+    /* Active/current menu item highlighting */
+    li.active,
+    li.current,
+    li[aria-current="page"],
+    li.selected {
+        a {
+            color: var(--global-masthead-link-color-hover) !important;
+            font-weight: bold !important;
+            background-color: transparent !important;
+            border-bottom: 3px solid var(--global-masthead-link-color-hover) !important;
+            margin-bottom: -3px !important;
 
-                &:before {
-                    display: none !important;
-                    transform: scaleX(0) !important;
-                    opacity: 0 !important;
-                }
+            &:before,
+            &:hover:before {
+                display: none !important;
+                transform: scaleX(0) !important;
+                opacity: 0 !important;
             }
         }
     }
 
-    /* Target first child (logo) to prevent all hover effects */
+    /* Logo styling (first child) */
     li:first-child a {
 
         &:hover,
@@ -363,10 +356,11 @@
         }
     }
 
+    /* Theme toggle styling */
     li#theme-toggle a,
     a#theme-toggle {
 
-        /* Only apply effects on hover, not on focus/active */
+        /* Only show effects on hover */
         &:hover {
             color: var(--global-masthead-link-color-hover) !important;
 
@@ -376,11 +370,10 @@
             }
         }
 
-        /* Reset for focus/active states to prevent hover effect persisting after click */
+        /* Reset on focus/active when not hovering */
         &:focus:not(:hover),
         &:active:not(:hover) {
             color: var(--global-masthead-link-color) !important;
-            /* Reset to default color */
 
             &:before {
                 display: none !important;
@@ -390,6 +383,7 @@
     }
 }
 
+/* Hamburger menu icon */
 .greedy-nav button .navicon,
 .greedy-nav button .navicon::before,
 .greedy-nav button .navicon::after {
@@ -402,36 +396,26 @@ html[data-theme="dark"] .greedy-nav button .navicon::after {
     background: var(--custom-color-4) !important;
 }
 
-/* Mobile styles - preserve active item highlighting */
+/* Mobile styles */
 @media (max-width: 767px) {
 
-    /* Disable underlines on hover for all items */
-    .greedy-nav .visible-links a:before,
-    .greedy-nav .visible-links a:hover:before,
-    .greedy-nav .visible-links a:focus:before,
-    .greedy-nav .visible-links a:active:before {
-        display: none !important;
-        content: none !important;
-    }
+    /* Default link styling for mobile */
+    .greedy-nav .visible-links li:not(#theme-toggle):not(.active):not(.current):not([aria-current="page"]):not(.selected) a {
 
-    /* Default link color */
-    .greedy-nav .visible-links a,
-    .greedy-nav .visible-links a:hover,
-    .greedy-nav .visible-links a:focus,
-    .greedy-nav .visible-links a:active {
-        color: var(--global-masthead-link-color) !important;
-        background: none !important;
-    }
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            color: var(--global-masthead-link-color) !important;
+            background: none !important;
+        }
 
-    /* Active/current item styling for mobile */
-    .greedy-nav .visible-links li.active a,
-    .greedy-nav .visible-links li.current a,
-    .greedy-nav .visible-links li[aria-current="page"] a,
-    .greedy-nav .visible-links li.selected a {
-        color: var(--global-masthead-link-color-hover) !important;
-        font-weight: bold !important;
-        border-bottom: 3px solid var(--global-masthead-link-color-hover) !important;
-        margin-bottom: -3px !important;
+        &:before,
+        &:hover:before,
+        &:focus:before,
+        &:active:before {
+            display: none !important;
+        }
     }
 }
 
@@ -537,10 +521,8 @@ html[data-theme="dark"] .greedy-nav button .navicon::after {
         }
     }
 
-    >li:last-child {
-        a {
-            border-bottom: none;
-        }
+    >li:last-child a {
+        border-bottom: none;
     }
 
     li ul>li a {
