@@ -369,32 +369,6 @@
         }
     }
 
-    // /* Theme toggle styling */
-    // li#theme-toggle a,
-    // a#theme-toggle {
-    //     // Default state for the theme toggle link (applies to all states unless overridden by hover-capable media query)
-    //     // This ensures no sticky styles on touch devices like iPads.
-    //     color: var(--global-masthead-link-color) !important;
-    //     background: none !important; // Just in case
-
-    //     &:before {
-    //         display: none !important;
-    //         transform: scaleX(0) !important;
-    //     }
-
-    //     // Apply visual hover effects (color change and underline) only for devices that can truly hover (e.g., mouse users)
-    //     @media (hover: hover) and (pointer: fine) {
-    //         &:hover {
-    //             color: var(--global-masthead-link-color-hover) !important;
-
-    //             &:before {
-    //                 display: block !important; // Show underline
-    //                 transform: scaleX(1) !important; // Full width
-    //             }
-    //         }
-    //     }
-    // }
-
     li#theme-toggle a,
     a#theme-toggle {
         /* Base properties */
