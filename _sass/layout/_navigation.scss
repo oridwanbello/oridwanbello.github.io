@@ -412,106 +412,102 @@ html[data-theme="dark"] .greedy-nav button .navicon::after {
     background: var(--custom-color-4) !important;
 }
 
-// /* Mobile styles */
-// @media (max-width: 767px) {
-
-//     /* Default link styling for mobile - don't show hover effects */
-//     .greedy-nav .visible-links li:not(#theme-toggle):not(.active):not(.current):not([aria-current="page"]):not(.selected) a {
-
-//         &,
-//         &:hover,
-//         &:focus,
-//         &:active {
-//             color: var(--global-masthead-link-color) !important;
-//             background: none !important;
-//         }
-
-//         &:before,
-//         &:hover:before,
-//         &:focus:before,
-//         &:active:before {
-//             display: none !important;
-//         }
-//     }
-
-//     /* Specific override for theme toggle on mobile */
-//     .greedy-nav .visible-links li#theme-toggle a,
-//     .greedy-nav .visible-links a#theme-toggle {
-
-//         /* Force remove any hover effects on mobile after tapping */
-//         &,
-//         &:hover,
-//         &:focus,
-//         &:active {
-//             color: var(--global-masthead-link-color) !important;
-
-//             &:before {
-//                 display: none !important;
-//                 transform: scaleX(0) !important;
-//             }
-//         }
-
-//         /* Only apply hover effect during actual hover, never after tap */
-//         &:hover {
-//             color: var(--global-masthead-link-color-hover) !important;
-//         }
-//     }
-// }
-
-
 /* Mobile styles */
 @media (max-width: 767px) {
 
-    /* More aggressive theme toggle fix for mobile */
-    #theme-toggle,
-    li#theme-toggle,
-    .greedy-nav .visible-links #theme-toggle,
-    .greedy-nav .visible-links li#theme-toggle {
+    /* Default link styling for mobile - don't show hover effects */
+    .greedy-nav .visible-links li:not(#theme-toggle):not(.active):not(.current):not([aria-current="page"]):not(.selected) a {
 
-        a,
-        a:link,
-        a:visited,
-        a:hover,
-        a:active,
-        a:focus {
+        &,
+        &:hover,
+        &:focus,
+        &:active {
             color: var(--global-masthead-link-color) !important;
-            background: transparent !important;
-            border-bottom: none !important;
+            background: none !important;
+        }
 
-            &:before {
-                content: none !important;
-                display: none !important;
-                opacity: 0 !important;
-                visibility: hidden !important;
-                transform: scaleX(0) !important;
-                height: 0 !important;
-                width: 0 !important;
-            }
+        &:before,
+        &:hover:before,
+        &:focus:before,
+        &:active:before {
+            display: none !important;
         }
     }
 
-    /* Remove all hover/focus animations for the theme toggle */
-    #theme-toggle a:before,
-    li#theme-toggle a:before,
-    .greedy-nav .visible-links #theme-toggle a:before,
-    .greedy-nav .visible-links li#theme-toggle a:before {
-        content: none !important;
-        display: none !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        position: absolute !important;
-        height: 0 !important;
-        width: 0 !important;
-    }
+    /* Specific override for theme toggle on mobile */
+    .greedy-nav .visible-links li#theme-toggle a,
+    .greedy-nav .visible-links a#theme-toggle {
 
-    /* Disable transitions on mobile for theme toggle */
-    #theme-toggle a,
-    li#theme-toggle a {
-        -webkit-transition: none !important;
-        transition: none !important;
-        -webkit-tap-highlight-color: transparent !important;
+        /* Force remove any hover effects on mobile after tapping */
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            color: var(--global-masthead-link-color) !important;
+
+            &:before {
+                display: none !important;
+                transform: scaleX(0) !important;
+                opacity: 0 !important;
+            }
+        }
     }
 }
+
+
+// /* Mobile styles */
+// @media (max-width: 767px) {
+
+//     /* More aggressive theme toggle fix for mobile */
+//     #theme-toggle,
+//     li#theme-toggle,
+//     .greedy-nav .visible-links #theme-toggle,
+//     .greedy-nav .visible-links li#theme-toggle {
+
+//         a,
+//         a:link,
+//         a:visited,
+//         a:hover,
+//         a:active,
+//         a:focus {
+//             color: var(--global-masthead-link-color) !important;
+//             background: transparent !important;
+//             border-bottom: none !important;
+
+//             &:before {
+//                 content: none !important;
+//                 display: none !important;
+//                 opacity: 0 !important;
+//                 visibility: hidden !important;
+//                 transform: scaleX(0) !important;
+//                 height: 0 !important;
+//                 width: 0 !important;
+//             }
+//         }
+//     }
+
+//     /* Remove all hover/focus animations for the theme toggle */
+//     #theme-toggle a:before,
+//     li#theme-toggle a:before,
+//     .greedy-nav .visible-links #theme-toggle a:before,
+//     .greedy-nav .visible-links li#theme-toggle a:before {
+//         content: none !important;
+//         display: none !important;
+//         opacity: 0 !important;
+//         visibility: hidden !important;
+//         position: absolute !important;
+//         height: 0 !important;
+//         width: 0 !important;
+//     }
+
+//     /* Disable transitions on mobile for theme toggle */
+//     #theme-toggle a,
+//     li#theme-toggle a {
+//         -webkit-transition: none !important;
+//         transition: none !important;
+//         -webkit-tap-highlight-color: transparent !important;
+//     }
+// }
 
 
 
