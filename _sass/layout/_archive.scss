@@ -4,9 +4,9 @@
 
 /* Add this at the top of your file */
 #main {
-    width: 95%;
+    width: 90%;
     max-width: 1440px;
-    margin: 0 auto;
+    margin: 0 20px;
 
     @include clearfix();
 }
