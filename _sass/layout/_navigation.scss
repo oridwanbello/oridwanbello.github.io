@@ -347,9 +347,7 @@
             border-bottom: none !important; /* Remove the old border-bottom */
             margin-bottom: 0 !important; /* Reset margin */
             &:before { /* Ensure underline is visible and full width for active item */
-                display: block !important;
-                opacity: 1 !important;
-                transform: scaleX(1) !important;
+                transform: scaleX(1);
             }
         }
     }
