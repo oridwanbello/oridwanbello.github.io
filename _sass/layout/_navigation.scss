@@ -322,6 +322,32 @@
     }
 }
 
+.greedy-nav .visible-links {
+
+    // Disable underline for site logo
+    li:first-child a:before,
+    li:first-child a:hover:before {
+        display: none !important;
+        transform: scaleX(0) !important;
+    }
+
+    // Disable underline for theme toggle but keep color change
+    #theme-toggle a:before,
+    #theme-toggle a:hover:before {
+        display: none !important;
+        transform: scaleX(0) !important;
+    }
+
+    // Keep active menu items highlighted but remove underline
+    .active a:before,
+    .current a:before,
+    .active a:hover:before,
+    .current a:hover:before {
+        display: none !important;
+        transform: scaleX(0) !important;
+    }
+}
+
 .greedy-nav button .navicon,
 .greedy-nav button .navicon::before,
 .greedy-nav button .navicon::after {
