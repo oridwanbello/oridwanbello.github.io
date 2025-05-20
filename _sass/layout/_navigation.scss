@@ -375,27 +375,31 @@
     /* Theme toggle styling */
     li#theme-toggle a,
     a#theme-toggle {
+        // Default state for the theme toggle link (applies to all states unless overridden by hover-capable media query)
+        // This ensures no sticky styles on touch devices like iPads.
+        color: var(--global-masthead-link-color) !important;
+        background: none !important; // Just in case
 
-        /* Only show effects on hover */
-        &:hover {
-            color: var(--global-masthead-link-color-hover) !important;
-
-            &:before {
-                display: block !important;
-                transform: scaleX(1) !important;
-            }
+        &:before {
+            display: none !important;
+            transform: scaleX(0) !important;
+            opacity: 0 !important; // Ensure fully transparent and scaled down
         }
 
-        /* Reset on focus/active when not hovering */
-        &:focus:not(:hover),
-        &:active:not(:hover) {
-            color: var(--global-masthead-link-color) !important;
+        // Apply visual hover effects (color change and underline) only for devices that can truly hover (e.g., mouse users)
+        @media (hover: hover) and (pointer: fine) {
+            &:hover {
+                color: var(--global-masthead-link-color-hover) !important;
 
-            &:before {
-                display: none !important;
-                transform: scaleX(0) !important;
+                &:before {
+                    display: block !important; // Show underline
+                    transform: scaleX(1) !important; // Full width
+                    opacity: 1 !important; // Ensure visible
+                }
             }
         }
+        // For touch devices, :focus and :active will use the default styles defined above,
+        // preventing the hover color/underline from sticking.
     }
 }
 
@@ -431,25 +435,6 @@ html[data-theme="dark"] .greedy-nav button .navicon::after {
         &:focus:before,
         &:active:before {
             display: none !important;
-        }
-    }
-
-    /* Specific override for theme toggle on mobile */
-    .greedy-nav .visible-links li#theme-toggle a,
-    .greedy-nav .visible-links a#theme-toggle {
-
-        /* Force remove any hover effects on mobile after tapping */
-        &,
-        &:hover,
-        &:focus,
-        &:active {
-            color: var(--global-masthead-link-color) !important;
-
-            &:before {
-                display: none !important;
-                transform: scaleX(0) !important;
-                opacity: 0 !important;
-            }
         }
     }
 }
