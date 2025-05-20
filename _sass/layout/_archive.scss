@@ -10,6 +10,13 @@
 
     @include clearfix();
 
+    // Add this new section for iPad-sized devices
+    @include breakpoint($medium) {
+        width: 99%;
+        margin: 0.5em auto;
+        padding: 0em 0.8em;
+    }
+
     @include breakpoint($large) {
     // For desktop screens
         width: 95%;

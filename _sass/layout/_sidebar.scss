@@ -17,6 +17,7 @@
     margin-top: 0em;
     padding-top: 0em;
     @include breakpoint($medium) {
+      //  It only affects desktop in landscape mode = Almost never in use.
       margin-top: -$masthead-height;
     }
   }
