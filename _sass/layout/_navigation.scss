@@ -348,14 +348,13 @@
             margin-bottom: -3px !important;
 
             &:before,
-            &:hover:before {
-                display: none !important;
-                transform: scaleX(0) !important;
-                opacity: 0 !important;
+            &:hover:before { /* Ensure underline is visible and full width for active item, even on hover */
+                display: block !important;
+                opacity: 1 !important;
+                transform: scaleX(1) !important;
             }
         }
     }
-
     /* Logo styling (first child) */
     li:first-child a {
 
@@ -383,7 +382,6 @@
         &:before {
             display: none !important;
             transform: scaleX(0) !important;
-            opacity: 0 !important; // Ensure fully transparent and scaled down
         }
 
         // Apply visual hover effects (color change and underline) only for devices that can truly hover (e.g., mouse users)
@@ -394,12 +392,9 @@
                 &:before {
                     display: block !important; // Show underline
                     transform: scaleX(1) !important; // Full width
-                    opacity: 1 !important; // Ensure visible
                 }
             }
         }
-        // For touch devices, :focus and :active will use the default styles defined above,
-        // preventing the hover color/underline from sticking.
     }
 }
 
@@ -438,72 +433,6 @@ html[data-theme="dark"] .greedy-nav button .navicon::after {
         }
     }
 }
-
-
-// /* Mobile styles */
-// @media (max-width: 767px) {
-
-//     /* More aggressive theme toggle fix for mobile */
-//     #theme-toggle,
-//     li#theme-toggle,
-//     .greedy-nav .visible-links #theme-toggle,
-//     .greedy-nav .visible-links li#theme-toggle {
-
-//         a,
-//         a:link,
-//         a:visited,
-//         a:hover,
-//         a:active,
-//         a:focus {
-//             color: var(--global-masthead-link-color) !important;
-//             background: transparent !important;
-//             border-bottom: none !important;
-
-//             &:before {
-//                 content: none !important;
-//                 display: none !important;
-//                 opacity: 0 !important;
-//                 visibility: hidden !important;
-//                 transform: scaleX(0) !important;
-//                 height: 0 !important;
-//                 width: 0 !important;
-//             }
-//         }
-//     }
-
-//     /* Remove all hover/focus animations for the theme toggle */
-//     #theme-toggle a:before,
-//     li#theme-toggle a:before,
-//     .greedy-nav .visible-links #theme-toggle a:before,
-//     .greedy-nav .visible-links li#theme-toggle a:before {
-//         content: none !important;
-//         display: none !important;
-//         opacity: 0 !important;
-//         visibility: hidden !important;
-//         position: absolute !important;
-//         height: 0 !important;
-//         width: 0 !important;
-//     }
-
-//     /* Disable transitions on mobile for theme toggle */
-//     #theme-toggle a,
-//     li#theme-toggle a {
-//         -webkit-transition: none !important;
-//         transition: none !important;
-//         -webkit-tap-highlight-color: transparent !important;
-//     }
-// }
-
-
-
-
-
-
-
-
-
-
-
 
 /*
      Navigation list
