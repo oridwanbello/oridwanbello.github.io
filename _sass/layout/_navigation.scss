@@ -339,6 +339,11 @@
     }
 
     // Keep active menu items highlighted but remove underline
+    li.active a,
+    li.current a {
+        color: var(--global-masthead-link-color-hover) !important;
+        font-weight: bold !important;
+    }
     .active a:before,
     .current a:before,
     .active a:hover:before,

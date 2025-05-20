@@ -37,7 +37,7 @@
         /* Center the inner content */
 
         @include breakpoint($medium) {
-            /* Desktop mods (90%) */
+            /* Desktop mods */
             width: 90%;
             padding: 0.5em 1.1em;
         }
