@@ -363,18 +363,28 @@
         }
     }
 
-    /* Target theme toggle specifically */
     li#theme-toggle a,
     a#theme-toggle {
 
-        &:hover,
-        &:focus,
-        &:active {
+        /* Only apply effects on hover, not on focus/active */
+        &:hover {
             color: var(--global-masthead-link-color-hover) !important;
 
             &:before {
                 display: block !important;
                 transform: scaleX(1) !important;
+            }
+        }
+
+        /* Reset for focus/active states to prevent hover effect persisting after click */
+        &:focus:not(:hover),
+        &:active:not(:hover) {
+            color: var(--global-masthead-link-color) !important;
+            /* Reset to default color */
+
+            &:before {
+                display: none !important;
+                transform: scaleX(0) !important;
             }
         }
     }
