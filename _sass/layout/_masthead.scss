@@ -92,50 +92,59 @@
         max-height: 20px;
         transform: translateY(-4px);
     }
-
-    // Prevent hover effects entirely for the logo
-    &:hover,
-    a:hover & {
-        text-decoration: none;
-        box-shadow: none;
-        border-bottom: none;
-        background: transparent;
-
-        &::after {
-            display: none;
-        }
-    }
 }
 
-// For light-dark mode toggle
-.theme-toggle {
+// More specific selector for site logo
+.masthead a .site-logo,
+.masthead a.site-logo {
 
     &:hover,
-    a:hover & {
-        // Keep hover color but remove underline
-        box-shadow: none;
-        border-bottom: none;
-        text-decoration: none;
+    &:focus,
+    &:active {
+        text-decoration: none !important;
+        border-bottom: none !important;
+        box-shadow: none !important;
 
-        &::after {
-            display: none;
-        }
-    }
-}
-
-// For active/current menu items
-.masthead__menu-item {
-
-    &.active,
-    &.current {
-
-        // Keep highlighted but without underline
         &::after,
-        &:hover::after {
-            display: none;
+        &::before {
+            display: none !important;
+            opacity: 0 !important;
+            content: none !important;
         }
     }
 }
+
+// More specific selector for theme toggle
+.masthead a.theme-toggle {
+    &:hover {
+        // Keep color change but force no underline
+        text-decoration: none !important;
+        border-bottom: none !important;
+        box-shadow: none !important;
+
+        &::after,
+        &::before {
+            display: none !important;
+            opacity: 0 !important;
+        }
+    }
+}
+
+// More specific for active/current menu items
+.masthead__menu-item.active,
+.masthead__menu-item.current {
+    border-bottom: none !important;
+    box-shadow: none !important;
+
+    &::after,
+    &::before,
+    &:hover::after,
+    &:hover::before {
+        display: none !important;
+        opacity: 0 !important;
+    }
+}
+
 
 .site-logo--light {
     display: inline-block;
