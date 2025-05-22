@@ -75,12 +75,14 @@
     font-size: 1em;
     padding: 0.6em 1.2em;
     margin-top: 0.8em;
-    text-decoration: none;
+    text-decoration: none !important;
     border-radius: 4px;
     font-weight: normal;
     border: 1px solid;
     cursor: pointer;
     text-align: center;
+    align-self: flex-start;
+    width: auto;
 }
 
 .btn--primary {
@@ -124,13 +126,13 @@ html[data-theme="dark"] .file-header h1 {
 
 html[data-theme="dark"] .btn--primary {
     background-color: var(--custom-color-2);
-    color: var(--global-black);
+    color: var(--global-black) !important;
     border-color: var(--custom-color-2);
 }
 
 html[data-theme="dark"] .btn--primary:hover {
     background-color: var(--custom-color-1);
-    color: var(--custom-color-4);
+    color: var(--custom-color-4) !important;
     border-color: var(--custom-color-1);
 }
 /* End of File Viewer Styles -------------------------------------------------*/

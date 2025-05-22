@@ -33,15 +33,13 @@ layout: default
                     </div>
                 </div>
 
-                <div class="btn btn--primary">
-                    <a
-                        href="{{ page.file_url }}"
-                        class="download-button"
-                        download="{{ page.download_filename | default: (page.file_url | split: '/' | last) }}"
-                    >
-                        Download
-                    </a>
-                </div>
+                <a
+                    href="{{ page.file_url }}"
+                    class="btn btn--primary"
+                    download="{{ page.download_filename | default: (page.file_url | split: '/' | last) }}"
+                >
+                    Download
+                </a>
             </div>
         {% else %}
             <p style="text-align: center">
