@@ -1,48 +1,97 @@
 ---
 layout: compress
 ---
-
 {% include base_path %}
 
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
+<html
+    lang="{{ site.locale | slice: 0,2 }}"
+    class="no-js"
+    {% if site.site_theme == 'dark' %}
+        data-theme="dark"
+    {% endif %}
+>
+    <head>
+        {% include head.html %}
+        {% include head/custom.html %}
 
-    <!-- Favicon and Manifest declarations -->
-    <link rel="apple-touch-icon" href="{{ site.baseurl }}/images/favicon.png?v=2">
-    <link rel="icon" type="image/png" href="{{ site.baseurl }}/images/favicon.png?v=2">
-    <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/images/favicon.svg?v=2">
-    <link rel="mask-icon" href="{{ site.baseurl }}/images/favicon.svg?v=2" color="#00784a">
+        <!-- Favicon and Manifest declarations -->
+        <link
+            rel="apple-touch-icon"
+            href="{{ site.baseurl }}/images/favicon.png?v=2"
+        >
+        <link
+            rel="icon"
+            type="image/png"
+            href="{{ site.baseurl }}/images/favicon.png?v=2"
+        >
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="{{ site.baseurl }}/images/favicon.svg?v=2"
+        >
+        <link
+            rel="mask-icon"
+            href="{{ site.baseurl }}/images/favicon.svg?v=2"
+            color="#00784a"
+        >
 
-    <!-- Fallback ICO Icon -->
-    <link rel="shortcut icon" href="{{ site.baseurl }}/images/favicon.ico?v=2">
+        <!-- Fallback ICO Icon -->
+        <link
+            rel="shortcut icon"
+            href="{{ site.baseurl }}/images/favicon.ico?v=2"
+        >
 
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="{{ site.baseurl }}/images/manifest.json?v=2">
+        <!-- Web App Manifest -->
+        <link rel="manifest" href="{{ site.baseurl }}/images/manifest.json?v=2">
 
-    <meta name="msapplication-TileColor" content="#00784a">
-    <meta name="theme-color" content="#00784a">
-    <!---End of Favicon and Manifest declarations-->
+        <meta name="msapplication-TileColor" content="#00784a">
+        <meta name="theme-color" content="#00784a">
+        <!-- -End of Favicon and Manifest declarations -->
 
-  </head>
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+        <meta
+            property="og:title"
+            content="Unlocking the Full Potential of the Immune System"
+        >
+        <meta
+            property="og:description"
+            content="I harness the latest scientific advancements, especially in bioinformatics and machine learning, to develop prophylactic and therapeutic immunotherapies for humans and animals."
+        >
+        <meta property="og:image" content="{{ site.url }}/images/dna_virus.jpg">
 
-  <body>
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+        <meta
+            name="twitter:title"
+            content="Unlocking the Full Potential of the Immune System"
+        >
+        <meta
+            name="twitter:description"
+            content="I harness the latest scientific advancements, especially in bioinformatics and machine learning, to develop prophylactic and therapeutic immunotherapies for humans and animals."
+        >
+        <meta
+            name="twitter:image"
+            content="{{ site.url }}/images/dna_virus.jpg"
+        >
+    </head>
 
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
+    <body>
+        {% include browser-upgrade.html %}
+        {% include masthead.html %}
 
-    {{ content }}
+        {{ content }}
 
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
-    </div>
+        <div class="page__footer">
+            <footer>
+                {% include footer/custom.html %}
+                {% include footer.html %}
+            </footer>
+        </div>
 
-    {% include scripts.html %}
-
-  </body>
+        {% include scripts.html %}
+    </body>
 </html>
