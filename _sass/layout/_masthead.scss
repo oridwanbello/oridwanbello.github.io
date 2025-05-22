@@ -85,7 +85,7 @@
     width: auto;
     vertical-align: middle;
     display: inline-block;
-    transform: translateY(0px);
+    transform: translateY(-1px);
 
     // For screens smaller than medium
     @include breakpoint(max-width $medium) {
