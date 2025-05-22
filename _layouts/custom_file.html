@@ -38,7 +38,6 @@ layout: default
                         href="{{ page.file_url }}"
                         class="btn btn--primary"
                         download="{{ page.download_filename | default: (page.file_url | split: '/' | last) }}"
-                        style="text-decoration: none !important; color: var(--custom-color-4) !important;"
                     >
                         Download
                     </a>

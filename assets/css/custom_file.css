@@ -74,21 +74,23 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 0.5em;
+    margin-top: 1em;
 }
 
 .btn {
     display: inline-block;
     font-size: 1em;
-    padding: 0.6em 1.2em;
+    padding: 0.75em 1.5em;
     margin-top: 0.8em;
     text-decoration: none !important;
-    border-radius: 4px;
+    border-radius: 50px;
+    /* Rounded corners like in custom_default */
     font-weight: normal;
     border: 1px solid;
     cursor: pointer;
     text-align: center;
-    align-self: flex-start;
+    align-self: center;
+    /* Center the button */
     width: auto;
 }
 
@@ -100,8 +102,8 @@
 
 .btn--primary:hover {
     background-color: var(--custom-color-2);
-    color: var(--global-black);
     border-color: var(--custom-color-2);
+    color: var(--global-black) !important;
 }
 
 .file-additional-content {
@@ -131,15 +133,15 @@ html[data-theme="dark"] .file-header h1 {
     color: var(--global-white);
 }
 
-html[data-theme="dark"] .btn--primary {
+html[data-theme="dark"] body .btn--primary {
     background-color: var(--custom-color-2);
-    color: var(--global-black) !important;
     border-color: var(--custom-color-2);
+    color: var(--global-black) !important;
 }
 
-html[data-theme="dark"] .btn--primary:hover {
+html[data-theme="dark"] body .btn--primary:hover {
     background-color: var(--custom-color-1);
-    color: var(--custom-color-4) !important;
     border-color: var(--custom-color-1);
+    color: var(--custom-color-4) !important;
 }
 /* End of File Viewer Styles -------------------------------------------------*/
