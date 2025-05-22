@@ -81,16 +81,16 @@
 // Site log styling ============================================================
 
 .site-logo {
-    max-height: 30px; // Default sizing for larger screens
+    max-height: 40px; // Default sizing for larger screens
     width: auto;
     vertical-align: middle;
     display: inline-block;
-    transform: translateY(-6px);
+    transform: translateY(0px);
 
     // For screens smaller than medium
     @include breakpoint(max-width $medium) {
-        max-height: 20px;
-        transform: translateY(-4px);
+        max-height: 30px;
+        transform: translateY(0px);
     }
 }
 
