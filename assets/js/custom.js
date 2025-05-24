@@ -275,10 +275,30 @@ document.addEventListener('DOMContentLoaded', function () {
                 stopContentAutoplay();
                 if (slides.length <= 1) return;
                 contentAutoplayTimer = setInterval(() => {
-                    const currentIndex = getCurrentSlideIndex();
-                    const nextIndex = (currentIndex + 1) % slides.length;
-                    const targetScrollLeft = getScrollTargetForIndex(nextIndex);
-                    sliderContainer.scrollTo({ left: targetScrollLeft, behavior: 'smooth' });
+                    // Instead of using index-based navigation, move by exactly one item width
+                    const slideWidth = slides[0].offsetWidth;
+                    const gap = parseInt(getComputedStyle(sliderContainer).gap) || 0;
+
+                    // Calculate current and max scroll positions
+                    const currentScrollPos = sliderContainer.scrollLeft;
+                    const maxScrollPos = sliderContainer.scrollWidth - sliderContainer.offsetWidth;
+
+                    // Calculate next scroll position (one item forward)
+                    let nextScrollPos = currentScrollPos + slideWidth + gap;
+
+                    // If we're near the end, loop back to the beginning
+                    if (nextScrollPos >= maxScrollPos - 10) {
+                        nextScrollPos = 0;
+                    }
+
+                    // Scroll to the calculated position
+                    sliderContainer.scrollTo({
+                        left: nextScrollPos,
+                        behavior: 'smooth'
+                    });
+
+                    // After scrolling, update UI indicators
+                    setTimeout(updateUI, 500);
                 }, AUTOPLAY_INTERVAL);
             }
 
