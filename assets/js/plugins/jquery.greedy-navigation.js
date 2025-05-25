@@ -8,46 +8,42 @@
 var $nav = $('#site-nav');
 var $btn = $('#site-nav button');
 var $vlinks = $('#site-nav .visible-links');
-var $vlinks_persist_tail = $vlinks.children("*.persist.tail");
 var $hlinks = $('#site-nav .hidden-links');
 
 var breaks = [];
 
 function updateNav() {
+  // Get elements that should persist
+  var $logoItem = $vlinks.find('.masthead__menu-item--lg');
+  var $themeToggle = $vlinks.find('#theme-toggle');
+  var $regularItems = $vlinks.children(':not(.masthead__menu-item--lg):not(#theme-toggle)');
 
-  var availableSpace = $btn.hasClass('hidden') ? $nav.width() : $nav.width() - $btn.width() - 30;
+  // Calculate available space
+  var availableSpace = $nav.width() - $logoItem.outerWidth(true) - $themeToggle.outerWidth(true) - $btn.outerWidth(true) - 30;
 
   // The visible list is overflowing the nav
-  if ($vlinks.width() > availableSpace) {
+  if ($regularItems.outerWidth(true) > availableSpace) {
+    // Show the dropdown btn
+    $btn.removeClass("hidden");
 
-    while ($vlinks.width() > availableSpace && $vlinks.children("*:not(.persist)").length > 0) {
+    while ($regularItems.outerWidth(true) > availableSpace && $regularItems.length > 0) {
       // Record the width of the list
-      breaks.push($vlinks.width());
+      breaks.push($regularItems.outerWidth(true));
 
       // Move item to the hidden list
-      $vlinks.children("*:not(.persist)").last().prependTo($hlinks);
-
-      availableSpace = $btn.hasClass("hidden") ? $nav.width() : $nav.width() - $btn.width() - 30;
-
-      // Show the dropdown btn
-      $btn.removeClass("hidden");
+      $regularItems.last().prependTo($hlinks);
+      // Update our collection
+      $regularItems = $vlinks.children(':not(.masthead__menu-item--lg):not(#theme-toggle)');
     }
-
-    // The visible list is not overflowing
   } else {
-
-    // There is space for another item in the nav
+    // There is space for more items in the nav
     while (breaks.length > 0 && availableSpace > breaks[breaks.length - 1]) {
-      // Move the item to the visible list
-      if ($vlinks_persist_tail.children().length > 0) {
-        $hlinks.children().first().insertBefore($vlinks_persist_tail);
-      } else {
-        $hlinks.children().first().appendTo($vlinks);
-      }
+      // Move the first item from hidden to visible
+      $hlinks.children().first().appendTo($vlinks);
       breaks.pop();
     }
 
-    // Hide the dropdown btn if hidden list is empty
+    // Hide dropdown btn if hidden list is empty
     if (breaks.length < 1) {
       $btn.addClass('hidden');
       $btn.removeClass('close');
@@ -58,7 +54,7 @@ function updateNav() {
   // Keep counter updated
   $btn.attr("count", breaks.length);
 
-  // update masthead height and the body/sidebar top padding
+  // Update masthead height and body padding
   var mastheadHeight = $('.masthead').height();
   $('body').css('padding-top', mastheadHeight + 'px');
   if ($(".author__urls-wrapper button").is(":visible")) {
@@ -66,19 +62,17 @@ function updateNav() {
   } else {
     $(".sidebar").css("padding-top", mastheadHeight + "px");
   }
-
 }
 
 // Window listeners
-
-$(window).on('resize', function () {
+$(window).on('resize', function() {
   updateNav();
 });
-screen.orientation.addEventListener("change", function () {
+screen.orientation.addEventListener("change", function() {
   updateNav();
 });
 
-$btn.on('click', function () {
+$btn.on('click', function() {
   $hlinks.toggleClass('hidden');
   $(this).toggleClass('close');
 });

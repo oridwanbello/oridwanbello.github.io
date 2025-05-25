@@ -176,6 +176,9 @@
     position: relative;
     min-width: 250px;
     background: var(--global-bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     a {
         display: block;
@@ -190,9 +193,8 @@
     }
 
     button {
-        position: absolute;
+        position: relative;
         height: 2.5rem;
-        right: 0;
         padding: 0 0.5rem;
         border: 0;
         outline: none;
@@ -200,28 +202,31 @@
         color: var(--global-black);
         cursor: pointer;
         z-index: 100;
+        order: 3; /* Put hamburger menu last */
     }
 
     .visible-links {
-        display: table;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-left: auto; /* Push items to the right */
+        order: 2; /* Middle section */
 
         li {
-            display: table-cell;
-            vertical-align: middle;
+            position: relative;
+            display: flex;
+            align-items: center;
 
-            &:first-child {
+            &.masthead__menu-item--lg {
+                margin-right: auto; /* Push this to left */
                 font-weight: bold;
-                text-wrap: wrap;
-
-                a {
-                    margin-left: 0;
-                }
+                order: -1; /* Always first */
+                margin-left: -1rem; /* Adjust spacing */
             }
 
-            &:last-child {
-                a {
-                    margin-right: 0;
-                }
+            &#theme-toggle {
+                order: -1; /* Put it before nav items */
+                margin-right: 0.5rem;
             }
         }
 
