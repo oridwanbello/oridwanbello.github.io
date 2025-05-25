@@ -32,8 +32,8 @@ li {
             rgba(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0) 100%),
         linear-gradient(to top,
             rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 1) 0%,
-            rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0.5) 10%,
-            rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0) 20%,
+            rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0.9) 10%,
+            rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0.1) 20%,
             rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0) 100%);
     z-index: 1;
 }
@@ -818,8 +818,8 @@ html[data-theme="dark"] .hero-image-container::before {
             rgba(var(--global-black-r), var(--global-black-g), var(--global-black-b), 0) 100%),
         linear-gradient(to top,
             rgb(var(--global-black-r), var(--global-black-g), var(--global-black-b), 1) 0%,
-            rgb(var(--global-black-r), var(--global-black-g), var(--global-black-b), 0.5) 10%,
-            rgb(var(--global-black-r), var(--global-black-g), var(--global-black-b), 0) 20%,
+            rgb(var(--global-black-r), var(--global-black-g), var(--global-black-b), 0.9) 10%,
+            rgb(var(--global-black-r), var(--global-black-g), var(--global-black-b), 0.1) 20%,
             rgb(var(--global-black-r), var(--global-black-g), var(--global-black-b), 0) 100%);
 }
 
