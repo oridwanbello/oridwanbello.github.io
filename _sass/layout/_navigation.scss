@@ -6,7 +6,7 @@
    Breadcrumb navigation links
    ========================================================================== */
 
-.breadcrumbs {
+   .breadcrumbs {
     @include container;
     @include clearfix;
     margin-top: 0;
@@ -176,18 +176,6 @@
     position: relative;
     min-width: 250px;
     background: var(--global-bg-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    /* Logo styling */
-    .site-title {
-        margin: 0 1rem 0 0;
-        padding: 0.5rem 0;
-        font-weight: 700;
-        color: var(--global-masthead-link-color);
-        text-decoration: none;
-    }
 
     a {
         display: block;
@@ -202,8 +190,9 @@
     }
 
     button {
-        position: relative;
+        position: absolute;
         height: 2.5rem;
+        right: 0;
         padding: 0 0.5rem;
         border: 0;
         outline: none;
@@ -211,33 +200,28 @@
         color: var(--global-black);
         cursor: pointer;
         z-index: 100;
-        order: 3; /* Put hamburger menu last */
     }
 
     .visible-links {
-        display: flex;
-        flex-grow: 1;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: flex-end;
-        margin: 0;
-        padding: 0;
+        display: table;
 
         li {
-            position: relative;
-            display: flex;
-            align-items: center;
+            display: table-cell;
+            vertical-align: middle;
 
-            &.masthead__menu-item--lg {
-                margin-right: auto; /* Push this to left */
+            &:first-child {
                 font-weight: bold;
-                order: -1; /* Always first */
-                margin-left: -1rem; /* Adjust spacing */
+                text-wrap: wrap;
+
+                a {
+                    margin-left: 0;
+                }
             }
 
-            &#theme-toggle {
-                order: -1; /* Put it before nav items */
-                margin-right: 0.5rem;
+            &:last-child {
+                a {
+                    margin-right: 0;
+                }
             }
         }
 
@@ -247,11 +231,6 @@
                 display: flex;
                 justify-content: center;
                 cursor: pointer;
-
-                /* Always hide the underline for theme toggle */
-                &:before {
-                    display: none !important;
-                }
             }
         }
 
