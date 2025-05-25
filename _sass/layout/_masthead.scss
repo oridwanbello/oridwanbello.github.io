@@ -94,7 +94,7 @@
     @include breakpoint(max-width $medium) {
         max-height: 30px;
         height: 30px; // Set explicit height for mobile
-        margin-right: 7em;
+        margin-right: 6.5em;
     }
 }
 
