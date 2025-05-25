@@ -180,6 +180,15 @@
     justify-content: space-between;
     align-items: center;
 
+    /* Logo styling */
+    .site-title {
+        margin: 0 1rem 0 0;
+        padding: 0.5rem 0;
+        font-weight: 700;
+        color: var(--global-masthead-link-color);
+        text-decoration: none;
+    }
+
     a {
         display: block;
         margin: 0 1rem;
@@ -207,10 +216,12 @@
 
     .visible-links {
         display: flex;
+        flex-grow: 1;
         flex-wrap: nowrap;
         align-items: center;
-        margin-left: auto; /* Push items to the right */
-        order: 2; /* Middle section */
+        justify-content: flex-end;
+        margin: 0;
+        padding: 0;
 
         li {
             position: relative;
@@ -236,6 +247,11 @@
                 display: flex;
                 justify-content: center;
                 cursor: pointer;
+
+                /* Always hide the underline for theme toggle */
+                &:before {
+                    display: none !important;
+                }
             }
         }
 
