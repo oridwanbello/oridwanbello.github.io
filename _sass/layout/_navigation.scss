@@ -204,45 +204,27 @@
 
     .visible-links {
         display: table;
-        width: 100%; /* Ensure the table takes full width for the spacer to work */
-        table-layout: auto; /* Allows content to influence column widths */
 
         li {
             display: table-cell;
             vertical-align: middle;
 
-            // Styling for the site logo item
-            &.site-logo-li {
-                width: auto; /* Shrink to content */
+            &:first-child {
                 font-weight: bold;
-                text-wrap: wrap; /* Consider browser compatibility for text-wrap */
+                text-wrap: wrap;
 
                 a {
                     margin-left: 0;
                 }
             }
 
-            // Spacer cell to push theme toggle and nav items to the right
-            &.masthead__spacer-cell {
-                width: 100%; /* Expands to fill available space */
-            }
-
-            // Theme toggle item
-            &.theme-toggle-li {
-                width: auto; /* Shrink to content */
-            }
-
-            // Regular navigation items
-            &.main-nav-item {
-                width: auto; /* Shrink to content */
-            }
-            // Last main navigation item link (original :last-child a behavior)
-            &.main-nav-item:last-of-type {
+            &:last-child {
                 a {
                     margin-right: 0;
                 }
             }
         }
+
         #theme-toggle {
             a {
                 width: 25px;
@@ -337,12 +319,13 @@
 /* Custom navigation styling */
 .greedy-nav .visible-links {
 
-    /* Regular navigation items (main-nav-item) - keep hover styles on focus/active */
-    li.main-nav-item:not(.active):not(.current):not([aria-current="page"]):not(.selected) a {
+    /* Regular navigation items - keep hover styles on focus/active */
+    li:not(:first-child):not(#theme-toggle):not(.active):not(.current):not([aria-current="page"]):not(.selected) a {
 
         &:focus,
         &:active {
             color: var(--global-masthead-link-color-hover) !important;
+
             &:before {
                 -webkit-transform: scaleX(1) !important;
                 -ms-transform: scaleX(1) !important;
@@ -353,10 +336,10 @@
     }
 
     /* Active/current menu item highlighting */
-    li.main-nav-item.active,
-    li.main-nav-item.current,
-    li.main-nav-item[aria-current="page"],
-    li.main-nav-item.selected {
+    li.active,
+    li.current,
+    li[aria-current="page"],
+    li.selected {
         a {
             color: var(--global-masthead-link-color-hover) !important;
             font-weight: bold !important;
@@ -378,8 +361,8 @@
         }
     }
 
-    /* Logo link specific styling (was li:first-child a) */
-    li.site-logo-li a {
+    /* Logo styling (first child) */
+    li:first-child a {
 
         &:hover,
         &:focus,
@@ -394,8 +377,7 @@
         }
     }
 
-    /* Theme toggle link specific styling (li#theme-toggle a still works due to ID) */
-    li.theme-toggle-li a, /* Added class-based selector for consistency */
+    li#theme-toggle a,
     a#theme-toggle {
         /* Base properties */
         color: var(--global-masthead-link-color) !important;
