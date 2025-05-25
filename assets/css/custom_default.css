@@ -31,8 +31,8 @@ li {
             rgba(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0.1) 50%,
             rgba(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0) 100%),
         linear-gradient(to top,
-            rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0.9) 0%,
-            rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0.1) 30%,
+            rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 1) 0%,
+            rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0.2) 30%,
             rgb(var(--custom-color-4-r), var(--custom-color-4-g), var(--custom-color-4-b), 0) 100%);
     z-index: 1;
 }
