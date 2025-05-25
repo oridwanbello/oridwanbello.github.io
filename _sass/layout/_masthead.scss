@@ -86,7 +86,7 @@
     vertical-align: middle;
     display: inline-block;
     object-fit: contain; // Ensures the logo maintains aspect ratio
-    margin-right: 5em; // Reserve horizontal space (adjust to match your logo width)
+    margin-right: 3em; // Reserve horizontal space (adjust to match your logo width)
     transform: translateZ(0); // Force hardware acceleration
     will-change: transform; // Hint to browser about changes
 
@@ -94,7 +94,7 @@
     @include breakpoint(max-width $medium) {
         max-height: 30px;
         height: 30px; // Set explicit height for mobile
-        margin-right: 5em;
+        margin-right: 3em;
     }
 }
 
