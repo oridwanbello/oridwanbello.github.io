@@ -80,21 +80,21 @@
 
 // Site logo styling ============================================================
 .site-logo {
-    max-height: 35px !important; // Default sizing for larger screens
-    height: 35px !important; // Set explicit height
+    max-height: 35px; // Default sizing for larger screens
+    height: 35px; // Set explicit height
     width: auto;
     vertical-align: middle;
     display: inline-block;
     object-fit: contain; // Ensures the logo maintains aspect ratio
-    margin-right: 3em !important;
+    margin-right: 3em;
     transform: translateZ(0); // Force hardware acceleration
     will-change: transform; // Hint to browser about changes
 
     // For screens smaller than medium
     @include breakpoint(max-width $medium) {
-        max-height: 30px !important;
-        height: 30px !important; // Set explicit height for mobile
-        margin-right: 6.5em !important;
+        max-height: 30px;
+        height: 30px; // Set explicit height for mobile
+        margin-right: 6.5em;
     }
 }
 
