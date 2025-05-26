@@ -513,6 +513,9 @@ exclude:
     - README
     - tmp
     - vendor
+    - ".DS_Store"
+    - "*.ipynb"
+    - "*.py"
 keep_files:
     - .git
     - .svn
