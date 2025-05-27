@@ -91,7 +91,7 @@
     will-change: transform; // Hint to browser about changes
 
     // For larger screens
-    @include breakpoint(min-width 480px) {
+    @include breakpoint(min-width $screen-medium) {
         max-height: 35px;
         height: 35px;
         margin-right: 3em;
