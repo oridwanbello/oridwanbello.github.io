@@ -9,6 +9,8 @@
  */
 
 @import
+    "custom_variables",
+
     "vendor/breakpoint/breakpoint",
 
     "themes",
@@ -41,5 +43,5 @@
     "vendor/font-awesome/brands",
     "vendor/magnific-popup/magnific-popup",
 
-    "custom"
+    "custom_overrides"
 ;
