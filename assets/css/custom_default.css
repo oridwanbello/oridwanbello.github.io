@@ -439,7 +439,7 @@ li {
     .feature-style-hero .custom-feature__description-wrapper,
     .feature-style-hero .custom-feature__description-wrapper-2 {
         left: 5%;
-        width: 40%;
+        width: 60%;
         max-width: 800px;
         padding: 20px;
     }
@@ -480,6 +480,14 @@ li {
 
 /* Large tablet and laptop styles (768px+) */
 @media (min-width: 768px) {
+    .hero-text-overlay,
+    .feature-style-hero .custom-feature__description-wrapper,
+    .feature-style-hero .custom-feature__description-wrapper-2 {
+        left: 5%;
+        width: 40%;
+        max-width: 800px;
+        padding: 20px;
+    }
 
     /* Reset negative margin for horizontal layouts */
     .custom-feature__item--layout-desktop-row .custom-feature__image-wrapper:has(.custom-feature__image--shape-round),
