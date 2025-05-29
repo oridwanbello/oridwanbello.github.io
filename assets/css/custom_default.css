@@ -159,14 +159,14 @@ li {
 /* ===== SECTION: Feature Cards and Sections ===== */
 .custom-section-header {
     text-align: center;
-    margin: 3em auto 0 auto;
+    margin: 3em auto -1em auto;
     padding: 0;
-    font-size: 1.25em;
+    font-size: 1.2em;
     color: var(--global-text-color)
 }
 
 .custom-feature-section {
-    margin: 1px auto 0.5em auto;
+    margin: 1px auto 0 auto;
     /* Top margin set to 1px (mobile arrow-to-slider gap) */
     padding: 0 1em 1em;
     /* Adjusted: top padding 0, L/R 1em, bottom 1em */
@@ -450,6 +450,10 @@ li {
     }
 
     /* Feature section styling */
+    .custom-section-header {
+        margin: 3em auto 0 auto;
+    }
+
     .custom-feature-section {
         width: 90%;
         margin-left: auto;
