@@ -236,8 +236,8 @@ li {
     border-radius: 50%;
     aspect-ratio: 1 / 1;
     margin: 0 auto;
-    max-height: 400px;
-    max-width: 400px;
+    max-height: 250px;
+    max-width: 250px;
 }
 
 .custom-feature__image--shape-rect,
@@ -495,7 +495,17 @@ li {
         align-items: center;
     }
 
-    /* Image wrapper sizing for different layouts */
+    /* Image and wrapper sizing for different layouts */
+    .custom-feature__item--layout-desktop-row:not(:has(.custom-feature__image--shape-round)) .custom-feature__image-wrapper,
+    .custom-feature__item-2.custom-feature__item--layout-desktop-row-2:not(:has(.custom-feature__image--shape-round-2)) .custom-feature__image-wrapper-2 {
+        width: 40%;
+    }
+
+    .custom-feature__item--layout-desktop-row .custom-feature__image--shape-round {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
     .floating-slider-container .custom-feature__item--layout-desktop-row:has(.custom-feature__image--shape-round) .custom-feature__image-wrapper,
     .floating-slider-container .custom-feature__item-2.custom-feature__item--layout-desktop-row-2:has(.custom-feature__image--shape-round-2) .custom-feature__image-wrapper-2 {
         width: 250px;
@@ -504,38 +514,27 @@ li {
         margin-right: 0;
     }
 
+    .custom-feature__item-2.custom-feature__item--layout-desktop-row-2 .custom-feature__image--shape-round-2 {
+        margin: 0 auto;
+        max-height: 200px;
+        max-width: 200px;
+    }
+
+    .floating-slider-container .custom-feature__item--layout-desktop-row .custom-feature__image--shape-round {
+        max-height: 200px;
+        max-width: 200px;
+    }
+
     .custom-feature-section:not(.floating-slider-container) .custom-feature__item--layout-desktop-row:has(.custom-feature__image--shape-round) .custom-feature__image-wrapper {
-        width: 300px;
-        min-width: 300px;
+        width: 350px;
+        min-width: 350px;
         padding: 2em;
         margin-right: 0;
     }
 
-    .custom-feature__item--layout-desktop-row:not(:has(.custom-feature__image--shape-round)) .custom-feature__image-wrapper,
-    .custom-feature__item-2.custom-feature__item--layout-desktop-row-2:not(:has(.custom-feature__image--shape-round-2)) .custom-feature__image-wrapper-2 {
-        width: 40%;
-    }
-
-    /* Image sizing */
-    .custom-feature__item--layout-desktop-row .custom-feature__image--shape-round {
-        margin: 0 auto;
-        max-width: 100%;
-    }
-
-    .custom-feature__item-2.custom-feature__item--layout-desktop-row-2 .custom-feature__image--shape-round-2 {
-        margin: 0 auto;
-        max-height: 210px;
-        max-width: 210px;
-    }
-
-    .floating-slider-container .custom-feature__item--layout-desktop-row .custom-feature__image--shape-round {
-        max-height: 210px;
-        max-width: 210px;
-    }
-
     .custom-feature-section:not(.floating-slider-container) .custom-feature__item--layout-desktop-row .custom-feature__image--shape-round {
-        max-height: 240px;
-        max-width: 240px;
+        max-height: 250px;
+        max-width: 250px;
     }
 
     /* Description styling for horizontal layouts */
@@ -589,13 +588,13 @@ li {
 
     /* Section and image sizing */
     .custom-feature-section:not(.floating-slider-container) .custom-feature__item--layout-desktop-row:has(.custom-feature__image--shape-round) .custom-feature__image-wrapper {
-        width: 320px;
-        min-width: 320px;
+        width: 350px;
+        min-width: 350px;
     }
 
     .custom-feature-section:not(.floating-slider-container) .custom-feature__item--layout-desktop-row .custom-feature__image--shape-round {
-        max-height: 280px;
-        max-width: 280px;
+        max-height: 250px;
+        max-width: 250px;
     }
 
     .custom-feature-section:not(.floating-slider-container):has(.custom-feature__image--shape-round),
@@ -606,13 +605,13 @@ li {
     }
 
     .floating-slider-container .custom-feature__item-2.custom-feature__item--layout-desktop-row-2:has(.custom-feature__image--shape-round-2) .custom-feature__image-wrapper-2 {
-        width: 280px;
-        min-width: 280px;
+        width: 300px;
+        min-width: 300px;
     }
 
     .custom-feature__item-2.custom-feature__item--layout-desktop-row-2 .custom-feature__image--shape-round-2 {
-        max-height: 240px;
-        max-width: 240px;
+        max-height: 250px;
+        max-width: 250px;
     }
 
     /* Slider item widths */
@@ -658,15 +657,18 @@ li {
 /* Extra large screens (2040px+) */
 @media (min-width: 2040px) {
 
-    /* Image sizing */
-    .floating-slider-container .custom-feature__item--layout-desktop-row:has(.custom-feature__image--shape-round) .custom-feature__image-wrapper {
+    /* Image wrapper sizing */
+    .floating-slider-container .custom-feature__item--layout-desktop-row:has(.custom-feature__image--shape-round) .custom-feature__image-wrapper,
+    .floating-slider-container .custom-feature__item-2.custom-feature__item--layout-desktop-row-2:has(.custom-feature__image--shape-round-2) .custom-feature__image-wrapper-2 {
         width: 300px;
         min-width: 300px;
     }
 
-    .floating-slider-container .custom-feature__item-2.custom-feature__item--layout-desktop-row-2:has(.custom-feature__image--shape-round-2) .custom-feature__image-wrapper-2 {
-        width: 300px;
-        min-width: 300px;
+    /* Round image sizing */
+    .floating-slider-container .custom-feature__item--layout-desktop-row .custom-feature__image--shape-round,
+    .custom-feature__item-2.custom-feature__item--layout-desktop-row-2 .custom-feature__image--shape-round-2 {
+        max-height: 250px;
+        max-width: 250px;
     }
 
     .custom-feature-section:not(.floating-slider-container) .custom-feature__item--layout-desktop-row:has(.custom-feature__image--shape-round) .custom-feature__image-wrapper {
@@ -676,19 +678,9 @@ li {
         margin-right: 0;
     }
 
-    .floating-slider-container .custom-feature__item--layout-desktop-row .custom-feature__image--shape-round {
-        max-height: 260px;
-        max-width: 260px;
-    }
-
-    .custom-feature__item-2.custom-feature__item--layout-desktop-row-2 .custom-feature__image--shape-round-2 {
-        max-height: 260px;
-        max-width: 260px;
-    }
-
     .custom-feature-section:not(.floating-slider-container) .custom-feature__item--layout-desktop-row .custom-feature__image--shape-round {
-        max-height: 360px;
-        max-width: 360px;
+        max-height: 250px;
+        max-width: 250px;
     }
 
     .custom-feature__item--layout-desktop-row:not(:has(.custom-feature__image--shape-round)) .custom-feature__image-wrapper,
