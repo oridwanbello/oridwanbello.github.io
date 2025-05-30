@@ -13,7 +13,7 @@ li {
     width: 100%;
     height: 75vh;
     overflow: hidden;
-    margin-bottom: 3em;
+    margin-bottom: 6em;
     position: relative;
 }
 
@@ -159,10 +159,26 @@ li {
 /* ===== SECTION: Feature Cards and Sections ===== */
 .custom-section-header {
     text-align: center;
-    margin: 5em auto -1em auto;
+    margin: 2em auto 0em auto;
     padding: 0;
     font-size: 1.2em;
     color: var(--global-text-color)
+}
+
+.custom-section-header-2 {
+    text-align: center;
+    margin: 2em auto -1em auto;
+    padding: 0;
+    font-size: 1.2em;
+    color: var(--global-text-color);
+}
+
+.custom-section-header-3 {
+    text-align: center;
+    margin: 5em auto -1em auto;
+    padding: 0;
+    font-size: 1.2em;
+    color: var(--global-text-color);
 }
 
 .custom-feature-section {
@@ -802,8 +818,8 @@ html[data-theme="dark"] .hero-slider-indicators .indicator.active {
 /* ===== SECTION: Slider Navigation Arrows ===== */
 .slider-arrow {
     position: absolute;
-    top: calc(50% - 17.5px);
-    /* The pixel subtraction accounts for the arrow height and indicator margin/padding */
+    top: calc(50% - 17px);
+    /* Half arrow height subtracted and indicator spacing added */
     transform: translateY(-50%);
     z-index: 5;
     background: transparent;
@@ -879,8 +895,8 @@ html[data-theme="dark"] .hero-slider-indicators .indicator.active {
 /* Mobile specific adjustments for arrows */
 @media (min-width: 768px) {
     .slider-arrow {
+        /* Clickable area */
         width: 44px;
-        /* Smaller clickable area */
         height: 44px;
     }
 
