@@ -135,7 +135,7 @@
 }
 
 /* This media query helps with Chrome's emulation mode */
-@media (max-width: 768px),
+@media (max-width: 1024px),
 (pointer: coarse) {
 
     /* Use attribute selector to target mobile viewer more specifically */
