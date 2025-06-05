@@ -130,8 +130,7 @@
 
 /* Style to handle PDF viewers */
 #mobile-file-viewer {
-    display: none;
-    /* Hidden by default */
+    display: none; /* Hidden by default */
 }
 
 /* This media query helps with Chrome's emulation mode */
