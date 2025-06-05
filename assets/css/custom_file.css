@@ -128,6 +128,28 @@
     }
 }
 
+/* Style to handle PDF viewers */
+#mobile-file-viewer {
+    display: none;
+    /* Hidden by default */
+}
+
+/* This media query helps with Chrome's emulation mode */
+@media (max-width: 768px),
+(pointer: coarse) {
+
+    /* Use attribute selector to target mobile viewer more specifically */
+    iframe#mobile-file-viewer {
+        display: block !important;
+        /* Force display on mobile/touch devices */
+    }
+
+    iframe#desktop-file-viewer {
+        display: none !important;
+        /* Hide desktop viewer */
+    }
+}
+
 /* Dark Mode Styles */
 html[data-theme="dark"] .file-header h1 {
     color: var(--global-white);
