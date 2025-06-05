@@ -48,7 +48,7 @@ a:hover {
     text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .container {
         margin: 10px 15px;
         padding: 15px;
