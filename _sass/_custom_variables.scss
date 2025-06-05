@@ -16,7 +16,6 @@ $doc-large: 1200px;
 $vh-short: 70vh; /* Extra short viewport height */
 $vh-medium: 80vh; /* Short viewport height */
 $vh-tall: 90vh; /* Medium viewport height */
-$vh-x-tall: 92.5vh; /* Full viewport height */
 $vh-full: 100vh; /* Full viewport height */
 
 
@@ -35,6 +34,5 @@ $vh-full: 100vh; /* Full viewport height */
     --global-vh-short: #{$vh-short};
     --global-vh-medium: #{$vh-medium};
     --global-vh-tall: #{$vh-tall};
-    --global-vh-x-tall: #{$vh-x-tall};
     --global-vh-full: #{$vh-full};
 }
