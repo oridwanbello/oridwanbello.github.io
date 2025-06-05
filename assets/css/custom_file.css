@@ -116,6 +116,14 @@
     /* Example: limit height if .file-page-container is hidden overflow */
 }
 
+/* Default viewer */
+#default-file-viewer {
+    display: block;
+}
+#mobile-file-viewer {
+    display: none;
+}
+
 /* Handles mobile */
 @media (max-width: 600px) {
     .file-page-container {
@@ -127,14 +135,14 @@
     .file-additional-content {
         max-height: calc(100vh - var(--global-vh-medium) - 1em);
     }
-/*
-    iframe#desktop-file-viewer {
+
+    #default-file-viewer {
         display: none !important;
     }
 
-    iframe#mobile-file-viewer {
+    #mobile-file-viewer {
         display: block !important;
-    } */
+    }
 }
 
 /* Handles any touch and no hover device like mobile or tablets */
@@ -143,14 +151,13 @@
         max-width: var(--global-doc-small);
     }
 
-    /* Use attribute selector to target mobile viewer more specifically */
-    /* iframe#mobile-file-viewer {
+    #mobile-file-viewer {
         display: block !important;
     }
 
-    iframe#desktop-file-viewer {
+    #default-file-viewer {
         display: none !important;
-    } */
+    }
 }
 
 /* Dark Mode Styles */
