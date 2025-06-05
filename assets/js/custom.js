@@ -426,6 +426,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!desktopViewer && !mobileViewer) return; // Not a PDF viewer page
 
         function isMobileBrowser() {
+            // Check for Chrome's emulation mode specifically
+            if (/Chrome/.test(navigator.userAgent) && /Mobile/.test(navigator.userAgent)) return true;
+
             // Check for common mobile browser indicators
             var check = false;
             (function(a){
