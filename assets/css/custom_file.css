@@ -133,14 +133,15 @@
         max-width: 600px;
     }
 }
+
 /* Style to handle PDF viewers */
 #mobile-file-viewer {
     display: none; /* Hidden by default */
 }
 
 /* This media query helps with Chrome's emulation mode */
-@media (max-width: 1024px) and
-(pointer: coarse) and (hover: none), (max-width: 600px) {
+@media (max-width: 600px),
+(pointer: coarse) and (hover: none) {
 
     /* Use attribute selector to target mobile viewer more specifically */
     iframe#mobile-file-viewer {
