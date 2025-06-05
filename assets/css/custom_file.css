@@ -112,7 +112,7 @@
     padding-top: 10px;
     flex-shrink: 0;
     overflow-y: auto;
-    max-height: calc(100vh - var(--global-vh-tall) - 0em);
+    max-height: calc(100vh - var(--global-vh-tall) - 1em);
     /* Example: limit height if .file-page-container is hidden overflow */
 }
 
@@ -125,7 +125,7 @@
     }
 
     .file-additional-content {
-        max-height: calc(100vh - var(--global-vh-medium) - 1.25em);
+        max-height: calc(100vh - var(--global-vh-medium) - 1em);
     }
 
     iframe#desktop-file-viewer {
