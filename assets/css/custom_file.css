@@ -151,12 +151,12 @@
         max-width: var(--global-doc-small);
     }
 
-    #mobile-file-viewer {
-        display: block !important;
-    }
-
     #default-file-viewer {
         display: none !important;
+    }
+
+    #mobile-file-viewer {
+        display: block !important;
     }
 }
 
