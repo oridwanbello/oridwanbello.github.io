@@ -116,7 +116,7 @@
 }
 
 /* Responsive Design - Adjustments for mobile */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .file-page-container {
         height: 80vh;
         width: 100%;
