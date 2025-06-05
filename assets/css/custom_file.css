@@ -142,14 +142,14 @@
     .file-page-container {
         max-width: var(--global-doc-small);
     }
-
+/*
     #default-file-viewer {
         display: none !important;
     }
 
     #mobile-file-viewer {
         display: block !important;
-    }
+    } */
 }
 
 /* Dark Mode Styles */
