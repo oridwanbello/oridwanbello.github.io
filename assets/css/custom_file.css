@@ -140,11 +140,11 @@ iframe#mobile-file-viewer {
     }
 
     iframe#desktop-file-viewer {
-        display: none;
+        display: none !important;
     }
 
     iframe#mobile-file-viewer {
-        display: block;
+        display: block !important;
     }
 }
 
