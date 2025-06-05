@@ -74,20 +74,3 @@ layout: default
         <div class="file-additional-content">{{ content }}</div>
     {% endif %}
 </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Check if device is touch-capable
-        const isTouchDevice =
-            'ontouchstart' in window ||
-            navigator.maxTouchPoints > 0 ||
-            navigator.msMaxTouchPoints > 0;
-
-        if (isTouchDevice && document.getElementById('mobile-file-viewer')) {
-            document.getElementById('default-file-viewer').style.display =
-                'none';
-            document.getElementById('mobile-file-viewer').style.display =
-                'block';
-        }
-    });
-</script>
