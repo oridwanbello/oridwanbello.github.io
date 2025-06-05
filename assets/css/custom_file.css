@@ -115,33 +115,24 @@
     /* Example: limit height if .file-page-container is hidden overflow */
 }
 
-/* Responsive Design - Adjustments for mobile */
-@media (max-width: 600px) {
+/* Style to handle PDF viewers */
+#mobile-file-viewer {
+    display: none; /* Hidden by default */
+}
+
+/* Handles mobile and touch and no hover device */
+@media (max-width: 600px),
+(pointer: coarse) and (hover: none) {
     .file-page-container {
         height: 80vh;
         width: 100%;
+        max-width: 600px;
         padding: 20px 17px;
     }
 
     .file-additional-content {
         max-height: calc(100vh - 80vh - 20px);
     }
-}
-
-@media (max-width: 1024px) {
-    .file-page-container {
-        max-width: 600px;
-    }
-}
-
-/* Style to handle PDF viewers */
-#mobile-file-viewer {
-    display: none; /* Hidden by default */
-}
-
-/* This media query helps with Chrome's emulation mode */
-@media (max-width: 600px),
-(pointer: coarse) and (hover: none) {
 
     /* Use attribute selector to target mobile viewer more specifically */
     iframe#mobile-file-viewer {
