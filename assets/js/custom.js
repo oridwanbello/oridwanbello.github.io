@@ -448,22 +448,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Apply the appropriate viewer based on browser detection
         function applyAppropriateViewer() {
-            // Only proceed if we have both viewers or at least the mobile one
-            if (mobileViewer && desktopViewer) {
-                if (isMobileBrowser()) {
-                    // On mobile browser
+            if (isMobileBrowser()) {
+                // On mobile browser
+                if (mobileViewer) {
+                    // If mobile PDF is available, use it
                     desktopViewer.style.display = 'none';
                     mobileViewer.style.display = 'block';
-                    console.log("Mobile browser detected, showing mobile PDF viewer");
+                    console.log("Mobile browser: Using mobile PDF viewer");
                 } else {
-                    // On desktop browser
+                    // If no mobile PDF, fallback to desktop version
                     desktopViewer.style.display = 'block';
-                    mobileViewer.style.display = 'none';
-                    console.log("Desktop browser detected, showing desktop PDF viewer");
+                    console.log("Mobile browser: No mobile PDF available, using desktop version");
                 }
-            } else if (mobileViewer && isMobileBrowser()) {
-                // If we only have mobile viewer and we're on mobile
-                mobileViewer.style.display = 'block';
+            } else {
+                // On desktop browser
+                desktopViewer.style.display = 'block';
+                if (mobileViewer) mobileViewer.style.display = 'none';
+                console.log("Desktop browser: Using desktop PDF viewer");
             }
         }
 
