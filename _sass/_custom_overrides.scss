@@ -1,3 +1,8 @@
+/* Sass variables are compiled at build time, not at runtime like CSS variables,
+    so the last definition of the Sass variable will be used. However, you can
+    use both Sass and CSS variables in SCSS file
+*/
+
 /* Masthead and Footer Border Removal --------------------------------------- */
 
 /* Remove border-like line from bottom of the site header (masthead) */
@@ -34,3 +39,10 @@
 }
 
 /* End of Author Avatar Border Removal -------------------------------------- */
+
+/* Selection - Customization ------------------------------------------------ */
+::selection {
+    background-color: rgba(var(--custom-color-2-r), var(--custom-color-2-g), var(--custom-color-2-b), 0.2);
+    color: $global-black;
+}
+/* End of Selection - Customization ----------------------------------------- */
