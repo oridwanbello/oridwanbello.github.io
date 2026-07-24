@@ -202,8 +202,17 @@
         z-index: 100;
     }
 
+    button:not(.hidden) + .visible-links #theme-toggle {
+        right: 2.5rem;
+    }
+
+    button:not(.hidden) + .visible-links {
+        padding-right: 5.5rem;
+    }
+
     .visible-links {
         display: table;
+        padding-right: 3rem;
 
         li {
             display: table-cell;
@@ -226,11 +235,19 @@
         }
 
         #theme-toggle {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 101;
+            transition: right 0.2s ease;
+
             a {
                 width: 25px;
                 display: flex;
                 justify-content: center;
                 cursor: pointer;
+                margin: 0 0.5rem;
             }
         }
 

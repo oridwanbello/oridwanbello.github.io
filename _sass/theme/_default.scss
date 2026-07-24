@@ -9,7 +9,7 @@ $custom-color-3 : #2c2d2d;
 $custom-color-4 : #F7FAFF;
 
 $gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
+$dark-gray                  : #494C51;
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : #9ba1a6;
 $lighter-gray               : mix(#fff, $gray, 90%);
@@ -43,7 +43,7 @@ $sidebar-screen-min-width   : 1024px;
     --global-bg-color                   : #{$custom-color-4};
     --global-footer-bg-color            : #{$custom-color-4};
     --global-border-color               : #{$custom-color-1};
-    --global-dark-border-color          : #bdc1c4;
+    --global-dark-border-color          : #BDC0C5;
     --global-code-background-color      : #002b36;
     --global-code-text-color            : #{$global-white};
     --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
