@@ -42,6 +42,13 @@
             padding: 0.3em 1.2em;
         }
 
+        @include breakpoint($large) {
+            max-width: $x-large;
+            width: 100%;
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+
         nav {
             z-index: 10;
             width: 100%;
@@ -59,23 +66,21 @@
     ul {
         margin: 0;
         padding: 0;
-        clear: both;
-        list-style-type: none;
     }
-}
 
-.masthead__menu-item {
-    background-color: var(--global-bg-color);
-    display: block;
-    list-style-type: none;
-    white-space: nowrap;
+    li {
+        display: inline-block;
+        list-style-type: none;
+        white-space: nowrap;
 
-    &--lg {
-        padding-right: 2em;
-        font-weight: 700;
+        &--lg {
+            padding-right: 2em;
+            font-weight: 700;
 
-        @include breakpoint($large) {
-            min-width: 17.5rem;
+            @include breakpoint($large) {
+                width: 25%;
+                min-width: 25%;
+            }
         }
     }
 }
