@@ -17,8 +17,8 @@ url: https://oridwanbello.github.io # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. "/blog"
 repository: "oridwanbello/oridwanbello.github.io"
 logo: "/images/logo.png" # Fall back to when either of the below are not specified
-logo_light: "/images/logo.png" # Specify your light theme logo
-logo_dark: "/images/logo.png" # Specify your dark theme logo
+logo_light: "/images/logo_light_mode.png" # Specify your light theme logo
+logo_dark: "/images/logo_dark_mode.png" # Specify your dark theme logo
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.

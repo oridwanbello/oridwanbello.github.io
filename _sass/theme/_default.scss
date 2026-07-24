@@ -3,18 +3,18 @@
    ========================================================================== */
 
 /* Color codes used for the theme */
-$custom-color-1 : #00A6FB; /* #00784a */
-$custom-color-2 : #00A6FB; /* #50f050; /* #50dcb4; */
+$custom-color-1 : #00AB94; /* #00784a */
+$custom-color-2 : #c8ffc8; /* #50f050; /* #50dcb4; */
 $custom-color-3 : #2c2d2d;
-$custom-color-4 : #F7FAFF;
+$custom-color-4 : #faffff;
 
 $gray                       : #7a8288;
-$dark-gray                  : #494C51;
+$dark-gray                  : mix(#000, $gray, 40%);
 $darker-gray                : mix(#000, $gray, 60%);
 $light-gray                 : #9ba1a6;
 $lighter-gray               : mix(#fff, $gray, 90%);
-$global-white               : #fff;
-$global-black               : #41464B;
+$global-white               : #c8cdcd;
+$global-black               : #414646;
 
 $link                       : $custom-color-1;
 $link-dark                  : mix(#000, $link, 25%);
@@ -43,7 +43,7 @@ $sidebar-screen-min-width   : 1024px;
     --global-bg-color                   : #{$custom-color-4};
     --global-footer-bg-color            : #{$custom-color-4};
     --global-border-color               : #{$custom-color-1};
-    --global-dark-border-color          : #BDC0C5;
+    --global-dark-border-color          : #bdc1c4;
     --global-code-background-color      : #002b36;
     --global-code-text-color            : #{$global-white};
     --global-fig-caption-color          : mix(#fff,  #{$dark-gray}, 25%);
