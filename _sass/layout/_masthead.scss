@@ -79,8 +79,7 @@
             font-weight: 700;
 
             @include breakpoint($large) {
-                width: 25%;
-                min-width: 25%;
+                @include span(2.5 of 12);
                 box-sizing: border-box;
 
                 .site-title {
