@@ -42,6 +42,14 @@
             padding: 0.3em 1.2em;
         }
 
+        @include breakpoint($large) {
+            @include container;
+            max-width: $x-large;
+            margin: 0 auto;
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+
         nav {
             z-index: 10;
             width: 100%;
@@ -67,11 +75,17 @@
         white-space: nowrap;
 
         &--lg {
-            padding-right: 2em;
+            padding-right: 0;
             font-weight: 700;
 
             @include breakpoint($large) {
-                min-width: 22.5%;
+                width: 25%;
+                min-width: 25%;
+                box-sizing: border-box;
+
+                .site-title {
+                    padding-left: 1.5em;
+                }
             }
         }
     }

@@ -1,16 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" viewBox="15 15 235 235">
+<svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" clip-rule="evenodd" viewBox="0 0 267 267">
   <style>
     .icon-path {
-      fill: #00A6FB; /* Default fallback when mode detection is unsupported */
-    }
-    @media (prefers-color-scheme: light) {
-      .icon-path {
-        fill: #00AB94; /* Light Mode */
-      }
+      fill: #00AB94; /* Default / Light Mode Green */
     }
     @media (prefers-color-scheme: dark) {
       .icon-path {
-        fill: #C8FFC8; /* Dark Mode */
+        fill: #C8FFC8; /* Dark Mode Light Green */
       }
     }
   </style>
