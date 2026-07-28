@@ -44,7 +44,6 @@
 
         @include breakpoint($large) {
             @include container;
-            width: 100%;
             max-width: $x-large;
             margin: 0 auto;
             padding-left: 1em;
