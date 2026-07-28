@@ -214,21 +214,6 @@
         display: table;
         padding-right: 3rem;
 
-        @include breakpoint($large) {
-            display: flex;
-            align-items: center;
-
-            li {
-                display: block;
-                flex: 0 0 auto;
-            }
-
-            /* First menu link after logo (About) starts flush with main content column */
-            li.masthead__menu-item--lg + .masthead__menu-item a {
-                margin-left: 0;
-            }
-        }
-
         li {
             display: table-cell;
             vertical-align: middle;
@@ -240,6 +225,11 @@
                 a {
                     margin-left: 0;
                 }
+            }
+
+            /* First menu link after logo (About) starts flush with main content column */
+            &.masthead__menu-item--lg + .masthead__menu-item a {
+                margin-left: 0;
             }
 
             &:last-child {
