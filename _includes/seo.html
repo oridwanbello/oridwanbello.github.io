@@ -32,13 +32,10 @@
 {% endif %}
 
 {% if page_title_text != nil and page_title_text != "" and page_title_text != blank %}
-  {% assign seo_title = page_title_text | append: " | " | append: dynamic_site_title %}
+  {% assign page_title_clean = page_title_text | markdownify | strip_html | strip_newlines | escape_once %}
+  {% assign seo_title = page_title_clean | append: " &#124; " | append: dynamic_site_title %}
 {% else %}
   {% assign seo_title = dynamic_site_title %}
-{% endif %}
-
-{% if seo_title %}
-  {% assign seo_title = seo_title | markdownify | strip_html | strip_newlines | escape_once %}
 {% endif %}
 
 {% if site.url %}
