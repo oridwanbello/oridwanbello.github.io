@@ -7,8 +7,34 @@
 {% assign seo_url = seo_url | default: site.github.url %}
 
 {% assign dynamic_site_title = site.name | append: " - " | append: site.description %}
-{% if page.title %}
-  {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: dynamic_site_title %}
+
+{% assign page_title_text = page.seo_title | default: page.title %}
+{% if page_title_text == nil or page_title_text == "" or page_title_text == blank %}
+  {% if page.url == "/about/" or page.url == "/about.html" %}
+    {% assign page_title_text = "About" %}
+  {% elsif page.url == "/cv/" or page.url == "/cv.html" %}
+    {% assign page_title_text = "CV" %}
+  {% elsif page.url == "/research/" %}
+    {% assign page_title_text = "Research" %}
+  {% elsif page.url == "/portfolio/" %}
+    {% assign page_title_text = "Portfolio" %}
+  {% elsif page.url == "/teaching/" %}
+    {% assign page_title_text = "Teaching" %}
+  {% elsif page.url == "/publications/" %}
+    {% assign page_title_text = "Publications" %}
+  {% elsif page.url == "/talks/" %}
+    {% assign page_title_text = "Talks" %}
+  {% elsif page.url == "/news/" %}
+    {% assign page_title_text = "News" %}
+  {% elsif page.url == "/strengths/" %}
+    {% assign page_title_text = "Strengths" %}
+  {% endif %}
+{% endif %}
+
+{% if page_title_text != nil and page_title_text != "" and page_title_text != blank %}
+  {% assign seo_title = page_title_text | append: " | " | append: dynamic_site_title %}
+{% else %}
+  {% assign seo_title = dynamic_site_title %}
 {% endif %}
 
 {% if seo_title %}
@@ -19,7 +45,7 @@
   {% assign canonical_url = page.url | replace: "index.html", "" | prepend: site.url %}
 {% endif %}
 
-<title>{{ seo_title | default: dynamic_site_title }}{% if paginator %}{% unless paginator.page == 1 %} {{ site.title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
+<title>{{ seo_title }}{% if paginator %}{% unless paginator.page == 1 %} {{ site.title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
 
 {% assign seo_description = page.description | default: page.excerpt | default: site.description %}
 {% if seo_description %}
