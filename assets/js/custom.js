@@ -10,8 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         // document.documentElement.setAttribute('data-theme', savedTheme);
 
-        // Use site's configured theme (dark) with no fallback option
-        const savedTheme = 'dark';
+        // Read the default theme set by Jekyll (from site_theme in _config.yml),
+        // but let localStorage override it if the user has manually toggled.
+        const serverTheme = document.documentElement.getAttribute('data-theme');
+        const savedTheme = localStorage.getItem('theme') || serverTheme || 'dark';
         document.documentElement.setAttribute('data-theme', savedTheme);
     }
 
