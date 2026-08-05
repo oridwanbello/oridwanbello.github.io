@@ -156,6 +156,9 @@
 
 .author__bio {
   margin: 0;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 
   @include breakpoint($large) {
     margin-top: 10px;
