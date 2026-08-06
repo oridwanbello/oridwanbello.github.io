@@ -27,7 +27,7 @@ logo_dark: "/images/favicon_white.svg" # Specify your dark theme logo
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
     # Biographic information
-    avatar: "profile.jpg"
+    avatar: "profile.avif"
     name: "O Ridwan Bello, PhD"
     pronouns: # example: "she/her"
     bio: "Geneticist and Computational Immunologist"
