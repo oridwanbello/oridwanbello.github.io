@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-    <img src="images/dna_virus.jpg" alt="Research Area", title="Research Area">
+    <img src="images/dna_virus.avif" alt="Research Area", title="Research Area">
 </div>
 
 <div align="center">

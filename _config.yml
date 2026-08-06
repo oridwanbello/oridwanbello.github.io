@@ -16,9 +16,10 @@ description: &description "Geneticist and Computational Immunologist"
 url: https://oridwanbello.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl: "" # the subpath of your site, e.g. "/blog"
 repository: "oridwanbello/oridwanbello.github.io"
-logo: "/images/favicon.webp" # Fall back to when either of the below are not specified
-logo_light: "/images/favicon.webp" # Specify your light theme logo
-logo_dark: "/images/favicon_white.webp" # Specify your dark theme logo
+logo: "/images/favicon.svg" # Fall back to when either of the below are not specified
+logo_light: "/images/favicon.svg" # Specify your light theme logo
+logo_dark: "/images/favicon_white.svg" # Specify your dark theme logo
+
 
 
 # Site Author - The following control what appear as part of the author content on the side bar.
