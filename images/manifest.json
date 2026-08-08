@@ -3,11 +3,6 @@
     "short_name": "Ridwan",
     "icons": [
         {
-            "src": "/images/favicon.webp",
-            "sizes": "1024x1024",
-            "type": "image/webp"
-        },
-        {
             "src": "/images/favicon.svg",
             "sizes": "any",
             "type": "image/svg+xml"
